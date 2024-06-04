@@ -59,55 +59,19 @@
 
 \begin{document}
 
-\title{Deep Learning for Semiparametric DiD Estimation\thanks{Norman, University of Bonn. Email: \href{mailto:s6nometz@uni-bonn.de}{\nolinkurl{s6nometz [at] uni-bonn [dot] de}}.}}
-
-\author{Norman}
-
-\date{
-    {\bf Preliminary -- please do not quote}
-    \\[1ex]
-    \today
-}
-
-\maketitle
+\input{./title.tex}
+\input{./intro} % (fold)
+\input{./methodology}
+\input{./deepl}
+\input{./montecarlo}
+\input{./application}
+\input{./conclusion}
 
 
-\begin{abstract}
-    Some abstract here.
-\end{abstract}
 
 \clearpage
 
 
-\section{Introduction} % (fold)
-\label{sec:introduction}
-
-If you are using this template, please cite this item from the references:
-\citet{GaudeckerEconProjectTemplates}.
-
-The data set for the example project is taken from
-\url{https://www.stem.org.uk/resources/elibrary/resource/28452/large-datasets-stats4schools}.
-It contains data on smoking habits in the UK, with 1691 observations and 12 variables.
-We consider only 4 of the 12 features for the prediction of the variable
-\texttt{smoking}: \texttt{marital\_status}, \texttt{highest\_qualification},
-\texttt{gender} and \texttt{age}. We model the dependence using a Logistic model. All
-numerical features are included linearly, while categorical features are expanded into
-dummy variables. Figures below illustrate the model predictions over the lifetime. You
-will find one figure and one estimation summary table for each installed programming
-language.
-
-
-
-
-
-
-% section introduction (end)
-
-
-
-\setstretch{1}
-\printbibliography
-\setstretch{1.5}
 
 
 % \appendix

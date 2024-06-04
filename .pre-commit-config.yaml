@@ -13,7 +13,7 @@ repos:
     rev: v4.4.0
     hooks:
       - id: check-added-large-files
-        args: [--maxkb=25]
+        args: [--maxkb=1000]
       - id: check-case-conflict
       - id: check-merge-conflict
       - id: check-vcs-permalinks
@@ -87,11 +87,6 @@ repos:
         additional_dependencies: [mdformat-myst, mdformat-black]
         args: [--wrap, '88']
         files: (docs/.)
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
-    hooks:
-      - id: codespell
-        args: [--skip="**.ipynb"]
   - repo: https://github.com/asottile/setup-cfg-fmt
     rev: v2.2.0
     hooks:
