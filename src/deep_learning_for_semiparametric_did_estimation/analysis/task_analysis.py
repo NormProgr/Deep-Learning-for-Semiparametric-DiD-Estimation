@@ -17,15 +17,19 @@ def make_task_estimate_regression(dgp):
         / "tables"
         / f"dr_classic_results_{dgp}.tex",
     ) -> None:
-        model_results = estimate_dr_ATTE(
-            n_obs=1000,
-            n_rep=100,
-            ATTE=0.0,
-            dgp_type=dgp,
-        )  # change n_rep to 100
-        df = pd.DataFrame(list(model_results.items()), columns=["Measure", "Value"])
-        with open(did_table_year_output, "w") as fh:
-            fh.write(df.to_latex())
+        # Check if the output file already exists
+        if not did_table_year_output.exists():
+            model_results = estimate_dr_ATTE(
+                n_obs=1000,
+                n_rep=100,
+                ATTE=0.0,
+                dgp_type=dgp,
+            )  # change n_rep to 100
+            df = pd.DataFrame(list(model_results.items()), columns=["Measure", "Value"])
+            with open(did_table_year_output, "w") as fh:
+                fh.write(df.to_latex())
+        else:
+            print(f"Output file {did_table_year_output} already exists. Skipping task.")
 
     return task_estimate_regression
 
@@ -36,7 +40,7 @@ tasks = {}
 for dgp in dgp_type:
     tasks[f"task_estimate_regression_{dgp}"] = make_task_estimate_regression(dgp)
 
-# Call the tasks to execute them
+# Call the tasks to execute them if necessary
 for task_name, task in tasks.items():
     print(f"Running {task_name}...")
     task()
