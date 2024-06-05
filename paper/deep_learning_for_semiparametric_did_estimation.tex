@@ -60,12 +60,23 @@
 \begin{document}
 
 \input{./title.tex}
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
 \input{./intro} % (fold)
 \input{./methodology}
 \input{./deepl}
 \input{./montecarlo}
 \input{./application}
 \input{./conclusion}
+
+
+
+\pagenumbering{Roman}
+\input{./appendix}
+\printbibliography
 
 
 

@@ -2,10 +2,10 @@
 import shutil
 
 import pytask
-from pytask_latex import compilation_steps as cs
 from deep_learning_for_semiparametric_did_estimation.config import BLD, PAPER_DIR
+from pytask_latex import compilation_steps as cs
 
-documents = ["deep_learning_for_semiparametric_did_estimation", "deep_learning_for_semiparametric_did_estimation_pres"]
+documents = ["deep_learning_for_semiparametric_did_estimation"]
 
 for document in documents:
 
