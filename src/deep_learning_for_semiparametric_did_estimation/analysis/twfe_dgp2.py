@@ -34,6 +34,8 @@ def twfe_DGP2_simulation():
     # Initialize empty lists to store results
     ATTE_estimates = []
     asymptotic_variance = []
+    asymptotic_variance_corr = []
+    ATTE_estimates_corr = []
 
     for _i in range(1000):
         # Generate covariates
@@ -131,6 +133,39 @@ def twfe_DGP2_simulation():
             twfe_i.HC0_se["post:d"],
         )  # Append the standard error for the interaction term
         ATTE_estimates.append(twfe)
+        # correct version of twfe
+        for var in ["x1", "x2", "x3", "x4"]:
+            dta_long[f"{var}:d"] = dta_long[var] * dta_long["d"]
+            dta_long[f"{var}:post"] = dta_long[var] * dta_long["post"]
+            dta_long[f"{var}:post:d"] = dta_long[var] * dta_long["post"] * dta_long["d"]
+        independent_vars = [
+            "x1",
+            "x2",
+            "x3",
+            "x4",
+            "post",
+            "d",
+            "post:d",
+            "x1:d",
+            "x2:d",
+            "x3:d",
+            "x4:d",
+            "x1:post",
+            "x2:post",
+            "x3:post",
+            "x4:post",
+            "x1:post:d",
+            "x2:post:d",
+            "x3:post:d",
+            "x4:post:d",
+        ]
+        twfe_corr_i = sm.OLS(
+            dta_long["y"],
+            sm.add_constant(dta_long[independent_vars]),
+        ).fit()
+        twfe_corr = twfe_corr_i.params["post:d"]
+        asymptotic_variance_corr.append(twfe_corr_i.cov_params()["post:d"])
+        ATTE_estimates_corr.append(twfe_corr)
 
     ATTE_estimates = np.array(ATTE_estimates)
 
@@ -143,21 +178,29 @@ def twfe_DGP2_simulation():
     med_bias = np.median(twfe - 0)  # Assuming ATTE is 0 as mentioned in the code
     rmse = np.sqrt(
         np.mean((twfe - 0) ** 2),
-    )  # Assuming ATTE is 0 as mentioned in the code
-    variance_ATT = np.var(ATTE_estimates)
-    coverage_probability = np.mean(
-        ((twfe - 1.96 * np.sqrt(variance_ATT)) <= 0)
-        & ((twfe + 1.96 * np.sqrt(variance_ATT)) >= 0),
     )
-    avg_ci_length = np.mean(
-        2 * 1.96 * np.sqrt(variance_ATT),
-    )  # Length of 95% confidence interval
+    variance_ATT = np.var(ATTE_estimates)
+
+    # results for corrected version
+    ATTE_estimates_corr = np.array(ATTE_estimates_corr)
+    avg_bias_corr = np.mean(
+        ATTE_estimates_corr - 0,
+    )
+    med_bias_corr = np.median(
+        ATTE_estimates_corr - 0,
+    )
+    rmse_corr = np.sqrt(
+        np.mean((ATTE_estimates_corr - 0) ** 2),
+    )
+    variance_ATT_corr = np.var(ATTE_estimates_corr)
 
     return {
         "Average Bias": avg_bias,
         "Median Bias": med_bias,
         "RMSE": rmse,
         "Average Variance of ATT": variance_ATT,
-        "Coverage": coverage_probability,
-        "Confidence Interval Length": avg_ci_length,
+        "Average Bias_corr": avg_bias_corr,
+        "Median Bias_corr": med_bias_corr,
+        "RMSE_corr": rmse_corr,
+        "Average Variance of ATT_corr": variance_ATT_corr,
     }

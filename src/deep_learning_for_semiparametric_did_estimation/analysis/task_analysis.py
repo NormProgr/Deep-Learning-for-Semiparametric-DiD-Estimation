@@ -8,6 +8,10 @@ from pytask import Product
 
 from deep_learning_for_semiparametric_did_estimation.analysis import (
     estimate_dr_ATTE,
+    ipw_sim_dgp1,
+    ipw_sim_dgp2,
+    ipw_sim_dgp3,
+    ipw_sim_dgp4,
     twfe_DGP1_simulation,
     twfe_DGP2_simulation,
     twfe_DGP3_simulation,
@@ -59,6 +63,57 @@ def task_twfe_dgp4def(
 ) -> None:
     """Estimate the Two-Way Fixed Effects model for DGP4."""
     model = twfe_DGP4_simulation()
+    df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
+    with open(did_table_year_output, "w") as fh:
+        fh.write(df.to_latex())
+
+
+##change here
+
+
+def task_ipw_dgp1(
+    did_table_year_output: Annotated[Path, Product] = BLD
+    / "ipw_results"
+    / "ipw_dgp1_results.tex",
+) -> None:
+    """Estimate the IPW with the DGP1."""
+    model = ipw_sim_dgp1()
+    df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
+    with open(did_table_year_output, "w") as fh:
+        fh.write(df.to_latex())
+
+
+def task_ipw_dgp2(
+    did_table_year_output: Annotated[Path, Product] = BLD
+    / "ipw_results"
+    / "ipw_dgp2_results.tex",
+) -> None:
+    """Estimate the IPW with the DGP2."""
+    model = ipw_sim_dgp2()
+    df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
+    with open(did_table_year_output, "w") as fh:
+        fh.write(df.to_latex())
+
+
+def task_ipw_dgp3(
+    did_table_year_output: Annotated[Path, Product] = BLD
+    / "ipw_results"
+    / "ipw_dgp3_results.tex",
+) -> None:
+    """Estimate the IPW with the DGP3."""
+    model = ipw_sim_dgp3()
+    df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
+    with open(did_table_year_output, "w") as fh:
+        fh.write(df.to_latex())
+
+
+def task_ipw_dgp4(
+    did_table_year_output: Annotated[Path, Product] = BLD
+    / "ipw_results"
+    / "ipw_dgp4_results.tex",
+) -> None:
+    """Estimate the IPW with the DGP4."""
+    model = ipw_sim_dgp4()
     df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
     with open(did_table_year_output, "w") as fh:
         fh.write(df.to_latex())

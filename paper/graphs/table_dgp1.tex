@@ -1,0 +1,28 @@
+
+\begin{table}[h]
+\centering
+\resizebox{\linewidth}{!}{
+\begin{threeparttable}
+\caption{Monte Carlo Simulation with DGP1}
+\begin{tabular}{llllll}
+\toprule
+Estimator         & Reference                         & Av. Bias   & Med. Bias   & RMSE & Variance  \\ \midrule
+TWFE              &                                   &            &             &      &           \\
+$\hat{\tau}^{fe}$ & Regression, Eq. (1)               & -20.963       & -20.816        & 21.277 & 13.247      \\
+$\hat{\tau}^{corr}$ & Regression, Eq. (2)             & -0.002       & -0.001        & 0.196 & 0.038      \\
+\addlinespace
+IPW               &                                   &            &             &      &           \\
+$\hat{\tau}^{ipw}$ & Abadie (2005)                    & data       & data        & data & data      \\
+$\hat{\tau}^{ipw,dl}$ & Abadie (2005) + DL            & data       & data        & data & data      \\
+\addlinespace
+Doubly-Robust     &                                   &            &             &      &           \\
+$\hat{\tau}^{dr}$ & Sant'Anna and Zhao (2020)         & data       & data        & data & data      \\
+$\hat{\tau}^{dr,dl}$ & Sant'Anna and Zhao (2020) + DL & data       & data        & data & data      \\
+\bottomrule
+\end{tabular}
+\vspace{1em}
+\begin{tablenotes}
+\item Notes: Simulations based on panel data with sample size $n = 1000$ and 1000 Monte Carlo repetitions. Propensity score model correct, outcome regression correct.
+\end{tablenotes}
+\end{threeparttable}}
+\end{table}

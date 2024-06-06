@@ -34,7 +34,8 @@ def twfe_DGP4_simulation():
     # Initialize empty lists to store results
     ATTE_estimates = []
     asymptotic_variance = []
-
+    ATTE_estimates_corr = []
+    asymptotic_variance_corr = []
     for _i in range(1000):
         # Gen covariates
         x1 = np.random.normal(0, 1, n)
@@ -126,6 +127,40 @@ def twfe_DGP4_simulation():
         asymptotic_variance.append(twfe_i.cov_params()["post:d"])
         ATTE_estimates.append(twfe)
 
+        # correct version of twfe
+        for var in ["x1", "x2", "x3", "x4"]:
+            dta_long[f"{var}:d"] = dta_long[var] * dta_long["d"]
+            dta_long[f"{var}:post"] = dta_long[var] * dta_long["post"]
+            dta_long[f"{var}:post:d"] = dta_long[var] * dta_long["post"] * dta_long["d"]
+        independent_vars = [
+            "x1",
+            "x2",
+            "x3",
+            "x4",
+            "post",
+            "d",
+            "post:d",
+            "x1:d",
+            "x2:d",
+            "x3:d",
+            "x4:d",
+            "x1:post",
+            "x2:post",
+            "x3:post",
+            "x4:post",
+            "x1:post:d",
+            "x2:post:d",
+            "x3:post:d",
+            "x4:post:d",
+        ]
+        twfe_corr_i = sm.OLS(
+            dta_long["y"],
+            sm.add_constant(dta_long[independent_vars]),
+        ).fit()
+        twfe_corr = twfe_corr_i.params["post:d"]
+        asymptotic_variance_corr.append(twfe_corr_i.cov_params()["post:d"])
+        ATTE_estimates_corr.append(twfe_corr)
+
     # Convert lists to arrays for calculations
 
     # Convert lists to arrays for ease of calculation
@@ -145,14 +180,21 @@ def twfe_DGP4_simulation():
         np.mean((ATTE_estimates - 0) ** 2),
     )  # Assuming ATTE is 0 as mentioned in the code
     variance_ATT = np.var(ATTE_estimates)
-    coverage_probability = np.mean(
-        ((ATTE_estimates - 1.96 * np.sqrt(variance_ATT)) <= 0)
-        & ((ATTE_estimates + 1.96 * np.sqrt(variance_ATT)) >= 0),
+
+    ATTE_estimates_corr = np.array(ATTE_estimates_corr)
+    asymptotic_variance_corr = np.array(asymptotic_variance_corr)
+    asymptotic_variance_corr = asymptotic_variance_corr.reshape(-1, 8)
+    asymptotic_variance_corr = asymptotic_variance_corr[:, 0]
+    avg_bias_corr = np.mean(
+        ATTE_estimates_corr - 0,
     )
-    avg_ci_length = np.mean(
-        2 * 1.96 * np.sqrt(variance_ATT),
-    )  # Length of 95% confidence interval
-    np.mean(ATTE_estimates)
+    med_bias_corr = np.median(
+        ATTE_estimates_corr - 0,
+    )
+    rmse_corr = np.sqrt(
+        np.mean((ATTE_estimates_corr - 0) ** 2),
+    )
+    variance_ATT_corr = np.var(ATTE_estimates_corr)
 
     # Print results
     return {
@@ -160,6 +202,8 @@ def twfe_DGP4_simulation():
         "Median Bias": med_bias,
         "RMSE": rmse,
         "Average Variance of ATT": variance_ATT,
-        "Coverage": coverage_probability,
-        "Confidence Interval Length": avg_ci_length,
+        "Average Bias_corr": avg_bias_corr,
+        "Median Bias_corr": med_bias_corr,
+        "RMSE_corr": rmse_corr,
+        "Average Variance of ATT_corr": variance_ATT_corr,
     }
