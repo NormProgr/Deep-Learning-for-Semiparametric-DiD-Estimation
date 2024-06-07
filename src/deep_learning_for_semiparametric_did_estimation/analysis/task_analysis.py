@@ -3,6 +3,7 @@
 from pathlib import Path
 from typing import Annotated
 
+import numpy as np
 import pandas as pd
 from pytask import Product
 
@@ -18,6 +19,8 @@ from deep_learning_for_semiparametric_did_estimation.analysis import (
     twfe_DGP4_simulation,
 )
 from deep_learning_for_semiparametric_did_estimation.config import BLD
+
+np.random.seed(42)
 
 
 def task_twfe_dgp1def(
