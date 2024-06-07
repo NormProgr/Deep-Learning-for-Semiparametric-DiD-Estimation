@@ -1,6 +1,15 @@
 """Code for the core analyses."""
-from deep_learning_for_semiparametric_did_estimation.analysis.dr_did import (
-    estimate_dr_ATTE,
+from deep_learning_for_semiparametric_did_estimation.analysis.dr_dgp1 import (
+    sz_dr_dgp1,
+)
+from deep_learning_for_semiparametric_did_estimation.analysis.dr_dgp2 import (
+    sz_dr_dgp2,
+)
+from deep_learning_for_semiparametric_did_estimation.analysis.dr_dgp3 import (
+    sz_dr_dgp3,
+)
+from deep_learning_for_semiparametric_did_estimation.analysis.dr_dgp4 import (
+    sz_dr_dgp4,
 )
 from deep_learning_for_semiparametric_did_estimation.analysis.ipw_dgp1 import (
     ipw_sim_dgp1,
@@ -28,7 +37,6 @@ from deep_learning_for_semiparametric_did_estimation.analysis.twfe_dgp4 import (
 )
 
 __all__ = [
-    estimate_dr_ATTE,
     twfe_DGP1_simulation,
     twfe_DGP2_simulation,
     twfe_DGP3_simulation,
@@ -37,4 +45,8 @@ __all__ = [
     ipw_sim_dgp2,
     ipw_sim_dgp3,
     ipw_sim_dgp4,
+    sz_dr_dgp1,
+    sz_dr_dgp2,
+    sz_dr_dgp3,
+    sz_dr_dgp4,
 ]
