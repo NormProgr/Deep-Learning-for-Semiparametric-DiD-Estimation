@@ -1,13 +1,13 @@
-\contentsline {section}{\numberline {1}Introduction}{I}{section.1}%
-\contentsline {section}{\numberline {2}Methodology}{III}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Notation and Setup}{III}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Classic 2x2 Difference in Difference}{III}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Outcome Regression}{III}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Inverse Probability Weighting}{III}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Double Robust Difference in Difference}{III}{subsection.2.5}%
-\contentsline {section}{\numberline {3}Deep Learning for Inference}{III}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Revision of Deep Learning}{III}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Deep Learning for Difference in Difference}{III}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Monte Carlo Simulations}{III}{section.4}%
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
+\contentsline {section}{\numberline {2}Methodology}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Notation and Setup}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Classic 2x2 Difference in Difference}{2}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Outcome Regression}{2}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Inverse Probability Weighting}{2}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Double Robust Difference in Difference}{2}{subsection.2.5}%
+\contentsline {section}{\numberline {3}Deep Learning for Inference}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Revision of Deep Learning}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Deep Learning for Difference in Difference}{2}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Monte Carlo Simulations}{2}{section.4}%
 \contentsline {section}{\numberline {5}Application}{III}{section.5}%
 \contentsline {section}{\numberline {6}Conclusion}{III}{section.6}%

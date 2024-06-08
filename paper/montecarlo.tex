@@ -1,5 +1,65 @@
 \section{Monte Carlo Simulations}
 
+
+\subsection*{Panel Data Case}
+We first discuss the case where panel data are available. For a generic $W = (W_1, W_2, W_3, W_4)'$, let
+\begin{align*}
+    f_{\text{reg}}(W) &= 210 + 27.4 \cdot W_1 + 13.7 \cdot (W_2 + W_3 + W_4), \\
+    f_{\text{ps}}(W) &= 0.75 \cdot (-W_1 + 0.5 \cdot W_2 - 0.25 \cdot W_3 - 0.1 \cdot W_4).
+\end{align*}
+
+Let $\mathbf{X} = (X_1, X_2, X_3, X_4)'$ be distributed as $N(0, I_4)$, and $I_4$ be the $4 \times 4$ identity matrix. For $j = 1, 2, 3, 4$, let
+\begin{align*}
+    Z_j &= \frac{\tilde{Z}_j - \mathbb{E}[\tilde{Z}_j]}{\sqrt{\text{Var}(\tilde{Z}_j)}}, \quad \text{where} \quad \tilde{Z}_1 = \exp(0.5X_1), \\
+    \tilde{Z}_2 &= 10 + \frac{X_2}{1 + \exp(X_1)}, \\
+    \tilde{Z}_3 &= (0.6 + \frac{X_1 X_3}{25})^3, \quad \text{and} \quad \tilde{Z}_4 = (20 + X_2 + X_4)^2.
+\end{align*}
+
+Building on Kang and Schafer (2007), we consider the following data generating processes (DGPs):
+
+\begin{multicols}{2}
+
+\textbf{DGP1} \\
+(PS and OR models correct)
+\begin{align*}
+    Y_0(0) &= f_{\text{reg}}(Z) + \nu(Z, D) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{reg}}(Z) + \nu(Z, D) + \epsilon_1(d) \\
+    p(Z) &= \frac{\exp \left( f_{\text{ps}}(Z) \right)}{1 + \exp \left( f_{\text{ps}}(Z) \right)}, \\
+    D &= 1\{ p(Z) \geq U \};
+\end{align*}
+
+\textbf{DGP2} \\
+(PS model incorrect, OR correct)
+\begin{align*}
+    Y_0(0) &= f_{\text{reg}}(Z) + \nu(Z, D) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{reg}}(Z) + \nu(Z, D) + \epsilon_1(d) \\
+    p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
+    D &= 1\{ p(X) \geq U \};
+\end{align*}
+
+\columnbreak
+
+\textbf{DGP3}\\
+(PS model correct, OR incorrect)
+\begin{align*}
+    Y_0(0) &= f_{\text{reg}}(X) + \nu(X, D) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{reg}}(X) + \nu(X, D) + \epsilon_1(d) \\
+    p(Z) &= \frac{\exp \left( f_{\text{ps}}(Z) \right)}{1 + \exp \left( f_{\text{ps}}(Z) \right)}, \\
+    D &= 1\{ p(X) \geq U \};
+\end{align*}
+
+\textbf{DGP4 } \\
+(PS and OR models incorrect)
+\begin{align*}
+    Y_0(0) &= f_{\text{reg}}(X) + \nu(X, D) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{reg}}(X) + \nu(X, D) + \epsilon_1(d) \\
+    p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
+    D &= 1\{ p(X) \geq U \};
+\end{align*}
+
+\end{multicols}
+
+
 \input{./graphs/table_low_dim}
 
 
