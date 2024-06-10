@@ -11,6 +11,12 @@ from deep_learning_for_semiparametric_did_estimation.analysis.dr_dgp3 import (
 from deep_learning_for_semiparametric_did_estimation.analysis.dr_dgp4 import (
     sz_dr_dgp4,
 )
+from deep_learning_for_semiparametric_did_estimation.analysis.het_dr_dgp4 import (
+    het_sz_dr_dgp4,
+)
+from deep_learning_for_semiparametric_did_estimation.analysis.het_ipw_dgp4 import (
+    het_ipw_dgp4,
+)
 from deep_learning_for_semiparametric_did_estimation.analysis.ipw_dgp1 import (
     ipw_sim_dgp1,
 )
@@ -49,4 +55,6 @@ __all__ = [
     sz_dr_dgp2,
     sz_dr_dgp3,
     sz_dr_dgp4,
+    het_sz_dr_dgp4,
+    het_ipw_dgp4,
 ]

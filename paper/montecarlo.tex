@@ -64,3 +64,13 @@ Building on Kang and Schafer (2007), we consider the following data generating p
 
 
 \input{./graphs/table_loss_report}
+
+To explore the flexibility of neural networks, I consider the following data generating processes. Note that this is an adjusted version of the DGP4, where the PS and OR are incorrect and heterogenous treatment effects are added. In \\
+\textbf{DGP4 with Heterogeneous Treatment Effects}
+\begin{align*}
+    Y_0(0) &= f_{\text{reg}}(X) + \nu(X) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{reg}}(X) + \nu(X) + \theta(X) \cdot d + \epsilon_1(d), \\
+    p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
+    D &= 1\{ p(X) \geq U \},
+\end{align*}
+where: $\theta(X) = 10 \cdot (Z_1 + Z_2 - Z_3 + Z_4)$.

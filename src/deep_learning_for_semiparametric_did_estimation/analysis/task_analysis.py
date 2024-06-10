@@ -8,6 +8,8 @@ import pandas as pd
 from pytask import Product
 
 from deep_learning_for_semiparametric_did_estimation.analysis import (
+    het_ipw_dgp4,
+    het_sz_dr_dgp4,
     ipw_sim_dgp1,
     ipw_sim_dgp2,
     ipw_sim_dgp3,
@@ -24,7 +26,6 @@ from deep_learning_for_semiparametric_did_estimation.analysis import (
 from deep_learning_for_semiparametric_did_estimation.config import BLD
 
 np.random.seed(42)
-
 # TWFE tasks
 
 
@@ -173,6 +174,35 @@ def task_sz_dr_dgp4(
 ) -> None:
     """Estimate the IPW with the DGP4."""
     model = sz_dr_dgp4()
+    df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
+    with open(did_table_year_output, "w") as fh:
+        fh.write(df.to_latex())
+
+
+# Heterogeneous Treatment Effects
+
+
+def task_het_sz_dr_dgp4(
+    did_table_year_output: Annotated[Path, Product] = BLD
+    / "het_results"
+    / "het_sz_dr_dgp4_results.tex",
+) -> None:
+    """Estimate the DR DiD Estimator with the DGP4 and heterogenous treatment
+    effects."""
+    model = het_sz_dr_dgp4()
+    df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
+    with open(did_table_year_output, "w") as fh:
+        fh.write(df.to_latex())
+
+
+def task_het_ipw_dgp4(
+    did_table_year_output: Annotated[Path, Product] = BLD
+    / "het_results"
+    / "het_ipw_dgp4_results.tex",
+) -> None:
+    """Estimate the DR DiD Estimator with the DGP4 and heterogenous treatment
+    effects."""
+    model = het_ipw_dgp4()
     df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
     with open(did_table_year_output, "w") as fh:
         fh.write(df.to_latex())
