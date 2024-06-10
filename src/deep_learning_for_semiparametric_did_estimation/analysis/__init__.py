@@ -42,6 +42,11 @@ from deep_learning_for_semiparametric_did_estimation.analysis.twfe_dgp4 import (
     twfe_DGP4_simulation,
 )
 
+from deep_learning_for_semiparametric_did_estimation.analysis.het_twfe_dgp4 import (
+    het_twfe_DGP4_simulation,
+)
+
+
 __all__ = [
     twfe_DGP1_simulation,
     twfe_DGP2_simulation,
@@ -57,4 +62,5 @@ __all__ = [
     sz_dr_dgp4,
     het_sz_dr_dgp4,
     het_ipw_dgp4,
+    het_twfe_DGP4_simulation,
 ]

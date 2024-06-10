@@ -22,6 +22,7 @@ from deep_learning_for_semiparametric_did_estimation.analysis import (
     twfe_DGP2_simulation,
     twfe_DGP3_simulation,
     twfe_DGP4_simulation,
+    het_twfe_DGP4_simulation,
 )
 from deep_learning_for_semiparametric_did_estimation.config import BLD
 
@@ -203,6 +204,19 @@ def task_het_ipw_dgp4(
     """Estimate the DR DiD Estimator with the DGP4 and heterogenous treatment
     effects."""
     model = het_ipw_dgp4()
+    df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
+    with open(did_table_year_output, "w") as fh:
+        fh.write(df.to_latex())
+
+
+def task_het_twfe_DGP4_simulation(
+    did_table_year_output: Annotated[Path, Product] = BLD
+    / "het_results"
+    / "het_twfe_DGP4_results.tex",
+) -> None:
+    """Estimate the DR DiD Estimator with the DGP4 and heterogenous treatment
+    effects."""
+    model = het_twfe_DGP4_simulation()
     df = pd.DataFrame(list(model.items()), columns=["Measure", "Value"])
     with open(did_table_year_output, "w") as fh:
         fh.write(df.to_latex())
