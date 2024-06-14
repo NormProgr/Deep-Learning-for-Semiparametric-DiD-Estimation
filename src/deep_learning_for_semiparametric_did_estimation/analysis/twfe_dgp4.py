@@ -166,8 +166,7 @@ def twfe_DGP4_simulation():
     # Convert lists to arrays for ease of calculation
     ATTE_estimates = np.array(ATTE_estimates)
     asymptotic_variance = np.array(asymptotic_variance)
-    asymptotic_variance = asymptotic_variance.reshape(-1, 8)
-    asymptotic_variance = asymptotic_variance[:, 0]
+    asymptotic_variance_corr = np.array(asymptotic_variance_corr)
 
     # Calculate metrics
     avg_bias = np.mean(

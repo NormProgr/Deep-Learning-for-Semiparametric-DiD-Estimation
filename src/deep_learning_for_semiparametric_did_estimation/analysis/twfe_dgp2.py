@@ -168,21 +168,21 @@ def twfe_DGP2_simulation():
         ATTE_estimates_corr.append(twfe_corr)
 
     ATTE_estimates = np.array(ATTE_estimates)
-
-    # Convert lists to arrays for calculations
-    twfe = np.array(twfe)
-    asymptotic_variance = np.array(asymptotic_variance)
+    ATTE_estimates_corr = np.array(ATTE_estimates_corr)
 
     # Calculate metrics
-    avg_bias = np.mean(twfe - 0)  # Assuming ATTE is 0 as mentioned in the code
-    med_bias = np.median(twfe - 0)  # Assuming ATTE is 0 as mentioned in the code
+    avg_bias = np.mean(
+        ATTE_estimates - 0
+    )  # Assuming ATTE is 0 as mentioned in the code
+    med_bias = np.median(
+        ATTE_estimates - 0
+    )  # Assuming ATTE is 0 as mentioned in the code
     rmse = np.sqrt(
-        np.mean((twfe - 0) ** 2),
+        np.mean((ATTE_estimates - 0) ** 2),
     )
     variance_ATT = np.var(ATTE_estimates)
 
     # results for corrected version
-    ATTE_estimates_corr = np.array(ATTE_estimates_corr)
     avg_bias_corr = np.mean(
         ATTE_estimates_corr - 0,
     )
