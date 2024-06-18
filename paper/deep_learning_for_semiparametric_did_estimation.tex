@@ -21,7 +21,6 @@
 % submissions.
 \usepackage{threeparttable}
 \usepackage{multicol}
-
 \usepackage[
     natbib=true,
     bibencoding=inputenc,
@@ -55,8 +54,22 @@
 \clubpenalty=10000
 
 \setlength{\parskip}{1ex}
-\setlength{\parindent}{0ex}
+%\setlength{\parindent}{0ex}
 \setstretch{1.5}
+
+\usepackage{acronym}
+\acrodef{iid}[i.i.d.]{\textbf{independent and identically distributed}}
+\acrodef{did}[DiD]{\textbf{Difference-in-Difference}}
+\acrodef{ols}[OLS]{\textbf{Ordinary Least Squares}}
+\acrodef{twfe}[TWFE]{\textbf{Two-Way Fixed Effects}}
+\acrodef{twfer}[TWFEr]{\textbf{Two-Way Fixed Effects Regression}}
+\acrodef{OWFE}[OWFE]{\textbf{One-Way Fixed Effects}}
+\acrodef{mcs}[MCS]{\textbf{Monte Carlo Simulation}}
+\acrodef{att}[ATT]{\textbf{average treatment effect on the treated}}
+\acrodef{pta}[PTA]{\textbf{parallel trends assumption}}
+\acrodef{ipw}[IPW]{\textbf{Inverse Probability Weighting}}
+\acrodef{drdid}[DRDiD]{\textbf{Doubly-Robust DiD}}
+\acrodef{or}[OR]{\textbf{Outcome Regression}}
 
 
 \begin{document}

@@ -4,21 +4,32 @@
 
 % Issues and importance of Inference and DIfference in Difference and how Deep Learning could tackle that
 
+\ac{did} is a widely used econometric method to estimate the effect of a policy change on a group of individuals called treatment group.
+To achieve this, the method requires to compare treatment group to a control group before and after the policy change.
+The important underlying assumption is the \ac{pta}, which states that the treatment and control group would have developed similarly in the absence of the policy change.
+This assumption is key to identify the effect on the treatment group, the \ac{att}, to be causal.
 
+However in practice one does not know if the \ac{pta} holds as it is by design untestable.
+If individuals are selected into treatment based on characteristics that also influence the outcome, the \ac{pta} is violated.
+To overcome this issue researchers condition on these characteristics such that they assume conditional \ac{pta} \citep[see][]{santannaDoublyRobustDifferenceindifferences2020,manfeDifferenceInDifferenceDesignRepeated}
 
-
-
+In this thesis I want to adress how researchers can use a more flexible semiparametric approach to achieve robust \ac{did} estimation under conditional \ac{pta}.
+For this I consider a variety of machine and deep learning models to interchange the first-step in the \ac{did} estimation.
+Especially the use of deep learning marks a novelty and I follow \citet{farrellDeepNeuralNetworks2021} to contribute to the young but growing literature.
 % Importance of Deep Learning for Inference and for Economics
 
 
 
 % say what the exact finding is in the following parts and keep the structure with First, Second, ... .
 %
-This thesis wants to contribute in four ways to the literature. %explain more
-First, I want to revise the current state of Machine Learning techniques used for Difference-in-Difference estimation.%explain more
-Second, I introduce a new approach that uses Deep Learning for Difference-in-Difference estimation.%explain more
-Third, I want to provide a comprehensive Monte Carlo study to compare the performance of these techniques.%explain more
-Lastly, I want to apply these techniques to a real-world dataset to show the potential of these techniques.%explain more
+This thesis wants to contribute in four ways to the literature.
+First, I want to discuss the current state of classical and machine learning techniques used for \ac{did} estimation.
+For this I revise the classic \ac{did} estimation with \ac{twfe}, then I revise the semiparametric approaches such as \ac{or} \citep[see][]{heckmanMatchingEconometricEvaluation1998}, \ac{ipw} \citep[see][]{abadieSemiparametricDifferenceinDifferencesEstimators2005}, and \ac{drdid} \citep[see][]{santannaDoublyRobustDifferenceindifferences2020}.
+
+Second, I introduce a new approach using deep learning for first step \ac{did} estimation.
+As the literature is rather new I want to revise how deep neural networks work and why they can be valid for inference following the results of \citet{farrellDeepNeuralNetworks2021}.
+Third, I want to provide a comprehensive \textit{Monte Carlo Simulation} to compare the performance of these techniques. %explain more
+Lastly, I want to apply these techniques to a real-world dataset to show the potential of these techniques. %explain more
 
 
 % Organization of the paper
