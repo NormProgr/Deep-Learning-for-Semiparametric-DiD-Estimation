@@ -27,9 +27,20 @@ First, I want to discuss the current state of classical and machine learning tec
 For this I revise the classic \ac{did} estimation with \ac{twfe}, then I revise the semiparametric approaches such as \ac{or} \citep[see][]{heckmanMatchingEconometricEvaluation1998}, \ac{ipw} \citep[see][]{abadieSemiparametricDifferenceinDifferencesEstimators2005}, and \ac{drdid} \citep[see][]{santannaDoublyRobustDifferenceindifferences2020}.
 
 Second, I introduce a new approach using deep learning for first step \ac{did} estimation.
-As the literature is rather new I want to revise how deep neural networks work and why they can be valid for inference following the results of \citet{farrellDeepNeuralNetworks2021}.
-Third, I want to provide a comprehensive \textit{Monte Carlo Simulation} to compare the performance of these techniques. %explain more
-Lastly, I want to apply these techniques to a real-world dataset to show the potential of these techniques. %explain more
+As the literature is rather new I want to revise how deep neural networks work and why it can be valid for inference following the results of \citet{farrellDeepNeuralNetworks2021}.
 
+Third, I want to provide a \ac{mcs} to compare the performance of all techniques mentioned earlier with deep learning variations of the \ac{ipw} and \ac{drdid} approach.
+My simulation is close to the design of \citet{santannaDoublyRobustDifferenceindifferences2020} where we use the same data generating process for panel data that introduces four variations.
+The variations differ whether the outcome was generated correctly by \ac{or}, \ac{ipw}, both or none.
+I can show that deep learning is nearly as good as the best performing technique in the first three variations.
+In the variation where the outcome was not generated correctly by any technique, \ac{drdid} deep learning outperforms the other techniques.
+Additionally, I introduce heterogeneity in treatment for the incorrectly specified case and show that \ac{drdid} deep learning case is the best performing technique.
+%explain more
+Lastly, I want to apply these techniques to a real-world dataset of \citet{favaraCreditSupplyPrice2015} to show the potential of the \ac{drdid} deep learning estimator. %explain more
+The rest of the paper is structured as follows. In Section I introduces the methodology of all techniques used in this thesis.
+Section II introduces deep learning in general and its use for inference.
+Section III introduces the \ac{mcs} and its results.
+Section V applies the techniques to a real-world dataset.
+Section VI concludes the paper.
 
 % Organization of the paper
