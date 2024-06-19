@@ -11,7 +11,7 @@ The model has two time periods given by $T$, where $t \in 0, 1$. These define th
 Note that I use in the whole thesis panel data such that $i$ denotes the individual over the time periods.
 The two groups are defined by $D$, where $d \in 0, 1$, where $d = 1$ is the treatment group and $d = 0$ is the control group.
 The outcome variable is given by $Y$ and the variable of interest we investigate, the \ac{att}, is given by $\tau^{fe} = \mathbb{E}(Y_{1,1} - Y_{0,1} \mid  X,D = 1)$.
-For my \ac{mcs} I use the following common \ac{twfe} model notation from \citet{santannaDoublyRobustDifferenceindifferences2020}:
+For my \ac{mcs} I use the following common \ac{twfe} model notation as in \citet{santannaDoublyRobustDifferenceindifferences2020}:
 \begin{equation}
 Y_{it} = \alpha_1 + \alpha_2 T_i + \alpha_3 D_i + \tau^{fe} (T_i \cdot D_i) + \theta' X_i + \epsilon_{it}
 \label{eq:twfe}
@@ -32,7 +32,10 @@ Eq. \ref{eq:twfecorr} is therefore, in a correctly specified case, neither biase
 The issue is that the econometric practitioner needs very good reasoning and understanding to add the right interactions.
 In the following sections I introduce more flexible techniques circumventing this issue.
 \subsection{Outcome Regression}
-
+I want to emphasize \ac{or} as an technical part of \ac{drdid} than using this approach itself for estimating \ac{att}.
+\ac{or} is a generalized \ac{did} approach that estimates the outcomes as a function of covariates.
+The basic idea is to use the control group to predict what would have happened to the treated individuals if they had not received the treatment.
+The prediction can be done trough a linear regression but also other non-linear models like p-nearest neighbor matching \parencite{heckmanMatchingEconometricEvaluation1998}.
 
 
 \subsection{Inverse Probability Weighting}
