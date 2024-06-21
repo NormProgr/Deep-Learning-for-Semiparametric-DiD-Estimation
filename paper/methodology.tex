@@ -12,6 +12,7 @@ Note that I use in the whole thesis panel data such that $i$ denotes the individ
 The two groups are defined by $D$, where $d \in 0, 1$, such that $d = 1$ is the treatment group and $d = 0$ is the control group.
 The outcome variable is given by $Y$ and the variable of interest, the \ac{att}, is given by $\tau^{fe} = \mathbb{E}(Y_{1,1} - Y_{0,1} \mid  X,D = 1)$.
 Therefore the \ac{att} describes the expected difference in outcomes between the treated group (when they receive the treatment) and what their outcomes would have been if they had not received the treatment.
+
 For my \ac{mcs} I use the following common \ac{twfe} model notation to display the 2x2 \ac{did} as in \citet{santannaDoublyRobustDifferenceindifferences2020}:
 \begin{equation}
 Y_{it} = \alpha_1 + \alpha_2 T_i + \alpha_3 D_i + \tau^{fe} (T_i \cdot D_i) + \theta' X_i + \epsilon_{it}
@@ -38,9 +39,10 @@ In this part, I revise \ac{or} as it is an important technique used in \ac{drdid
 \ac{or} is a generalized \ac{did} estimation approach that estimates the outcomes as a function of covariates, given by $Y_i = g_i(X) + \epsilon_i$, where $i \in 0,1$.
 The basic idea is to predict the control group outcomes based on their covariates and then compare these predicted outcomes to the actual outcomes observed for the treated group.
 The prediction can be done trough a linear regression or other non-linear models like p-nearest neighbor matching \parencite{heckmanMatchingEconometricEvaluation1998}.
+
 In this thesis, I fit a regression to estimate \ac{or} within the \ac{drdid} framework, allowing to formulate the following model:
 \begin{equation}
-\tau^{or} = \bar{Y}_{1,1} - \bar{Y}_{1,0} - \left[ \frac{1}{n_{treat}} \sum_{i \mid D_i = 1} \left( \hat{\mu}_{0,1}(X_i) - \hat{\mu}_{0,0}(X_i) \right) \right],
+\hat{\tau}^{or} = \bar{Y}_{1,1} - \bar{Y}_{1,0} - \left[ \frac{1}{n_{treat}} \sum_{i \mid D_i = 1} \left( \hat{\mu}_{0,1}(X_i) - \hat{\mu}_{0,0}(X_i) \right) \right],
 \label{eq:3}
 \end{equation}
 where $\bar{Y}_{1,1} - \bar{Y}_{1,0}$ is the average outcome among treated units between pre- and post-treatment period.
@@ -51,6 +53,31 @@ Note that if $\hat{\mu}_{d,t}(X)$ is linear it would be close to the correct \ac
 Finally, it is crucial that $\hat{\mu}_{d,t}(X)$ is correctly specified; otherwise the \ac{att} is biased and inconsistent.
 
 \subsection{Inverse Probability Weighting}
+The \ac{ipw} estimator is another common approach to estimate \ac{att}, which relaxes the conditional \ac{pta} as considered in this thesis.
+Contrary to the \ac{or} approach, \ac{ipw} does not directly model the change in the outcome \citep{santannaDoublyRobustDifferenceindifferences2020}.
+Instead, the idea is to only control for covariates that affect the probability of the treatment.
+If the probability of an individual to receive the treatment or being in the control group is the same, then the only difference between control and treatment is chance.
+Thus, there are no biases through confounding variables.
+
+Naturally, it is crucial to correctly estimate the probability of being treated \citep{angrist2009mostly}.
+The true probability is estimated by the so-called propensity score, given by $p(x) = P(D=1 \mid X)$, which is not directly observable.
+Therefore it is estimated by $\hat{\pi}(X)$.
+Note that there are several ways to estimate the propensity score, such as logistic regression, probit regression, or machine learning techniques.
+These techniques are used in the first-step to estimate the propensity score, and in the second step, the outcome model is estimated parametrically \citep{abadieSemiparametricDifferenceinDifferencesEstimators2005}, the \ac{ipw} estimator is called semiparametric.
+In this thesis, I use logistic regression and deep neural networks to estimate the propensity score.
+
+The \ac{ipw} estimator is given by:
+\begin{equation}
+\hat{\tau}^{\text{ipw}} = \frac{1}{\mathbb{E}_n[D]} \mathbb{E}_n \left[ \frac{D - \hat{\pi}(X)}{1 - \hat{\pi}(X)} (Y_1 - Y_0) \right],
+\label{eq:4}
+\end{equation}
+where $\mathbb{E}_n$  is the sample average of the treatment $D$.
+The term $\frac{D - \hat{\pi}(X)}{1 - \hat{\pi}(X)}$ reweights the treatment and control to account for the probability of receiving the treatment.
+$Y_1 - Y_0$ captures the change in the outcome for each individual.
 
 
+Lastly, there are two remarks regarding the \ac{ipw} estimator.
+First, the \ac{ipw} estimator is consistent and unbiased if the propensity score is correctly specified.
+Second, it is important to consider all relevant covariates in the propensity score estimation \citep{angrist2009mostly}, than to improve the prediction of propensity scores \citep{hernanCausalInferenceWhat}.
+The reason is that including irrelevant covariates to improve the prediction of the propensity scores, also increases the variance of the estimator without adding any more information \citep{hernanCausalInferenceWhat}.
 \subsection{Double Robust Difference in Differences}
