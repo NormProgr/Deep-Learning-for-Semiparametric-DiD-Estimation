@@ -80,4 +80,30 @@ Lastly, there are two remarks regarding the \ac{ipw} estimator.
 First, the \ac{ipw} estimator is consistent and unbiased if the propensity score is correctly specified.
 Second, it is important to consider all relevant covariates in the propensity score estimation \citep{angrist2009mostly}, than to improve the prediction of propensity scores \citep{hernanCausalInferenceWhat}.
 The reason is that including irrelevant covariates to improve the prediction of the propensity scores, also increases the variance of the estimator without adding any more information \citep{hernanCausalInferenceWhat}.
+
 \subsection{Double Robust Difference in Differences}
+
+The \ac{drdid} of \citet{santannaDoublyRobustDifferenceindifferences2020} is a combination of the two approaches discussed before; \ac{or} and \ac{ipw}.
+The \ac{drdid} identifies the \ac{att} correctly if either the \ac{or} or \ac{ipw} is correctly specified.
+In this case the aforementioned weakness of either approach is avoided which makes the \ac{drdid} double robust.
+
+Recall from before the $p(X)$ to be the true, unknown propensity score. $\mu_{d,t}(X)$ is being a model for the true, unknown outcome regression $m_{d,t}(x)\equiv \mathbb{E}[Y_t | D = d, X = x]$, $d, t = 0, 1$.
+In this thesis, I only view panel data such that I can write $\Delta Y = Y_1 - Y_0$ for the change in the outcome.
+The expression $\mu_{d,\Delta}(X) \equiv \mu_{d,1}(X) - \mu_{d,0}(X)$ represents the difference in the expected outcomes before and after treatment, adjusted for covariates $X$, for the group with treatment status $D=d$.
+
+Thus, one can se how \ac{or} and \ac{ipw} are constructed within the \ac{drdid} estimator, given by:
+\begin{equation}
+\tau^{dr} = \mathbb{E} \left[ \left( w_1(D) - w_0(D, X; p) \right) \left( \Delta Y - \mu_{0, \Delta}(X) \right) \right],
+\end{equation}
+
+where, for a generic $g$,
+%explain that more and check if it is correctly written to my notation
+\begin{equation}
+w_1(D) = \frac{D}{\mathbb{E}[D]},
+\end{equation}
+
+and
+
+\begin{equation}
+w_0(D, X; g) = \frac{g(X)(1-D)}{1 - g(X)} \Bigg/ \mathbb{E} \left[ \frac{g(X)(1-D)}{1 - g(X)} \right].
+\end{equation}
