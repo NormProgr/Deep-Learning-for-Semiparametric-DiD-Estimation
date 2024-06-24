@@ -87,23 +87,27 @@ The \ac{drdid} of \citet{santannaDoublyRobustDifferenceindifferences2020} is a c
 The \ac{drdid} identifies the \ac{att} correctly if either the \ac{or} or \ac{ipw} is correctly specified.
 In this case the aforementioned weakness of either approach is avoided which makes the \ac{drdid} double robust.
 
-Recall from before the $p(X)$ to be the true, unknown propensity score. $\mu_{d,t}(X)$ is being a model for the true, unknown outcome regression $m_{d,t}(x)\equiv \mathbb{E}[Y_t | D = d, X = x]$, $d, t = 0, 1$.
+Recall from before that $\hat{\pi}(X)$ estimates $p(X)$ the true, unknown propensity score model. $\mu_{d,t}(X)$ is being a model for the true, unknown outcome regression $m_{d,t}(x)\equiv \mathbb{E}[Y_t | D = d, X = x]$, $d, t = 0, 1$.
 In this thesis, I only view panel data such that I can write $\Delta Y = Y_1 - Y_0$ for the change in the outcome.
 The expression $\mu_{d,\Delta}(X) \equiv \mu_{d,1}(X) - \mu_{d,0}(X)$ represents the difference in the expected outcomes before and after treatment, adjusted for covariates $X$, for the group with treatment status $D=d$.
 
 Thus, one can se how \ac{or} and \ac{ipw} are constructed within the \ac{drdid} estimator, given by:
 \begin{equation}
-\tau^{dr} = \mathbb{E} \left[ \left( w_1(D) - w_0(D, X; p) \right) \left( \Delta Y - \mu_{0, \Delta}(X) \right) \right],
+\tau^{dr} = \mathbb{E} \left[ \left( w_1(D) - w_0(D, X; \hat{\pi}) \right) \left( \Delta Y - \mu_{0, \Delta}(X) \right) \right],
+\label{eq:5}
 \end{equation}
-
-where, for a generic $g$,
+where $w_1(D) - w_0(D, X; \hat{\pi})$ directly corresponds to the \ac{ipw} estimator and $\Delta Y - \mu_{0, \Delta}(X)$ corresponds to the \ac{or} estimator from eq. \ref{eq:3} and eq. \ref{eq:4} respectively.
+Note that $w_1(D)$ is a weighting assigned to the treatment group and $w_0(D, X; \hat{\pi})$ is a weighting assigned to the control group, are given by:
 %explain that more and check if it is correctly written to my notation
 \begin{equation}
-w_1(D) = \frac{D}{\mathbb{E}[D]},
+w_1(D) = \frac{D}{\mathbb{E}[D]}, \quad  \mathit{and} \quad
+w_0(D, X; \hat{\pi}) = \frac{\hat{\pi}(X)(1-D)}{1 - \hat{\pi}(X)} \Bigg/ \mathbb{E} \left[ \frac{\hat{\pi}(X)(1-D)}{1 - \hat{\pi}(X)} \right].
+\label{eq:6}
 \end{equation}
-
-and
-
-\begin{equation}
-w_0(D, X; g) = \frac{g(X)(1-D)}{1 - g(X)} \Bigg/ \mathbb{E} \left[ \frac{g(X)(1-D)}{1 - g(X)} \right].
-\end{equation}
+Obviously the \ac{drdid} estimator is consistent and unbiased if both \ac{or} and \ac{ipw} are correctly specified but it is less clear if only one of the two is correctly specified.
+To clarify this, assume the \ac{ipw} is incorrectly specified and the \ac{or} is correctly specified.
+The incorrect specification of \ac{ipw} is reflected in $w_0(D, X; \hat{\pi})$ in eq. \ref{eq:6}, because $\hat{\pi}$ is biased.
+Meaning the weight for the control group is misspecified for \ac{ipw}.
+This effect is nullified by the correct specification of \ac{or} in $\Delta Y - \mu_{0, \Delta}(X)$ because the change in the outcome evolution is zero in expectation.
+Intuitively, because the \ac{or} correctly identifies that the change in outcome of control should not change over time, as it is not treated, any multiplication of it becomes zero as well.
+A similar argument can be made for the \ac{or} being misspecified and the \ac{ipw} being correctly specified.

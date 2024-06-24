@@ -1,7 +1,15 @@
 \section{Monte Carlo Simulations}
 
 
+\subsection{\ac{dgp} explanation}
+
+
+
+
+
+
 \subsection*{Panel Data Case}
+
 We first discuss the case where panel data are available. For a generic $W = (W_1, W_2, W_3, W_4)'$, let
 \begin{align*}
     f_{\text{reg}}(W) &= 210 + 27.4 \cdot W_1 + 13.7 \cdot (W_2 + W_3 + W_4), \\
@@ -59,12 +67,11 @@ Building on Kang and Schafer (2007), we consider the following data generating p
 
 \end{multicols}
 
-
+\subsection{Results Homogenous Treatment Effects}
 \input{./graphs/table_low_dim}
 
 
-\input{./graphs/table_loss_report}
-
+\subsection{Results Heterogeneous Treatment Effects}
 To explore the flexibility of neural networks, I consider the following data generating processes. Note that this is an adjusted version of the DGP4, where the PS and OR are incorrect and heterogenous treatment effects are added. In \\
 \textbf{DGP4 with Heterogeneous Treatment Effects}
 \begin{align*}
@@ -75,3 +82,7 @@ To explore the flexibility of neural networks, I consider the following data gen
 \end{align*}
 where: $\theta(X) = 10 \cdot (Z_1 + Z_2 - Z_3 + Z_4)$.
 \input{./graphs/table_het_dgp4}
+
+
+\subsection{Deep Learning Model Results}
+\input{./graphs/table_loss_report}
