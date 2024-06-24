@@ -6,11 +6,11 @@
 \contentsline {subsection}{\numberline {2.4}Double Robust Difference in Differences}{5}{subsection.2.4}%
 \contentsline {section}{\numberline {3}Deep Learning for Inference}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Revision of Deep Learning}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Deep Learning for Difference in Difference}{7}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Monte Carlo Simulations}{7}{section.4}%
-\contentsline {subsection}{\numberline {4.1}\ac {dgp} explanation}{7}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Results Homogenous Treatment Effects}{8}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Results Heterogeneous Treatment Effects}{8}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Deep Learning Model Results}{I}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Application}{I}{section.5}%
-\contentsline {section}{\numberline {6}Conclusion}{I}{section.6}%
+\contentsline {subsection}{\numberline {3.2}Deep Learning for Difference in Differences}{8}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Monte Carlo Simulations}{8}{section.4}%
+\contentsline {subsection}{\numberline {4.1}\ac {dgp} explanation}{8}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Results Homogenous Treatment Effects}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Results Heterogeneous Treatment Effects}{9}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Deep Learning Model Results}{II}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Application}{II}{section.5}%
+\contentsline {section}{\numberline {6}Conclusion}{II}{section.6}%

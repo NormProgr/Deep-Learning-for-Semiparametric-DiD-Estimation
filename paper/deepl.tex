@@ -1,6 +1,29 @@
 \section{Deep Learning for Inference}
 
 \subsection{Revision of Deep Learning}
+Deep learning is a rapidly developing field within machine learning that recently got a lot of attention within economics.
+The idea is to take complex data and to represent it by a series of simpler representations, each of which is expressed in terms of the previous one \citep{Goodfellow-et-al-2016}.
+A common example of this is the \textit{feedforward neural network}, which is a series of layers of neurons, each of which is connected to the next layer.
+The first layer is the input layer, the last layer is the output layer, and the layers in between are called hidden layers.
+Figure \ref{fig:1} illustrates the layer and node structure of a \ac{mlp}, which is a special class of feed forward networks and is commonly used in empirical applications \citep{farrellDeepNeuralNetworks2021}.
+From hence on I use \ac{mlp} and deep learning interchangeably as it is the approach used in this paper.
+
+\begin{figure}%                 use [hb] only if necceccary!
+\centering
+\caption{Illustration of a feedforward neural network \citep{farrellDeepNeuralNetworks2021}}
+\includegraphics[width=\textwidth]{Neural_net}
+\caption*{\textbf{Note:} This figure illustrates the basic structure of a \ac{mlp} $\mathcal{F}_{\text{MLP}}$, showing the input layer with $d=2$ neurons in white. The two ($H=2$) hidden layers in grey with $U=6$ neurons, and one output layer in black ($L=1$). The total amount of weights is $W=28$.}
+\label{fig:1}
+\end{figure}
 
 
-\subsection{Deep Learning for Difference in Difference}
+The actual computation in neural networks is done by the \textit{activation function} $ \sigma : \mathbb{R} \to \mathbb{R} $, which is applied to the output of each node.
+The most common activation function is the \ac{relu} function, which is defined as $ \sigma(x) = \max(0, x) $ and used in this thesis.
+The advantage of the linear \ac{relu} is that it is computationally fast and the circumvents the vanishing gradient problem, which is a common problem in deep learning
+\footnote[1]{The vanishing gradient issue arises especially by activation functions like \textit{sigmoid} and \textit{tanh}.
+When the neural network model is trained, all the weights of the model are updated through a process called \textit{backpropagation}.
+Backpropagation is the algorithm used to compute the gradient of the loss function with respect to each parameter, which is then used to update the parameters in the direction that minimizes the loss.
+The issue that can arise is that updating updating of parameters is hindered or training is completely stopped \citep{abuqaddom2021oriented}.}.
+
+
+\subsection{Deep Learning for Difference in Differences}
