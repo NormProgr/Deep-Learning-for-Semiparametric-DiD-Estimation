@@ -16,4 +16,782 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global}
+    \entry{abadieSemiparametricDifferenceinDifferencesEstimators2005}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=da499bff747c5f6cd0ec9185c820ba4d}{%
+           family={Abadie},
+           familyi={A\bibinitperiod},
+           given={Alberto},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{fullhash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{bibnamehash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{authorbibnamehash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{authornamehash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \strng{authorfullhash}{da499bff747c5f6cd0ec9185c820ba4d}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1467-937X, 0034-6527}
+      \field{journaltitle}{The Review of Economic Studies}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Semiparametric {{Difference-in-Differences Estimators}}}
+      \field{urlday}{11}
+      \field{urlmonth}{4}
+      \field{urlyear}{2024}
+      \field{volume}{72}
+      \field{year}{2005}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+      \verb{doi}
+      \verb 10.1111/0034-6527.00321
+      \endverb
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\Y6MW6ABS\Abadie - 2005 - Semiparametric Difference-in-Differences Estimator.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/restud/article-lookup/doi/10.1111/0034-6527.00321
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/restud/article-lookup/doi/10.1111/0034-6527.00321
+      \endverb
+    \endentry
+    \entry{abuqaddom2021oriented}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=f67b7976c1bba29f306db57c57f9e790}{%
+           family={Abuqaddom},
+           familyi={A\bibinitperiod},
+           given={Inas},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a274f2b259d1da4a5b6ac7d1d6c0ee1c}{%
+           family={Mahafzah},
+           familyi={M\bibinitperiod},
+           given={Basel\bibnamedelima A},
+           giveni={B\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=abb482cdf2e2824467044a514903ba3f}{%
+           family={Faris},
+           familyi={F\bibinitperiod},
+           given={Hossam},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{427d8c0cc6330284c44faf25ed310d19}
+      \strng{fullhash}{427d8c0cc6330284c44faf25ed310d19}
+      \strng{bibnamehash}{427d8c0cc6330284c44faf25ed310d19}
+      \strng{authorbibnamehash}{427d8c0cc6330284c44faf25ed310d19}
+      \strng{authornamehash}{427d8c0cc6330284c44faf25ed310d19}
+      \strng{authorfullhash}{427d8c0cc6330284c44faf25ed310d19}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Knowledge-Based Systems}
+      \field{title}{Oriented stochastic loss descent algorithm to train very deep multi-layer neural networks without vanishing gradients}
+      \field{volume}{230}
+      \field{year}{2021}
+      \field{pages}{107391}
+      \range{pages}{1}
+    \endentry
+    \entry{angrist2009mostly}{book}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ee326f34eea24952d04c41cef1771bfc}{%
+           family={Angrist},
+           familyi={A\bibinitperiod},
+           given={Joshua\bibnamedelima D},
+           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a371aa94a6e25bcbee7d55da6003fbe6}{%
+           family={Pischke},
+           familyi={P\bibinitperiod},
+           given={Jörn-Steffen},
+           giveni={J\bibinithyphendelim S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton university press}%
+      }
+      \strng{namehash}{3a5c15818fc709fb8d1d7a4e9b97e05e}
+      \strng{fullhash}{3a5c15818fc709fb8d1d7a4e9b97e05e}
+      \strng{bibnamehash}{3a5c15818fc709fb8d1d7a4e9b97e05e}
+      \strng{authorbibnamehash}{3a5c15818fc709fb8d1d7a4e9b97e05e}
+      \strng{authornamehash}{3a5c15818fc709fb8d1d7a4e9b97e05e}
+      \strng{authorfullhash}{3a5c15818fc709fb8d1d7a4e9b97e05e}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Mostly harmless econometrics: An empiricist's companion}
+      \field{year}{2009}
+    \endentry
+    \entry{callawayDifferenceinDifferencesMultipleTime2021}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
+           family={Callaway},
+           familyi={C\bibinitperiod},
+           given={Brantly},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7767820037a369ec59519519e44c7e9a}{%
+           family={Sant’Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelima H.C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{81e94baa528cefc8bb56e5c1a70471e2}
+      \strng{fullhash}{81e94baa528cefc8bb56e5c1a70471e2}
+      \strng{bibnamehash}{81e94baa528cefc8bb56e5c1a70471e2}
+      \strng{authorbibnamehash}{81e94baa528cefc8bb56e5c1a70471e2}
+      \strng{authornamehash}{81e94baa528cefc8bb56e5c1a70471e2}
+      \strng{authorfullhash}{81e94baa528cefc8bb56e5c1a70471e2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this article, we consider identification, estimation, and inference procedures for treatment effect parameters using Difference-in-Differences (DiD) with (i) multiple time periods, (ii) variation in treatment timing, and (iii) when the ‘‘parallel trends assumption" holds potentially only after conditioning on observed covariates. We show that a family of causal effect parameters are identified in staggered DiD setups, even if differences in observed characteristics create non-parallel outcome dynamics between groups. Our identification results allow one to use outcome regression, inverse probability weighting, or doubly-robust estimands. We also propose different aggregation schemes that can be used to highlight treatment effect heterogeneity across different dimensions as well as to summarize the overall effect of participating in the treatment. We establish the asymptotic properties of the proposed estimators and prove the validity of a computationally convenient bootstrap procedure to conduct asymptotically valid simultaneous (instead of pointwise) inference. Finally, we illustrate the relevance of our proposed tools by analyzing the effect of the minimum wage on teen employment from 2001–2007. Open-source software is available for implementing the proposed methods. © 2020 Elsevier B.V. All rights reserved.}
+      \field{issn}{03044076}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{2}
+      \field{shortjournal}{Journal of Econometrics}
+      \field{title}{Difference-in-{{Differences}} with Multiple Time Periods}
+      \field{urlday}{5}
+      \field{urlmonth}{4}
+      \field{urlyear}{2024}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{200\bibrangedash 230}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2020.12.001
+      \endverb
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\DTESZ7LP\Callaway und Sant’Anna - 2021 - Difference-in-Differences with multiple time perio.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0304407620303948
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0304407620303948
+      \endverb
+    \endentry
+    \entry{https://doi.org/10.3982/ECTA18515}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c75cbe2cefd1e532f636a50892605d06}{%
+           family={Chernozhukov},
+           familyi={C\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=058d74ae5e89fbd5a49ebdbe97b4c922}{%
+           family={Newey},
+           familyi={N\bibinitperiod},
+           given={Whitney\bibnamedelima K.},
+           giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b417395e2c10f7be5dbda235bb6fdd4c}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Rahul},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{fullhash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{bibnamehash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{authorbibnamehash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{authornamehash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{authorfullhash}{307d2f4af1b987448b22ddffed07bf96}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Many causal and structural effects depend on regressions. Examples include policy effects, average derivatives, regression decompositions, average treatment effects, causal mediation, and parameters of economic structural models. The regressions may be high-dimensional, making machine learning useful. Plugging machine learners into identifying equations can lead to poor inference due to bias from regularization and/or model selection. This paper gives automatic debiasing for linear and nonlinear functions of regressions. The debiasing is automatic in using Lasso and the function of interest without the full form of the bias correction. The debiasing can be applied to any regression learner, including neural nets, random forests, Lasso, boosting, and other high-dimensional methods. In addition to providing the bias correction, we give standard errors that are robust to misspecification, convergence rates for the bias correction, and primitive conditions for asymptotic inference for estimators of a variety of estimators of structural and causal effects. The automatic debiased machine learning is used to estimate the average treatment effect on the treated for the NSW job training data and to estimate demand elasticities from Nielsen scanner data while allowing preferences to be correlated with prices and income.}
+      \field{journaltitle}{Econometrica}
+      \field{number}{3}
+      \field{title}{Automatic Debiased Machine Learning of Causal and Structural Effects}
+      \field{volume}{90}
+      \field{year}{2022}
+      \field{pages}{967\bibrangedash 1027}
+      \range{pages}{61}
+      \verb{doi}
+      \verb https://doi.org/10.3982/ECTA18515
+      \endverb
+      \verb{eprint}
+      \verb https://onlinelibrary.wiley.com/doi/pdf/10.3982/ECTA18515
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA18515
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.3982/ECTA18515
+      \endverb
+      \keyw{Debiased machine learning,causal parameters,structural parameters,regression effects,Lasso,Riesz representation}
+    \endentry
+    \entry{farrellDeepNeuralNetworks2021}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=394a467751a7e99efa9be98d667c6540}{%
+           family={Farrell},
+           familyi={F\bibinitperiod},
+           given={Max\bibnamedelima H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=a8e24a47f49e951837e8883af279559e}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Tengyuan},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c07fb2a9cbdcb390d4889feffe6dc98f}{%
+           family={Misra},
+           familyi={M\bibinitperiod},
+           given={Sanjog},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{fullhash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{bibnamehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{authorbibnamehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{authornamehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{authorfullhash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We study deep neural networks and their use in semiparametric inference. We establish novel nonasymptotic high probability bounds for deep feedforward neural nets. These deliver rates of convergence that are sufficiently fast (in some cases minimax optimal) to allow us to establish valid second‐step inference after first‐step estimation with deep learning, a result also new to the literature. Our nonasymptotic high probability bounds, and the subsequent semiparametric inference, treat the current standard architecture: fully connected feedforward neural networks (multilayer perceptrons), with the now‐common rectified linear unit activation function, unbounded weights, and a depth explicitly diverging with the sample size. We discuss other architectures as well, including fixed‐width, very deep networks. We establish the nonasymptotic bounds for these deep nets for a general class of nonparametric regression‐type loss functions, which includes as special cases least squares, logistic regression, and other generalized linear models. We then apply our theory to develop semiparametric inference, focusing on causal parameters for concreteness, and demonstrate the effectiveness of deep learning with an empirical application to direct mail marketing.}
+      \field{issn}{0012-9682}
+      \field{journaltitle}{Econometrica}
+      \field{langid}{english}
+      \field{number}{1}
+      \field{shortjournal}{ECTA}
+      \field{title}{Deep {{Neural Networks}} for {{Estimation}} and {{Inference}}}
+      \field{urlday}{5}
+      \field{urlmonth}{4}
+      \field{urlyear}{2024}
+      \field{volume}{89}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{181\bibrangedash 213}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.3982/ECTA16901
+      \endverb
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\UMYDJQ7K\Farrell et al. - 2021 - Deep Neural Networks for Estimation and Inference.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.econometricsociety.org/doi/10.3982/ECTA16901
+      \endverb
+      \verb{url}
+      \verb https://www.econometricsociety.org/doi/10.3982/ECTA16901
+      \endverb
+    \endentry
+    \entry{favaraCreditSupplyPrice2015}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=ecb4ffb002804980aebf9b29e4cc2f04}{%
+           family={Favara},
+           familyi={F\bibinitperiod},
+           given={Giovanni},
+           giveni={G\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=8a77ff27cb08694765a297252f0aa24d}{%
+           family={Imbs},
+           familyi={I\bibinitperiod},
+           given={Jean},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{2caf6796c924659cb8660bf9cb304d80}
+      \strng{fullhash}{2caf6796c924659cb8660bf9cb304d80}
+      \strng{bibnamehash}{2caf6796c924659cb8660bf9cb304d80}
+      \strng{authorbibnamehash}{2caf6796c924659cb8660bf9cb304d80}
+      \strng{authornamehash}{2caf6796c924659cb8660bf9cb304d80}
+      \strng{authorfullhash}{2caf6796c924659cb8660bf9cb304d80}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{An exogenous expansion in mortgage credit has significant effects on house prices. This finding is established using US branching deregulations between 1994 and 2005 as instruments for credit. Credit increases for deregulated banks, but not in placebo samples. Such differential responses rule out demand-based explanations, and identify an exogenous credit supply shock. Because of geographic diver-sification, treated banks expand credit: housing demand increases, house prices rise, but to a lesser extent in areas with elastic housing supply, where the housing stock increases instead. In an instrumental variable sense, house prices are well explained by the credit expansion induced by deregulation. (JEL G21, G28, R21, R31)}
+      \field{day}{1}
+      \field{issn}{0002-8282}
+      \field{journaltitle}{American Economic Review}
+      \field{langid}{english}
+      \field{month}{3}
+      \field{number}{3}
+      \field{shortjournal}{American Economic Review}
+      \field{title}{Credit {{Supply}} and the {{Price}} of {{Housing}}}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{105}
+      \field{year}{2015}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{958\bibrangedash 992}
+      \range{pages}{35}
+      \verb{doi}
+      \verb 10.1257/aer.20121416
+      \endverb
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\QC5UYD49\Favara und Imbs - 2015 - Credit Supply and the Price of Housing.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.20121416
+      \endverb
+      \verb{url}
+      \verb https://pubs.aeaweb.org/doi/10.1257/aer.20121416
+      \endverb
+    \endentry
+    \entry{Goodfellow-et-al-2016}{book}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=5d2585c11210cf1d4512e6e0a03ec315}{%
+           family={Goodfellow},
+           familyi={G\bibinitperiod},
+           given={Ian},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=40a8e4774982146adc2688546f54efb2}{%
+           family={Bengio},
+           familyi={B\bibinitperiod},
+           given={Yoshua},
+           giveni={Y\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ccec1ccd2e1aa86960eb2e872c6b7020}{%
+           family={Courville},
+           familyi={C\bibinitperiod},
+           given={Aaron},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{fullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{bibnamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authorbibnamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authornamehash}{3ae53fe582e8a815b118d26947eaa326}
+      \strng{authorfullhash}{3ae53fe582e8a815b118d26947eaa326}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{\url{http://www.deeplearningbook.org}}
+      \field{title}{Deep Learning}
+      \field{year}{2016}
+    \endentry
+    \entry{goodman-baconDifferenceindifferencesVariationTreatment2021}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=437b3fad5b4a40d10f45b4fc16dd7730}{%
+           family={Goodman-Bacon},
+           familyi={G\bibinithyphendelim B\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{fullhash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{bibnamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authorbibnamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authornamehash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \strng{authorfullhash}{437b3fad5b4a40d10f45b4fc16dd7730}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The canonical difference-in-differences (DD) estimator contains two time periods, "pre" and "post", and two groups, "treatment" and "control". Most DD applications, however, exploit variation across groups of units that receive treatment at different times. This paper shows that the two-way fixed effects estimator equals a weighted average of all possible two-group/two-period DD estimators in the data. A causal interpretation of twoway fixed effects DD estimates requires both a parallel trends assumption and treatment effects that are constant over time. I show how to decompose the difference between two specifications, and provide a new analysis of models that include time-varying controls.}
+      \field{issn}{03044076}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{langid}{english}
+      \field{month}{12}
+      \field{number}{2}
+      \field{shortjournal}{Journal of Econometrics}
+      \field{title}{Difference-in-Differences with Variation in Treatment Timing}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{225}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{254\bibrangedash 277}
+      \range{pages}{24}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2021.03.014
+      \endverb
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\GZPLD49E\Goodman-Bacon - 2021 - Difference-in-differences with variation in treatm.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0304407621001445
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0304407621001445
+      \endverb
+    \endentry
+    \entry{hansen2022econometrics}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=315b1c4b648dfdb7947647bac1df02a5}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Princeton University Press}%
+      }
+      \strng{namehash}{315b1c4b648dfdb7947647bac1df02a5}
+      \strng{fullhash}{315b1c4b648dfdb7947647bac1df02a5}
+      \strng{bibnamehash}{315b1c4b648dfdb7947647bac1df02a5}
+      \strng{authorbibnamehash}{315b1c4b648dfdb7947647bac1df02a5}
+      \strng{authornamehash}{315b1c4b648dfdb7947647bac1df02a5}
+      \strng{authorfullhash}{315b1c4b648dfdb7947647bac1df02a5}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{9780691235899}
+      \field{title}{Econometrics}
+      \field{year}{2022}
+      \verb{urlraw}
+      \verb https://books.google.de/books?id=Pte7zgEACAAJ
+      \endverb
+      \verb{url}
+      \verb https://books.google.de/books?id=Pte7zgEACAAJ
+      \endverb
+    \endentry
+    \entry{heckmanMatchingEconometricEvaluation1998}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b70b920520f54634a1f03f9312707db2}{%
+           family={Heckman},
+           familyi={H\bibinitperiod},
+           given={James\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d0d261351e2d86ceaf41d62b7d7308f9}{%
+           family={Ichimura},
+           familyi={I\bibinitperiod},
+           given={Hidehiko},
+           giveni={H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=24654531fff06b35dca1039b558200e8}{%
+           family={Todd},
+           familyi={T\bibinitperiod},
+           given={Petra},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{40308feb50b70abe30238ca6a5fda3a3}
+      \strng{fullhash}{40308feb50b70abe30238ca6a5fda3a3}
+      \strng{bibnamehash}{40308feb50b70abe30238ca6a5fda3a3}
+      \strng{authorbibnamehash}{40308feb50b70abe30238ca6a5fda3a3}
+      \strng{authornamehash}{40308feb50b70abe30238ca6a5fda3a3}
+      \strng{authorfullhash}{40308feb50b70abe30238ca6a5fda3a3}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0034-6527, 1467-937X}
+      \field{journaltitle}{Review of Economic Studies}
+      \field{langid}{english}
+      \field{month}{4}
+      \field{number}{2}
+      \field{shortjournal}{Rev Econ Studies}
+      \field{title}{Matching {{As An Econometric Evaluation Estimator}}}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{65}
+      \field{year}{1998}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{261\bibrangedash 294}
+      \range{pages}{34}
+      \verb{doi}
+      \verb 10.1111/1467-937X.00044
+      \endverb
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\88JUMVMB\Heckman et al. - 1998 - Matching As An Econometric Evaluation Estimator.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/restud/article-lookup/doi/10.1111/1467-937X.00044
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/restud/article-lookup/doi/10.1111/1467-937X.00044
+      \endverb
+    \endentry
+    \entry{hernanCausalInferenceWhat}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=e23110cd852e85dc77897465185fdaf1}{%
+           family={Hernan},
+           familyi={H\bibinitperiod},
+           given={Miguel\bibnamedelima A},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7a2ba958c4a9112b1e74732b9c35f016}{%
+           family={Robins},
+           familyi={R\bibinitperiod},
+           given={James\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {CRC Boca Raton, FL}%
+      }
+      \strng{namehash}{74105997977e65f466d26ac2b8626ae0}
+      \strng{fullhash}{74105997977e65f466d26ac2b8626ae0}
+      \strng{bibnamehash}{74105997977e65f466d26ac2b8626ae0}
+      \strng{authorbibnamehash}{74105997977e65f466d26ac2b8626ae0}
+      \strng{authornamehash}{74105997977e65f466d26ac2b8626ae0}
+      \strng{authorfullhash}{74105997977e65f466d26ac2b8626ae0}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{langid}{english}
+      \field{title}{Causal {{Inference}}: {{What If}}}
+      \field{year}{2024}
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\DND3F3BC\Hernan und Robins - Causal Inference What If.pdf
+      \endverb
+    \endentry
+    \entry{manfeDifferenceInDifferenceDesignRepeated}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=405d4561e866b80f96318059d1c03ea1}{%
+           family={Manfe},
+           familyi={M\bibinitperiod},
+           given={Tommaso},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ae2400710f0c542d394eb6806509d6e9}{%
+           family={Nunziata},
+           familyi={N\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{bf88a51c138e672c7d7ab10ab58c74a7}
+      \strng{fullhash}{bf88a51c138e672c7d7ab10ab58c74a7}
+      \strng{bibnamehash}{bf88a51c138e672c7d7ab10ab58c74a7}
+      \strng{authorbibnamehash}{bf88a51c138e672c7d7ab10ab58c74a7}
+      \strng{authornamehash}{bf88a51c138e672c7d7ab10ab58c74a7}
+      \strng{authorfullhash}{bf88a51c138e672c7d7ab10ab58c74a7}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We discuss the potentially severe bias in the Difference-in-Difference (DiD) design of commonly-used methods, including the regression specification known as Two-Way-Fixed-Effects (TWFE), when researchers must invoke the conditional trend assumption but the distribution of the covariates changes over time. Building on Abadie (2005), we propose a Double Inverse Probability Weighting (DIPW) estimator for repeated cross-sections based on both the probability of being treated and of belonging to the post-treatment period and derive its doubly-robust version (DR-DIPW), similarly as in Sant’Anna and Zhao (2020). Through Monte Carlo simulations, we compare its performance with a number of methods suggested by the literature, which span from the basic TWFE (and our proposed correction) to semi-parametric estimators, including those using machine-learning first-stage estimates, following Chernozhukov et al. (2018). Results show that DR-DIPW outperforms the other estimators in most realistic scenarios, even if TWFE corrections provide substantial benefits. Following Sequeira (2016), we estimate the effect of tariff reduction on bribing behavior by analyzing trades between South Africa and Mozambique during the period 2006–2014. Contrarily to the replication by Chang (2020), our findings show that the effect is lower in magnitude than the one presented in the original paper.}
+      \field{day}{14}
+      \field{langid}{english}
+      \field{month}{5}
+      \field{title}{Difference-{{In-Difference Design With Repeated Cross-Sections Under Compositional Changes}}: A {{Monte-Carlo Evaluation}} of {{Alternative Approaches}}}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\566UM4LE\Manfe und Nunziata - Difference-In-Difference Design With Repeated Cros.pdf
+      \endverb
+    \endentry
+    \entry{santannaDoublyRobustDifferenceindifferences2020}{article}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=7767820037a369ec59519519e44c7e9a}{%
+           family={Sant’Anna},
+           familyi={S\bibinitperiod},
+           given={Pedro\bibnamedelima H.C.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=3313b0fb30c52802abe615a883198713}{%
+           family={Zhao},
+           familyi={Z\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{6c47f1fd7a83092f82c2766ab840a44b}
+      \strng{fullhash}{6c47f1fd7a83092f82c2766ab840a44b}
+      \strng{bibnamehash}{6c47f1fd7a83092f82c2766ab840a44b}
+      \strng{authorbibnamehash}{6c47f1fd7a83092f82c2766ab840a44b}
+      \strng{authornamehash}{6c47f1fd7a83092f82c2766ab840a44b}
+      \strng{authorfullhash}{6c47f1fd7a83092f82c2766ab840a44b}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This article proposes doubly robust estimators for the average treatment effect on the treated (ATT) in difference-in-differences (DID) research designs. In contrast to alternative DID estimators, the proposed estimators are consistent if either (but not necessarily both) a propensity score or outcome regression working models are correctly specified. We also derive the semiparametric efficiency bound for the ATT in DID designs when either panel or repeated cross-section data are available, and show that our proposed estimators attain the semiparametric efficiency bound when the working models are correctly specified. Furthermore, we quantify the potential efficiency gains of having access to panel data instead of repeated cross-section data. Finally, by paying particular attention to the estimation method used to estimate the nuisance parameters, we show that one can sometimes construct doubly robust DID estimators for the ATT that are also doubly robust for inference. Simulation studies and an empirical application illustrate the desirable finite-sample performance of the proposed estimators. Open-source software for implementing the proposed policy evaluation tools is available.}
+      \field{issn}{03044076}
+      \field{journaltitle}{Journal of Econometrics}
+      \field{langid}{english}
+      \field{month}{11}
+      \field{number}{1}
+      \field{shortjournal}{Journal of Econometrics}
+      \field{title}{Doubly Robust Difference-in-Differences Estimators}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{219}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{101\bibrangedash 122}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1016/j.jeconom.2020.06.003
+      \endverb
+      \verb{file}
+      \verb C\:\\Users\\norma\\Zotero\\storage\\62K3R7EI\\Sant’Anna und Zhao - 2020 - Doubly robust difference-in-differences estimators.pdf;C\:\\Users\\norma\\Zotero\\storage\\K2B3HN6F\\doubly_robust_did_supplementary.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0304407620301901
+      \endverb
+      \verb{url}
+      \verb https://linkinghub.elsevier.com/retrieve/pii/S0304407620301901
+      \endverb
+    \endentry
+    \entry{10.1214/19-AOS1875}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=881838fc6b9c62b880a171be5e4083be}{%
+           family={Schmidt-Hieber},
+           familyi={S\bibinithyphendelim H\bibinitperiod},
+           given={Johannes},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Institute of Mathematical Statistics}%
+      }
+      \strng{namehash}{881838fc6b9c62b880a171be5e4083be}
+      \strng{fullhash}{881838fc6b9c62b880a171be5e4083be}
+      \strng{bibnamehash}{881838fc6b9c62b880a171be5e4083be}
+      \strng{authorbibnamehash}{881838fc6b9c62b880a171be5e4083be}
+      \strng{authornamehash}{881838fc6b9c62b880a171be5e4083be}
+      \strng{authorfullhash}{881838fc6b9c62b880a171be5e4083be}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{The Annals of Statistics}
+      \field{number}{4}
+      \field{title}{{Nonparametric regression using deep neural networks with ReLU activation function}}
+      \field{volume}{48}
+      \field{year}{2020}
+      \field{pages}{1875\bibrangedash 1897}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1214/19-AOS1875
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1214/19-AOS1875
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1214/19-AOS1875
+      \endverb
+      \keyw{Additive models,minimax estimation risk,multilayer neural networks,Nonparametric regression,ReLU activation function,Wavelets}
+    \endentry
+    \entry{telgarsky2016benefits}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=cc58bc38a2fd6209406cca9b6a4d0730}{%
+           family={Telgarsky},
+           familyi={T\bibinitperiod},
+           given={Matus},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{organization}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{cc58bc38a2fd6209406cca9b6a4d0730}
+      \strng{fullhash}{cc58bc38a2fd6209406cca9b6a4d0730}
+      \strng{bibnamehash}{cc58bc38a2fd6209406cca9b6a4d0730}
+      \strng{authorbibnamehash}{cc58bc38a2fd6209406cca9b6a4d0730}
+      \strng{authornamehash}{cc58bc38a2fd6209406cca9b6a4d0730}
+      \strng{authorfullhash}{cc58bc38a2fd6209406cca9b6a4d0730}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Conference on learning theory}
+      \field{title}{Benefits of depth in neural networks}
+      \field{year}{2016}
+      \field{pages}{1517\bibrangedash 1539}
+      \range{pages}{23}
+    \endentry
+    \entry{zimmert2018efficient}{article}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=247e94aecf26391777217381c91f5389}{%
+           family={Zimmert},
+           familyi={Z\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{247e94aecf26391777217381c91f5389}
+      \strng{fullhash}{247e94aecf26391777217381c91f5389}
+      \strng{bibnamehash}{247e94aecf26391777217381c91f5389}
+      \strng{authorbibnamehash}{247e94aecf26391777217381c91f5389}
+      \strng{authornamehash}{247e94aecf26391777217381c91f5389}
+      \strng{authorfullhash}{247e94aecf26391777217381c91f5389}
+      \field{sortinit}{Z}
+      \field{sortinithash}{96892c0b0a36bb8557c40c49813d48b3}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:1809.01643}
+      \field{title}{Efficient difference-in-differences estimation with high-dimensional common trend confounding}
+      \field{year}{2018}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput

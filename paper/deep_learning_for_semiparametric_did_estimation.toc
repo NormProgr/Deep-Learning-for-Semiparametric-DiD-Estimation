@@ -4,11 +4,11 @@
 \contentsline {subsection}{\numberline {2.2}Outcome Regression}{4}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Inverse Probability Weighting}{4}{subsection.2.3}%
 \contentsline {subsection}{\numberline {2.4}Double Robust Difference in Differences}{5}{subsection.2.4}%
-\contentsline {section}{\numberline {3}Deep Learning for Inference}{7}{section.3}%
+\contentsline {section}{\numberline {3}Deep Learning}{7}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Revision of Deep Learning}{7}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Deep Learning for Difference in Differences}{9}{subsection.3.2}%
-\contentsline {section}{\numberline {4}Monte Carlo Simulations}{9}{section.4}%
-\contentsline {subsection}{\numberline {4.1}\ac {dgp} explanation}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {3.2}Deep Learning for Inference}{10}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Monte Carlo Simulations}{10}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Data Generating Process}{10}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Results Homogenous Treatment Effects}{I}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Results Heterogeneous Treatment Effects}{I}{subsection.4.3}%
 \contentsline {subsection}{\numberline {4.4}Deep Learning Model Results}{I}{subsection.4.4}%

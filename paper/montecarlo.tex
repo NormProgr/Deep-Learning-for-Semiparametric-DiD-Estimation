@@ -1,82 +1,103 @@
 \section{Monte Carlo Simulations}
 
 
-\subsection{\ac{dgp} explanation}
+\subsection{Data Generating Process}
 
+In this section, I present the data \ac{dgp} for the Monte Carlo simulations.
+The \ac{dgp} is based on the simulation study by \citet{kang2007demystifying} and \citet{santannaDoublyRobustDifferenceindifferences2020}.
+The advantage of this setup is to ensure comparability with previous studies and allowing to validate novel approaches as the use of deep learning for \ac{did} estimation.
+For all simulations, the \ac{dgp} has a total sample size of $n=1000$.
+There are two time periods $t=0,1$ and two groups $i=0,1$ investigated, such that it allows to apply the classical $2\times2$-\ac{did} estimator.
+As individuals are tracked over time, the data is panel data.
+\citet{kang2007demystifying} created the \ac{dgp} the way such there are covariate specific trends and homogenous treatment effects.
+In the first simulation in Table \ref{tab:table1} I stick to this specification, in the second simulation in Table \ref{tab:table2} I extend the \ac{dgp} to allow for heterogeneous treatment effects.
 
+Consider the arbitrary input vector $M = (M_1, M_2, M_3, M_4)'$ and let the true \ac{or} and \ac{ipw} model be defined as follows:
+\begin{align}
+    f_{\text{or}}(M) &= 210 + 27.4 \cdot M_1 + 13.7 \cdot (M_2 + M_3 + M_4), \\
+    f_{\text{ipw}}(M) &= 0.75 \cdot (-M_1 + 0.5 \cdot M_2 - 0.25 \cdot M_3 - 0.1 \cdot M_4).
+\end{align}
+Note that in this data is a selection bias constructed \citep{kang2007demystifying} such that naive estimators are likely to be biased.
+As $M$ is arbitrary, \citet{kang2007demystifying} introduce two variations of covariates $Z$ and $X$ that are used in the simulations.
+$Z$ is a set of observable variables, while $X$ is a set of unobservable variables.
+In this simulation study, $f_{\text{or}}(M)$ and $f_{\text{ipw}}(M)$ is constructed only by $Z$ or only by $X$ or a combination of both.
+Thus there are four different \ac{dgp} setups that are labeled as DGP1, DGP2, DGP3, and DGP4.
+These four setups differ because $Z$ is a non-linear transformation of $X$.
 
-
-
-
-\subsection*{Panel Data Case}
-
-We first discuss the case where panel data are available. For a generic $W = (W_1, W_2, W_3, W_4)'$, let
-\begin{align*}
-    f_{\text{reg}}(W) &= 210 + 27.4 \cdot W_1 + 13.7 \cdot (W_2 + W_3 + W_4), \\
-    f_{\text{ps}}(W) &= 0.75 \cdot (-W_1 + 0.5 \cdot W_2 - 0.25 \cdot W_3 - 0.1 \cdot W_4).
-\end{align*}
-
-Let $\mathbf{X} = (X_1, X_2, X_3, X_4)'$ be distributed as $N(0, I_4)$, and $I_4$ be the $4 \times 4$ identity matrix. For $j = 1, 2, 3, 4$, let
-\begin{align*}
-    Z_j &= \frac{\tilde{Z}_j - \mathbb{E}[\tilde{Z}_j]}{\sqrt{\text{Var}(\tilde{Z}_j)}}, \quad \text{where} \quad \tilde{Z}_1 = \exp(0.5X_1), \\
-    \tilde{Z}_2 &= 10 + \frac{X_2}{1 + \exp(X_1)}, \\
-    \tilde{Z}_3 &= (0.6 + \frac{X_1 X_3}{25})^3, \quad \text{and} \quad \tilde{Z}_4 = (20 + X_2 + X_4)^2.
-\end{align*}
-
-Building on Kang and Schafer (2007), we consider the following data generating processes (DGPs):
-
+Consider $\mathbf{X} = (X_1, X_2, X_3, X_4)'$ be distributed as $N(0, I_4)$. $I_4$ is the $4 \times 4$ identity matrix.
+For $j = 1, 2, 3, 4$, \citet{kang2007demystifying} define the following variations of $Z_j = \frac{\tilde{Z}_j - \mathbb{E}[\tilde{Z}_j]}{\sqrt{\text{Var}(\tilde{Z}_j)}}$ where
+\begin{align} \nonumber
+\tilde{Z}_1 &= \exp(0.5X_1), \\ \nonumber
+\tilde{Z}_2 &= 10 + \frac{X_2}{1 + \exp(X_1)}, \\
+\tilde{Z}_3 &= (0.6 + \frac{X_1 X_3}{25})^3, \quad \text{and} \\ \nonumber
+\tilde{Z}_4 &= (20 + X_2 + X_4)^2.  \nonumber
+\label{eq:13}
+\end{align}
+Each variation of $Z$ differs by their functional form as they are quadratic, exponential, and cubic,
+They also include variations of interactions of $X$.
+This complexity in the functional form of $Z$ is added to invoke potential biases, when estimating the \ac{att}.
+For example, when the true \ac{dgp} is based on $X$ but the model estimates based on $Z$ then the estimates are likely to be biased.
+As we can construct either the \ac{or} or \ac{ipw} model based on $Z$ or $X$ or a combination of both, we have four different setups.
+In the following is the setup for each \ac{dgp} presented and it is also stated which model is then correctly specified and which is not.
 \begin{multicols}{2}
 
 \textbf{DGP1} \\
-(PS and OR models correct)
+(IPW and OR models correct)
 \begin{align*}
-    Y_0(0) &= f_{\text{reg}}(Z) + \nu(Z, D) + \epsilon_0, \\
-    Y_1(d) &= 2 \cdot f_{\text{reg}}(Z) + \nu(Z, D) + \epsilon_1(d) \\
-    p(Z) &= \frac{\exp \left( f_{\text{ps}}(Z) \right)}{1 + \exp \left( f_{\text{ps}}(Z) \right)}, \\
+    Y_0(0) &= f_{\text{or}}(Z) + \nu(Z, D) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{or}}(Z) + \nu(Z, D) + \epsilon_1(d) \\
+    p(Z) &= \frac{\exp \left( f_{\text{ipw}}(Z) \right)}{1 + \exp \left( f_{\text{ipw}}(Z) \right)}, \\
     D &= 1\{ p(Z) \geq U \};
 \end{align*}
 
 \textbf{DGP2} \\
-(PS model incorrect, OR correct)
+(IPW model incorrect, OR correct)
 \begin{align*}
-    Y_0(0) &= f_{\text{reg}}(Z) + \nu(Z, D) + \epsilon_0, \\
-    Y_1(d) &= 2 \cdot f_{\text{reg}}(Z) + \nu(Z, D) + \epsilon_1(d) \\
-    p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
+    Y_0(0) &= f_{\text{or}}(Z) + \nu(Z, D) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{or}}(Z) + \nu(Z, D) + \epsilon_1(d) \\
+    p(X) &= \frac{\exp \left( f_{\text{ipw}}(X) \right)}{1 + \exp \left( f_{\text{ipw}}(X) \right)}, \\
     D &= 1\{ p(X) \geq U \};
 \end{align*}
 
 \columnbreak
 
 \textbf{DGP3}\\
-(PS model correct, OR incorrect)
+(IPW model correct, OR incorrect)
 \begin{align*}
-    Y_0(0) &= f_{\text{reg}}(X) + \nu(X, D) + \epsilon_0, \\
-    Y_1(d) &= 2 \cdot f_{\text{reg}}(X) + \nu(X, D) + \epsilon_1(d) \\
-    p(Z) &= \frac{\exp \left( f_{\text{ps}}(Z) \right)}{1 + \exp \left( f_{\text{ps}}(Z) \right)}, \\
+    Y_0(0) &= f_{\text{or}}(X) + \nu(X, D) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{or}}(X) + \nu(X, D) + \epsilon_1(d) \\
+    p(Z) &= \frac{\exp \left( f_{\text{ipw}}(Z) \right)}{1 + \exp \left( f_{\text{ipw}}(Z) \right)}, \\
     D &= 1\{ p(X) \geq U \};
 \end{align*}
 
 \textbf{DGP4 } \\
-(PS and OR models incorrect)
+(IPW and OR models incorrect)
 \begin{align*}
-    Y_0(0) &= f_{\text{reg}}(X) + \nu(X, D) + \epsilon_0, \\
-    Y_1(d) &= 2 \cdot f_{\text{reg}}(X) + \nu(X, D) + \epsilon_1(d) \\
-    p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
+    Y_0(0) &= f_{\text{or}}(X) + \nu(X, D) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{or}}(X) + \nu(X, D) + \epsilon_1(d) \\
+    p(X) &= \frac{\exp \left( f_{\text{ipw}}(X) \right)}{1 + \exp \left( f_{\text{ipw}}(X) \right)}, \\
     D &= 1\{ p(X) \geq U \};
 \end{align*}
 
 \end{multicols}
 
 \subsection{Results Homogenous Treatment Effects}
+
 \input{./graphs/table_low_dim}
+
+In this section I present the results of the Monte Carlo simulations for the homogenous treatment effects.
+Note that the results in Table \ref{tab:table1}  and \ref{tab:table3} report the average bias, median bias, root mean squared error, and variance of the estimators.
+
+
+
 
 
 \subsection{Results Heterogeneous Treatment Effects}
 To explore the flexibility of neural networks, I consider the following data generating processes. Note that this is an adjusted version of the DGP4, where the PS and OR are incorrect and heterogenous treatment effects are added. In \\
 \textbf{DGP4 with Heterogeneous Treatment Effects}
 \begin{align*}
-    Y_0(0) &= f_{\text{reg}}(X) + \nu(X) + \epsilon_0, \\
-    Y_1(d) &= 2 \cdot f_{\text{reg}}(X) + \nu(X) + \theta(X) \cdot d + \epsilon_1(d), \\
+    Y_0(0) &= f_{\text{or}}(X) + \nu(X) + \epsilon_0, \\
+    Y_1(d) &= 2 \cdot f_{\text{or}}(X) + \nu(X) + \theta(X) \cdot d + \epsilon_1(d), \\
     p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
     D &= 1\{ p(X) \geq U \},
 \end{align*}
