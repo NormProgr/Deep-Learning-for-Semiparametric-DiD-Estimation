@@ -13,7 +13,7 @@ From hence on I use \ac{mlp} and deep learning interchangeably as it is the appr
 \centering
 \caption{Illustration of a feedforward neural network \citep{farrellDeepNeuralNetworks2021}}
 \includegraphics[width=\textwidth]{Neural_net}
-\caption*{\textbf{Note:} This figure illustrates the basic structure of a \ac{mlp} $\mathcal{F}_{\text{MLP}}$, showing the input layer with $d=2$ neurons in white. The two ($H=2$) hidden layers in grey with $U=6$ neurons, and one output layer in black ($L=1$). The total amount of weights is $W=28$.}
+\caption*{Note: This figure illustrates the basic structure of a \ac{mlp} $\mathcal{F}_{\text{MLP}}$, showing the input layer with $d=2$ neurons in white. The two ($H=2$) hidden layers in grey with $U=6$ neurons, and one output layer in black ($L=1$). The total amount of weights is $W=28$.}
 \label{fig:1}
 \end{figure}
 
@@ -33,10 +33,17 @@ As $f^*$ is unknown, the neural network tries to estimate it by minimizing the e
 \begin{equation}
 f^* = \arg \min_f \mathbb{E}[\ell(f, Z)],
 \end{equation}
-where $\ell(f, Z)$ is the loss function, which is a measure of how well the model is performing. %change it here
-The loss function can be represented by many different function such as least squares or logistic regression, where the latter one is used in this thesis.
+where $\ell(f, Z)$ is the loss function and the function $f$ predicts the outcome $\hat{Y} = f(X)$ and $Z = (Y, X')' \in \mathbb{R}^{d+1}$ is the set of random variables.
+The loss function can be represented by many different function such as least squares or logistic regression, where I use the latter one for propensity score estimation.
+The logistic loss function is defined as follows:
 \begin{equation}
-f^*(x) := \log \left( \frac{\mathbb{E}[Y|X = x]}{1 - \mathbb{E}[Y|X = x]} \right) \quad \text{and} \quad \ell(f, z) = -yf(x) + \log(1 + e^{f(x)}). \quad \text{(2.3)}
+f^*(x) := \log \left( \frac{\mathbb{E}[Y|X = x]}{1 - \mathbb{E}[Y|X = x]} \right) \quad \text{and} \quad \ell(f, z) = -yf(x) + \log(1 + e^{f(x)}).
+\label{eq:8}
 \end{equation}
+The logistic regression in eq. \ref*{eq:8} is a method used for binary classification and estimates the probability that the covariate $X$ becomes $0$ or $1$.
+The loss function measures the difference between the estimated probabilities and the actual class labels.
+The goal is to minimize the loss function $\ell(f, z)$ by updating iteratively the weights and biases of the neural network.
+For this $Z$ is passed multiple times through the neural network until the loss is minimized.
+The amount of iterations is called \textit{epochs}.
 
 \subsection{Deep Learning for Difference in Differences}
