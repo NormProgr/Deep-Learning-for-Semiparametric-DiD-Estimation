@@ -85,8 +85,13 @@ In the following is the setup for each \ac{dgp} presented and it is also stated 
 
 \input{./graphs/table_low_dim}
 
-In this section I present the results of the Monte Carlo simulations for the homogenous treatment effects.
-Note that the results in Table \ref{tab:table1}  and Table \ref{tab:table3} report the average bias, median bias, root mean squared error, and variance of the estimators.
+In this section I present the results of the Monte Carlo simulations for the homogenous treatment effects case.
+Table \ref{tab:table1} and Table \ref{tab:table3} report the average bias, median bias, root mean squared error, and variance of the estimators.
+$\hat{\tau}^{corr}$ are the results of the correctly specified \ac{twfe} from Equation \ref{eq:twfecorr}, which can be interpreted as a baseline for the other techniques.
+$\hat{\tau}^{fe}$ is the naive \ac{twfe} estimator from Equation \ref{eq:twfe}, as argued, the estimator is highly biased because the naive selection of controls does not reflect the underlying function of the data.
+$\hat{\tau}^{ipw}$ and $\hat{\tau}^{dr}$ are the results of the \ac{ipw} and \ac{drdid} estimators, respectively.
+In both cases are the propensity scores estimated with a logistic regression.
+The results of $\hat{\tau}^{fe}$, $\hat{\tau}^{ipw}$, and $\hat{\tau}^{dr}$ are directly comparable to the results of \citet{santannaDoublyRobustDifferenceindifferences2020} panel data case.
 
 %discuss consistency of results with other papers sant anna
 %bad performance of abadie dl. Discuss!

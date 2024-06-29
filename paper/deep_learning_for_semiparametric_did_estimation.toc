@@ -11,7 +11,7 @@
 \contentsline {subsection}{\numberline {4.1}Data Generating Process}{11}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Results Homogenous Treatment Effects}{13}{subsection.4.2}%
 \contentsline {subsection}{\numberline {4.3}Results Heterogeneous Treatment Effects}{13}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Deep Learning Model Results}{13}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.4}Deep Learning Model Results}{15}{subsection.4.4}%
 \contentsline {subsection}{\numberline {4.5}Discussion and Further Research}{I}{subsection.4.5}%
 \contentsline {section}{\numberline {5}Application}{I}{section.5}%
 \contentsline {section}{\numberline {6}Conclusion}{I}{section.6}%
