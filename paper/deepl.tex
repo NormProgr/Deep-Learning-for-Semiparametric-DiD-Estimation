@@ -81,7 +81,27 @@ These parameters are also the ones on which the neural network is repeatedly tra
 Secondly, unlike inference, there is no understanding within the deep learning literature how to select the optimal architecture or tuning parameters \citep[see][]{10.1214/19-AOS1875,telgarsky2016benefits}.
 Consequently, the chosen neural network architecture may not be the optimal one, and selecting the right architecture is often arbitrary.
 \subsection{Deep Learning for Inference}
+%first cite farrel paper where they describe the two use cases of semiparametric ML stuff
+The recent applications of deep learning for inferences mostly focusses on prediction problems, such as outcome or propensity score prediction.
+The idea is to embed the neural network within a semiparametric framework, where the neural network is used to estimate the unknown function $f^*$.
+In this framework, neural network is used as a first-step estimator, where the fitted values of the neural network are used as the input for the second-step inference. %is this correct?
+Other techniques such as tree-based methods, logistic regression, or hybrid models are also used as first-step estimators.
+The advantage of these machine learning approaches is that they considered to perform well under heterogenous treatment effects, conditional controls or many covariates \citep{belloni2017program}.
+\citet{belloni2017program} show that neural network perform as well as other machine learning approaches in terms of recovering the true treatment effect as a first step estimator.
+\citet{chernozhukovDoubleDebiasedMachine2018} approves those results even in a low-dimensional setting but struggle with the neural net if $n$ is small.
+Common across literature are the benefits of deep learning regarding handling heterogenous treatment effects \citep[see][]{DeepLearningIndividual2021,belloni2017program,chernozhukovDoubleDebiasedMachine2018}
 
+Another major advantage of Deep learning is its effectiveness in a high covariate settings \citep{chernozhukov2022automatic}\footnote[3]{\citet{belloni2017program} demonstrates this for \textit{moderately high} and \textit{very high} covariates compared to the sample size.}.
+This advantage arises from deep learning's capability to perform variable selection.
+Especially employing some form of regularization makes deep learning a useful tool \citep{chernozhukovDoubleDebiasedMachine2018} particular by reducing the variance induced by high covariates but comes at the costs of higher bias.
+Many machine learning techniques (see lasso or some tree-based methods) have similar properties.
+As such this thesis does not try to promote deep learning as an optimal technique but aims to investigate its utility as a valid first-step estimator in a semiparametric \ac{did} framework.
+
+To evaluate deep learnings performance, there are multiple important criterias to consider.
+First, deep learning should have good approximation power \citep{belloni2017program}, meaning it can closely approximate the true underlying function of the data.
+Second, deep learning should avoid overfitting of the data \citep{belloni2017program}, leading to poor generalization on new data.
+%explain what that means and how one can see that
+Third, \citet{belloni2017program} emphasize that doubly robust estimation methods ensure valid inference for many machine learning frameworks. including neural networks.\footnote[4]{\citet{belloni2017program} also point out that some form of orthogonal moment condition can also lead to valid inference in this setting. See \citet{DeepLearningIndividual2021} for a discussion that with even weaker conditions than doubly robust or orthogonality valid semiparametric inference is achievable, although these are not of focus here.}.
 
 % why to use deep learning for inference
 % farrell, chernozhukov et al, belloni et al
@@ -90,4 +110,4 @@ Consequently, the chosen neural network architecture may not be the optimal one,
 %how to use deep learning for inference
 %see what farrell wrote to OR and propensity score estimation with deep learning
 
-%how my paper uses deep learnin
+%how my paper uses deep learning

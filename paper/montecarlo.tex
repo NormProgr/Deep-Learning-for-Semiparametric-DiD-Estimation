@@ -12,15 +12,15 @@ As individuals are tracked over time, the data is panel data.
 \citet{kang2007demystifying} created the \ac{dgp} the way such there are covariate specific trends and homogenous treatment effects.
 In the first simulation in Table \ref{tab:table1} I stick to this specification, in the second simulation in Table \ref{tab:table2} I extend the \ac{dgp} to allow for heterogeneous treatment effects.
 
-Consider the arbitrary input vector $M = (M_1, M_2, M_3, M_4)'$ and let the true \ac{or} and \ac{ipw} model be defined as follows:
+Consider the arbitrary input vector $M = (M_1, M_2, M_3, M_4)'$ and let the true \ac{or} and propensity score based \ac{ipw} model be defined as follows:
 \begin{align}
     f_{\text{or}}(M) &= 210 + 27.4 \cdot M_1 + 13.7 \cdot (M_2 + M_3 + M_4), \\
-    f_{\text{ipw}}(M) &= 0.75 \cdot (-M_1 + 0.5 \cdot M_2 - 0.25 \cdot M_3 - 0.1 \cdot M_4).
+    f_{\text{ps}}(M) &= 0.75 \cdot (-M_1 + 0.5 \cdot M_2 - 0.25 \cdot M_3 - 0.1 \cdot M_4).
 \end{align}
 Note that in this data is a selection bias constructed \citep{kang2007demystifying} such that naive estimators are likely to be biased.
 As $M$ is arbitrary, \citet{kang2007demystifying} introduce two variations of covariates $Z$ and $X$ that are used in the simulations.
 $Z$ is a set of observable variables, while $X$ is a set of unobservable variables.
-In this simulation study, $f_{\text{or}}(M)$ and $f_{\text{ipw}}(M)$ is constructed only by $Z$ or only by $X$ or a combination of both.
+In this simulation study, $f_{\text{or}}(M)$ and $f_{\text{ps}}(M)$ is constructed only by $Z$ or only by $X$ or a combination of both.
 Thus there are four different \ac{dgp} setups that are labeled as DGP1, DGP2, DGP3, and DGP4.
 These four setups differ because $Z$ is a non-linear transformation of $X$.
 
@@ -46,7 +46,7 @@ In the following is the setup for each \ac{dgp} presented and it is also stated 
 \begin{align*}
     Y_0(0) &= f_{\text{or}}(Z) + \nu(Z, D) + \epsilon_0, \\
     Y_1(d) &= 2 \cdot f_{\text{or}}(Z) + \nu(Z, D) + \epsilon_1(d) \\
-    p(Z) &= \frac{\exp \left( f_{\text{ipw}}(Z) \right)}{1 + \exp \left( f_{\text{ipw}}(Z) \right)}, \\
+    p(Z) &= \frac{\exp \left( f_{\text{ps}}(Z) \right)}{1 + \exp \left( f_{\text{ps}}(Z) \right)}, \\
     D &= 1\{ p(Z) \geq U \};
 \end{align*}
 
@@ -55,7 +55,7 @@ In the following is the setup for each \ac{dgp} presented and it is also stated 
 \begin{align*}
     Y_0(0) &= f_{\text{or}}(Z) + \nu(Z, D) + \epsilon_0, \\
     Y_1(d) &= 2 \cdot f_{\text{or}}(Z) + \nu(Z, D) + \epsilon_1(d) \\
-    p(X) &= \frac{\exp \left( f_{\text{ipw}}(X) \right)}{1 + \exp \left( f_{\text{ipw}}(X) \right)}, \\
+    p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
     D &= 1\{ p(X) \geq U \};
 \end{align*}
 
@@ -66,7 +66,7 @@ In the following is the setup for each \ac{dgp} presented and it is also stated 
 \begin{align*}
     Y_0(0) &= f_{\text{or}}(X) + \nu(X, D) + \epsilon_0, \\
     Y_1(d) &= 2 \cdot f_{\text{or}}(X) + \nu(X, D) + \epsilon_1(d) \\
-    p(Z) &= \frac{\exp \left( f_{\text{ipw}}(Z) \right)}{1 + \exp \left( f_{\text{ipw}}(Z) \right)}, \\
+    p(Z) &= \frac{\exp \left( f_{\text{ps}}(Z) \right)}{1 + \exp \left( f_{\text{ps}}(Z) \right)}, \\
     D &= 1\{ p(X) \geq U \};
 \end{align*}
 
@@ -75,7 +75,7 @@ In the following is the setup for each \ac{dgp} presented and it is also stated 
 \begin{align*}
     Y_0(0) &= f_{\text{or}}(X) + \nu(X, D) + \epsilon_0, \\
     Y_1(d) &= 2 \cdot f_{\text{or}}(X) + \nu(X, D) + \epsilon_1(d) \\
-    p(X) &= \frac{\exp \left( f_{\text{ipw}}(X) \right)}{1 + \exp \left( f_{\text{ipw}}(X) \right)}, \\
+    p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
     D &= 1\{ p(X) \geq U \};
 \end{align*}
 
@@ -88,7 +88,10 @@ In the following is the setup for each \ac{dgp} presented and it is also stated 
 In this section I present the results of the Monte Carlo simulations for the homogenous treatment effects.
 Note that the results in Table \ref{tab:table1}  and Table \ref{tab:table3} report the average bias, median bias, root mean squared error, and variance of the estimators.
 
-
+%discuss consistency of results with other papers sant anna
+%bad performance of abadie dl. Discuss!
+%dl performs worse except in the case of dgp4. Discuss!
+%why are the biases of dl so similiar distributed? Discuss!
 
 
 
@@ -109,3 +112,14 @@ where: $\theta(X) = 10 \cdot (Z_1 + Z_2 - Z_3 + Z_4)$.
 [refer to section 3.1 how the loss functions are computed]
 
 \input{./graphs/table_loss_report}
+
+
+\subsection{Discussion and Further Research}
+%write that section first if I know if I write the application
+
+%discuss the shortcoming of my results
+
+%what is new stuff
+%%ausblick auf neue deep learning approaches (direct estimation with deepl by farrel paper 2)
+A relatevely new approach to use deep learning for inference is the direct estimation of the treatment effect.
+Meaning that instead of placing deep learning within a semiparametric framework it is used to recover directly the parameter functions as suggested by the work of \citet{DeepLearningIndividual2021}.
