@@ -10,6 +10,7 @@ For all simulations, the \ac{dgp} has a total sample size of $n=1000$.
 There are two time periods $t=0,1$ and two groups $i=0,1$ investigated, such that it allows to apply the classical $2\times2$-\ac{did} estimator.
 As individuals are tracked over time, the data is panel data.
 \citet{kang2007demystifying} created the \ac{dgp} the way such there are covariate specific trends and homogenous treatment effects.
+The true \ac{att} is $\tau = 0$.
 In the first simulation in Table \ref{tab:table1} I stick to this specification, in the second simulation in Table \ref{tab:table2} I extend the \ac{dgp} to allow for heterogeneous treatment effects.
 
 Consider the arbitrary input vector $M = (M_1, M_2, M_3, M_4)'$ and let the true \ac{or} and propensity score based \ac{ipw} model be defined as follows:
@@ -86,22 +87,55 @@ In the following is the setup for each \ac{dgp} presented and it is also stated 
 \input{./graphs/table_low_dim}
 
 In this section I present the results of the Monte Carlo simulations for the homogenous treatment effects case.
-Table \ref{tab:table1} and Table \ref{tab:table3} report the average bias, median bias, root mean squared error, and variance of the estimators.
-$\hat{\tau}^{corr}$ are the results of the correctly specified \ac{twfe} from Equation \ref{eq:twfecorr}, which can be interpreted as a baseline for the other techniques.
+Table \ref{tab:table1} and Table \ref{tab:table2} report the average bias, median bias, root mean squared error, and variance of the estimators.
+$\hat{\tau}^{corr}$ are the results of the correctly specified \ac{twfe} from Equation \ref{eq:twfecorr}, which can be interpreted as a baseline for the other estimators.
 $\hat{\tau}^{fe}$ is the naive \ac{twfe} estimator from Equation \ref{eq:twfe}, as argued, the estimator is highly biased because the naive selection of controls does not reflect the underlying function of the data.
 $\hat{\tau}^{ipw}$ and $\hat{\tau}^{dr}$ are the results of the \ac{ipw} and \ac{drdid} estimators, respectively.
 In both cases are the propensity scores estimated with a logistic regression.
 The results of $\hat{\tau}^{fe}$, $\hat{\tau}^{ipw}$, and $\hat{\tau}^{dr}$ are directly comparable to the results of \citet{santannaDoublyRobustDifferenceindifferences2020} panel data case.
+$\hat{\tau}^{ipw,dl}$ and $\hat{\tau}^{dr,dl}$ are the results of the \ac{ipw} and \ac{drdid} estimators, respectively, where the propensity scores are estimated with a neural network.
+Note that the \ac{or} part of $\hat{\tau}^{dr,dl}$ is estimated as a linear model.
+
+One can see that in DGP1 all estimators have relatively small biases, except for the naive \ac{twfe} estimator.
+This is consistent as DGP1 marks the case where the \ac{ipw} and \ac{or} models are correctly specified.
+In DGP2 the propensity score approach is misspecified such that $\hat{\tau}^{ipw}$ and $\hat{\tau}^{ipw,dl}$ are biased but the bias for the  $\hat{\tau}^{ipw,dl}$ is substantial.
+Possible reasons could be overfitting or the prediction of extreme propensity scores.
+Generally does the approach \ac{ipw} model approach produce high variance which is consistent with \citet{santannaDoublyRobustDifferenceindifferences2020} and seem to be also the case for other data structures like repeated cross-section \citep{santannaDoublyRobustDifferenceindifferences2020,manfeDifferenceInDifferenceDesignRepeated}.
+On the other hand in DGP3 one can clearly see that all estimators are relatively unbiased, except for the naive \ac{twfe} estimator as before.
+These results are consistent as DGP3 marks the case where the \ac{ipw} model is correctly specified.
+In DGP1-3 are both \ac{drdid} estimators $\hat{\tau}^{dr}$ and $\hat{\tau}^{dr,dl}$ relatively unbiased and produce low variance.
+Notably the classic $\hat{\tau}^{dr}$ of \citet{santannaDoublyRobustDifferenceindifferences2020} does perform slightly better.
+
+DGP4 is the most challenging but probably most realistic case as both the \ac{ipw} and \ac{or} models are misspecified.
+One can see clearly that all estimators are now more biased and have higher variance.
+Surprisingly is that the $\hat{\tau}^{dr,dl}$ reports the smallest bias and relatively small variance compared to the other estimators.
+This result is consistent with the findings of \citet{belloni2017program,chernozhukovDoubleDebiasedMachine2018,farrellDeepNeuralNetworks2021} that deep learning is useful to recover the true treatment effect if there is nuisance in the data.
+
+Overall, the results seem to be consistent with the findings of the literature of deep learning and \ac{did} estimation.
+It should be noted that the biases of the deep learning estimators are relatively similar distributed within each \ac{dgp}.
+This indicates that the deep learning models results across the monte carlo runs is consistent and not heavily driven by outliers.
+The results are also mirroring a structural aspect of deep learning that especially when using regularization methods they are prone to produce symmetrically distributed errors around zero \citep{koh2017understanding}.
+
+To evaluate if the deep learning model is robust, I report the minimum loss of the training and validation set in Table \ref{tab:table3}.
+Note that I implement one model and applied it on all \ac{dgp} setups, such that the results are comparable.
+Across all \ac{dgp} setups the deep learning model reports similar losses, indicating that the model itself leads to the results shown and not the variability in the data.
+Importantly, across all setups is the validation loss smaller than the training loss, indicating that the model is not overfitting \citep[see][]{Goodfellow-et-al-2016,farrellDeepNeuralNetworks2021}.
+
 
 %discuss consistency of results with other papers sant anna
 %bad performance of abadie dl. Discuss!
 %dl performs worse except in the case of dgp4. Discuss!
 %why are the biases of dl so similiar distributed? Discuss!
-
+\input{./graphs/table_loss_report}
 
 
 \subsection{Results Heterogeneous Treatment Effects}
-To explore the flexibility of neural networks, I consider the following data generating processes. Note that this is an adjusted version of the DGP4, where the PS and OR are incorrect and heterogenous treatment effects are added. In \\
+In previous section I outlined the advantage of neural networks, or machine learning in general, when dealing with heterogenous treatment effects.
+The problem of heterogenous treatment effect arises when the treatment effect $\theta(X)$ varies \citep{hansen2022econometrics}.
+To validate how the aforementioned estimators perform under heterogenous treatment effects I introduced heterogeneity to the DGP4.
+DGP4 is the most general and possibly the most realistic case of the observed \ac{dgp}s.
+The main difference to the DGP4 with homogenous treatment effects is the introduction of $\theta(X)$, which directly influences the outcome $Y_1(d)$ depending on the value of $X$.
+\\
 \textbf{DGP4 with Heterogeneous Treatment Effects}
 \begin{align*}
     Y_0(0) &= f_{\text{or}}(X) + \nu(X) + \epsilon_0, \\
@@ -109,15 +143,17 @@ To explore the flexibility of neural networks, I consider the following data gen
     p(X) &= \frac{\exp \left( f_{\text{ps}}(X) \right)}{1 + \exp \left( f_{\text{ps}}(X) \right)}, \\
     D &= 1\{ p(X) \geq U \},
 \end{align*}
-where: $\theta(X) = 10 \cdot (Z_1 + Z_2 - Z_3 + Z_4)$.
+where: $\theta(X) = 10 \cdot (Z_1 + Z_2 - Z_3 + Z_4)$.\\
 \input{./graphs/table_het_dgp4}
-
-
-\subsection{Deep Learning Model Results}
-[refer to section 3.1 how the loss functions are computed]
-
-\input{./graphs/table_loss_report}
-
+The results of the Monte Carlo simulations with heterogenous treatment effects are presented in Table \ref{tab:table2}.
+The estimators $\hat{\tau}^{fe}$,$\hat{\tau}^{corr}$,$\hat{\tau}^{ipw}$, and $\hat{\tau}^{dr}$ are now more biased and have higher variance compared to the homogenous treatment effects case.
+These results are consistent with the literature as these methods do not account for heterogeneity \citep{hansen2022econometrics}.
+\citet{manfeDifferenceInDifferenceDesignRepeated} reports similar more biased results for the \ac{ipw} and \ac{drdid} estimator in the case of repeated cross-section data.
+The $\hat{\tau}^{ipw,dl}$ also reports higher bias and variance compared to the homogenous treatment effects case.
+But overall is the bias and variance now smaller than the comparable $\hat{\tau}^{ipw}$.
+The same is true for the $\hat{\tau}^{dr,dl}$, which reports the smallest bias and variance across all estimators.
+These results are interestingly as it indicates that neural networks are more robust towards covariate specific trends and heterogenous treatment effects than comparable estimators.
+This is consistent with the findings of \citet{farrellDeepNeuralNetworks2021} and \citet{chernozhukovDoubleDebiasedMachine2018}.
 
 \subsection{Discussion and Further Research}
 %write that section first if I know if I write the application
