@@ -1,1 +1,19 @@
 \section{Application}
+
+An early application of \ac{did} is the paper of \citet{meyer1990workers} that investigate the effect of a workers' compensation on their time out of work.
+In 1980 the states of Kentucky and Michigan substantially increased the compensations in case of work induced disability or injury.
+As the policy just affected high-earning workers, \citet{meyer1990workers} took low-earning workers as a control group.
+Their idea is that low- and high earning workers are comparable except for the fact that high earning workers are treated with the compensation policy.
+In their original study they report a significant increase in time out of work for Kentucky but not for Michigan.
+Due to the low sample size for Michigan I focus solely on Kentucky.
+
+
+
+
+The dataset is taken from the online ressources of \citet{wooldridge2019introductory}
+
+
+
+\begin{equation}
+\text{Duration}_{it} = \alpha + \beta_1 \text{Post}_t + \beta_2 \text{HighEarnings}_i + \beta_3 (\text{Post}_t \times \text{HighEarnings}_i) + \gamma X_{it} + \epsilon_{it}
+\end{equation}

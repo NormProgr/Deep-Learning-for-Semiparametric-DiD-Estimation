@@ -24,4 +24,13 @@ dependencies:
   - seaborn
   - matplotlib  # added matplotlib
   - doubleml
-  - pip: [-e ., kaleido, pdbp, tensorflow, scikit-learn, doubleml,scikeras,scipy]
+  - pip:
+      - -e .
+      - kaleido
+      - pdbp
+      - tensorflow
+      - scikit-learn
+      - doubleml
+      - scikeras
+      - scipy
+      - linearmodels

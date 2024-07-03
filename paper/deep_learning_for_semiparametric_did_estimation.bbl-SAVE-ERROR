@@ -144,6 +144,56 @@
       \field{title}{Mostly harmless econometrics: An empiricist's companion}
       \field{year}{2009}
     \endentry
+    \entry{belloni2017program}{article}{}
+      \name{author}{4}{}{%
+        {{un=0,uniquepart=base,hash=d36a7f02195c9b910441b02a96249f50}{%
+           family={Belloni},
+           familyi={B\bibinitperiod},
+           given={Alexandre},
+           giveni={A\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c75cbe2cefd1e532f636a50892605d06}{%
+           family={Chernozhukov},
+           familyi={C\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c0f65465e8c173d572d4199b5af3184d}{%
+           family={Fernandez-Val},
+           familyi={F\bibinithyphendelim V\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b38b53cdfa3ce5b62046f22663d5cc6f}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{a8bffb0d311cf18c823ef1b2a70128cf}
+      \strng{fullhash}{360c429549398f23279ec3f19be5adf5}
+      \strng{bibnamehash}{360c429549398f23279ec3f19be5adf5}
+      \strng{authorbibnamehash}{360c429549398f23279ec3f19be5adf5}
+      \strng{authornamehash}{a8bffb0d311cf18c823ef1b2a70128cf}
+      \strng{authorfullhash}{360c429549398f23279ec3f19be5adf5}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{number}{1}
+      \field{title}{Program evaluation and causal inference with high-dimensional data}
+      \field{volume}{85}
+      \field{year}{2017}
+      \field{pages}{233\bibrangedash 298}
+      \range{pages}{66}
+    \endentry
     \entry{callawayDifferenceinDifferencesMultipleTime2021}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=4a5a67b3788b4a3653a14d9ab03fba0e}{%
@@ -201,6 +251,138 @@
       \verb https://linkinghub.elsevier.com/retrieve/pii/S0304407620303948
       \endverb
     \endentry
+    \entry{chernozhukovDoubleDebiasedMachine2018}{article}{}
+      \name{author}{7}{ul=2}{%
+        {{un=0,uniquepart=base,hash=c75cbe2cefd1e532f636a50892605d06}{%
+           family={Chernozhukov},
+           familyi={C\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=ef4b66d2ca2dde47ec1b0afa98306775}{%
+           family={Chetverikov},
+           familyi={C\bibinitperiod},
+           given={Denis},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d3c2cc443c71254678269de10d61d61c}{%
+           family={Demirer},
+           familyi={D\bibinitperiod},
+           given={Mert},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7e6b0ea4eee38822cdb0a4361e98752c}{%
+           family={Duflo},
+           familyi={D\bibinitperiod},
+           given={Esther},
+           giveni={E\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=b38b53cdfa3ce5b62046f22663d5cc6f}{%
+           family={Hansen},
+           familyi={H\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9c98526d9f1775b95096664c9cf0c633}{%
+           family={Newey},
+           familyi={N\bibinitperiod},
+           given={Whitney},
+           giveni={W\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=bf615cc72310078c444f0c653a1fc5e7}{%
+           family={Robins},
+           familyi={R\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{71ae0ee9c7eaedd51e4cfcb944a5be17}
+      \strng{fullhash}{7892f5fdea2b46a0fb4e6c031c27c781}
+      \strng{bibnamehash}{7892f5fdea2b46a0fb4e6c031c27c781}
+      \strng{authorbibnamehash}{7892f5fdea2b46a0fb4e6c031c27c781}
+      \strng{authornamehash}{71ae0ee9c7eaedd51e4cfcb944a5be17}
+      \strng{authorfullhash}{7892f5fdea2b46a0fb4e6c031c27c781}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{1}
+      \field{issn}{1368-4221, 1368-423X}
+      \field{journaltitle}{The Econometrics Journal}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{Double/Debiased Machine Learning for Treatment and Structural Parameters}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{volume}{21}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{C1\bibrangedash C68}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1111/ectj.12097
+      \endverb
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\N2V8A7M7\Chernozhukov et al. - 2018 - Doubledebiased machine learning for treatment and.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://academic.oup.com/ectj/article/21/1/C1/5056401
+      \endverb
+      \verb{url}
+      \verb https://academic.oup.com/ectj/article/21/1/C1/5056401
+      \endverb
+    \endentry
+    \entry{chernozhukov2022automatic}{article}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=c75cbe2cefd1e532f636a50892605d06}{%
+           family={Chernozhukov},
+           familyi={C\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=2,uniquepart=given,hash=058d74ae5e89fbd5a49ebdbe97b4c922}{%
+           family={Newey},
+           familyi={N\bibinitperiod},
+           given={Whitney\bibnamedelima K},
+           giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=2}}%
+        {{un=0,uniquepart=base,hash=b417395e2c10f7be5dbda235bb6fdd4c}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Rahul},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley Online Library}%
+      }
+      \strng{namehash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{fullhash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{bibnamehash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{authorbibnamehash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{authornamehash}{307d2f4af1b987448b22ddffed07bf96}
+      \strng{authorfullhash}{307d2f4af1b987448b22ddffed07bf96}
+      \field{extraname}{1}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Econometrica}
+      \field{number}{3}
+      \field{title}{Automatic debiased machine learning of causal and structural effects}
+      \field{volume}{90}
+      \field{year}{2022}
+      \field{pages}{967\bibrangedash 1027}
+      \range{pages}{61}
+    \endentry
     \entry{https://doi.org/10.3982/ECTA18515}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=c75cbe2cefd1e532f636a50892605d06}{%
@@ -209,12 +391,12 @@
            given={Victor},
            giveni={V\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=058d74ae5e89fbd5a49ebdbe97b4c922}{%
+        {{un=2,uniquepart=given,hash=058d74ae5e89fbd5a49ebdbe97b4c922}{%
            family={Newey},
            familyi={N\bibinitperiod},
            given={Whitney\bibnamedelima K.},
            giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod},
-           givenun=0}}%
+           givenun=2}}%
         {{un=0,uniquepart=base,hash=b417395e2c10f7be5dbda235bb6fdd4c}{%
            family={Singh},
            familyi={S\bibinitperiod},
@@ -228,8 +410,10 @@
       \strng{authorbibnamehash}{307d2f4af1b987448b22ddffed07bf96}
       \strng{authornamehash}{307d2f4af1b987448b22ddffed07bf96}
       \strng{authorfullhash}{307d2f4af1b987448b22ddffed07bf96}
+      \field{extraname}{2}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{extradate}{2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -256,6 +440,69 @@
       \endverb
       \keyw{Debiased machine learning,causal parameters,structural parameters,regression effects,Lasso,Riesz representation}
     \endentry
+    \entry{DeepLearningIndividual2021}{report}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=394a467751a7e99efa9be98d667c6540}{%
+           family={Farrell},
+           familyi={F\bibinitperiod},
+           given={Max\bibnamedelima H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=a8e24a47f49e951837e8883af279559e}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Tengyuan},
+           giveni={T\bibinitperiod},
+           givenun=1}}%
+        {{un=0,uniquepart=base,hash=c07fb2a9cbdcb390d4889feffe6dc98f}{%
+           family={Misra},
+           familyi={M\bibinitperiod},
+           given={Sanjog},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Cemmap}%
+      }
+      \strng{namehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{fullhash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{bibnamehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{authorbibnamehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{authornamehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \strng{authorfullhash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \field{extraname}{1}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradate}{1}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We develop methodology for estimation and inference using machine learning to enrich economic models. Our framework takes a standard economic model and recasts the parameters as fully flexible nonparametric functions, to capture the rich heterogeneity based on potentially high dimensional or complex observable characteristics. These “parameter functions” retain the interpretability, economic meaning, and discipline of classical parameters. In contrast to common implementations of machine learning in economics, these functions need not be predictions. We show that deep learning is particularly well-suited to structured modeling of heterogeneity in economics. First, we show how the network architecture can be easily designed to match the global structure of the economic model, delivering novel methodology that moves deep learning beyond prediction. Second, we prove convergence rates for the estimated parameter functions. These parameter functions are then the key input into the finite-dimensional parameter of inferential interest. We obtain valid inference based on a novel orthogonal score or influence function calculation that covers any second-stage parameter and any machine-learning-enriched model that uses a smooth per-observation loss function. No additional derivations are required and the score can be taken directly to data, using automatic differentiation if needed to obtain the components: the researcher need only define the original model and define the parameter of interest. A key insight is that we need not write down the influence function in order to evaluate it on the data. We apply this after deep learning, but our result can be used for any first-step estimator. Our framework covers, as special cases, well-known examples such as average treatment effects and partially linear models, but we also seamlessly deliver new results for such diverse examples as price elasticities, willingness-to-pay, and surplus measures in binary or multinomial choice models, average marginal and partial effects of continuous treatment variables, fractional outcome models, count data, heterogeneous production function components, and more. Across all these contexts inference can be made as automated as is currently available in special cases. We illustrate the utility of our framework with an application to a large scale advertising experiment for short-term loans. We show how economically meaningful estimates and inferences can be made that would be unavailable without our framework.}
+      \field{day}{27}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{shorttitle}{Deep Learning for Individual Heterogeneity}
+      \field{title}{Deep Learning for Individual Heterogeneity: An Automatic Inference Framework}
+      \field{urlday}{18}
+      \field{urlmonth}{6}
+      \field{urlyear}{2024}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.47004/wp.cem.2021.2921
+      \endverb
+      \verb{file}
+      \verb C:\Users\norma\Zotero\storage\FUX7FQP5\2021 - Deep learning for individual heterogeneity an aut.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://www.cemmap.ac.uk/wp-content/uploads/2021/07/CWP2921-Deep-learning-for-individual-heterogeneity-an-automatic-inference-framework.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.cemmap.ac.uk/wp-content/uploads/2021/07/CWP2921-Deep-learning-for-individual-heterogeneity-an-automatic-inference-framework.pdf
+      \endverb
+    \endentry
     \entry{farrellDeepNeuralNetworks2021}{article}{}
       \name{author}{3}{}{%
         {{un=0,uniquepart=base,hash=394a467751a7e99efa9be98d667c6540}{%
@@ -264,12 +511,12 @@
            given={Max\bibnamedelima H.},
            giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod},
            givenun=0}}%
-        {{un=0,uniquepart=base,hash=a8e24a47f49e951837e8883af279559e}{%
+        {{un=1,uniquepart=given,hash=a8e24a47f49e951837e8883af279559e}{%
            family={Liang},
            familyi={L\bibinitperiod},
            given={Tengyuan},
            giveni={T\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
         {{un=0,uniquepart=base,hash=c07fb2a9cbdcb390d4889feffe6dc98f}{%
            family={Misra},
            familyi={M\bibinitperiod},
@@ -283,8 +530,10 @@
       \strng{authorbibnamehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
       \strng{authornamehash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
       \strng{authorfullhash}{cc86c1bdecd2d05adf7b2f7bf0bb4f03}
+      \field{extraname}{2}
       \field{sortinit}{F}
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradate}{2}
       \field{extradatescope}{labelyear}
       \field{labeldatesource}{}
       \field{labelnamesource}{author}
@@ -316,64 +565,6 @@
       \endverb
       \verb{url}
       \verb https://www.econometricsociety.org/doi/10.3982/ECTA16901
-      \endverb
-    \endentry
-    \entry{favaraCreditSupplyPrice2015}{article}{}
-      \name{author}{2}{}{%
-        {{un=0,uniquepart=base,hash=ecb4ffb002804980aebf9b29e4cc2f04}{%
-           family={Favara},
-           familyi={F\bibinitperiod},
-           given={Giovanni},
-           giveni={G\bibinitperiod},
-           givenun=0}}%
-        {{un=0,uniquepart=base,hash=8a77ff27cb08694765a297252f0aa24d}{%
-           family={Imbs},
-           familyi={I\bibinitperiod},
-           given={Jean},
-           giveni={J\bibinitperiod},
-           givenun=0}}%
-      }
-      \strng{namehash}{2caf6796c924659cb8660bf9cb304d80}
-      \strng{fullhash}{2caf6796c924659cb8660bf9cb304d80}
-      \strng{bibnamehash}{2caf6796c924659cb8660bf9cb304d80}
-      \strng{authorbibnamehash}{2caf6796c924659cb8660bf9cb304d80}
-      \strng{authornamehash}{2caf6796c924659cb8660bf9cb304d80}
-      \strng{authorfullhash}{2caf6796c924659cb8660bf9cb304d80}
-      \field{sortinit}{F}
-      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{An exogenous expansion in mortgage credit has significant effects on house prices. This finding is established using US branching deregulations between 1994 and 2005 as instruments for credit. Credit increases for deregulated banks, but not in placebo samples. Such differential responses rule out demand-based explanations, and identify an exogenous credit supply shock. Because of geographic diver-sification, treated banks expand credit: housing demand increases, house prices rise, but to a lesser extent in areas with elastic housing supply, where the housing stock increases instead. In an instrumental variable sense, house prices are well explained by the credit expansion induced by deregulation. (JEL G21, G28, R21, R31)}
-      \field{day}{1}
-      \field{issn}{0002-8282}
-      \field{journaltitle}{American Economic Review}
-      \field{langid}{english}
-      \field{month}{3}
-      \field{number}{3}
-      \field{shortjournal}{American Economic Review}
-      \field{title}{Credit {{Supply}} and the {{Price}} of {{Housing}}}
-      \field{urlday}{18}
-      \field{urlmonth}{6}
-      \field{urlyear}{2024}
-      \field{volume}{105}
-      \field{year}{2015}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{958\bibrangedash 992}
-      \range{pages}{35}
-      \verb{doi}
-      \verb 10.1257/aer.20121416
-      \endverb
-      \verb{file}
-      \verb C:\Users\norma\Zotero\storage\QC5UYD49\Favara und Imbs - 2015 - Credit Supply and the Price of Housing.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://pubs.aeaweb.org/doi/10.1257/aer.20121416
-      \endverb
-      \verb{url}
-      \verb https://pubs.aeaweb.org/doi/10.1257/aer.20121416
       \endverb
     \endentry
     \entry{Goodfellow-et-al-2016}{book}{}
@@ -600,6 +791,74 @@
       \verb C:\Users\norma\Zotero\storage\DND3F3BC\Hernan und Robins - Causal Inference What If.pdf
       \endverb
     \endentry
+    \entry{kang2007demystifying}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=6856aad17921e28db83aac4811171cb7}{%
+           family={Kang},
+           familyi={K\bibinitperiod},
+           given={JD},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=519ba9893a6154ebc88c1ce2c02676de}{%
+           family={Schafer},
+           familyi={S\bibinitperiod},
+           given={JL},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{881249a587e05670f38b5547371b0ccd}
+      \strng{fullhash}{881249a587e05670f38b5547371b0ccd}
+      \strng{bibnamehash}{881249a587e05670f38b5547371b0ccd}
+      \strng{authorbibnamehash}{881249a587e05670f38b5547371b0ccd}
+      \strng{authornamehash}{881249a587e05670f38b5547371b0ccd}
+      \strng{authorfullhash}{881249a587e05670f38b5547371b0ccd}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Demystifying double robustness: A comparison of}
+      \field{year}{2007}
+    \endentry
+    \entry{koh2017understanding}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b7309d5979903f9e56ec43ebf0d594ad}{%
+           family={Koh},
+           familyi={K\bibinitperiod},
+           given={Pang\bibnamedelima Wei},
+           giveni={P\bibinitperiod\bibinitdelim W\bibinitperiod},
+           givenun=0}}%
+        {{un=1,uniquepart=given,hash=86c032bbc45c3b616f0a1170befc0e82}{%
+           family={Liang},
+           familyi={L\bibinitperiod},
+           given={Percy},
+           giveni={P\bibinitperiod},
+           givenun=1}}%
+      }
+      \list{organization}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{95fbadfaf56a4eaa8319b2754b69d5be}
+      \strng{fullhash}{95fbadfaf56a4eaa8319b2754b69d5be}
+      \strng{bibnamehash}{95fbadfaf56a4eaa8319b2754b69d5be}
+      \strng{authorbibnamehash}{95fbadfaf56a4eaa8319b2754b69d5be}
+      \strng{authornamehash}{95fbadfaf56a4eaa8319b2754b69d5be}
+      \strng{authorfullhash}{95fbadfaf56a4eaa8319b2754b69d5be}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International conference on machine learning}
+      \field{title}{Understanding black-box predictions via influence functions}
+      \field{year}{2017}
+      \field{pages}{1885\bibrangedash 1894}
+      \range{pages}{10}
+    \endentry
     \entry{manfeDifferenceInDifferenceDesignRepeated}{article}{}
       \name{author}{2}{}{%
         {{un=0,uniquepart=base,hash=405d4561e866b80f96318059d1c03ea1}{%
@@ -637,6 +896,45 @@
       \verb{file}
       \verb C:\Users\norma\Zotero\storage\566UM4LE\Manfe und Nunziata - Difference-In-Difference Design With Repeated Cros.pdf
       \endverb
+    \endentry
+    \entry{meyer1990workers}{misc}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=3517ba005ca0b2263e558bdc3fa650fa}{%
+           family={Meyer},
+           familyi={M\bibinitperiod},
+           given={Bruce\bibnamedelima D},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=840df9f6bf566f73714cff78d3a45cf1}{%
+           family={Viscusi},
+           familyi={V\bibinitperiod},
+           given={W\bibnamedelima Kip},
+           giveni={W\bibinitperiod\bibinitdelim K\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=e9fbfe300df53f5cc81ec37b37fa04ba}{%
+           family={Durbin},
+           familyi={D\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {National Bureau of Economic Research Cambridge, Mass., USA}%
+      }
+      \strng{namehash}{2733245588d54f3cd9d815e3a89178de}
+      \strng{fullhash}{2733245588d54f3cd9d815e3a89178de}
+      \strng{bibnamehash}{2733245588d54f3cd9d815e3a89178de}
+      \strng{authorbibnamehash}{2733245588d54f3cd9d815e3a89178de}
+      \strng{authornamehash}{2733245588d54f3cd9d815e3a89178de}
+      \strng{authorfullhash}{2733245588d54f3cd9d815e3a89178de}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Workers' compensation and injury duration: evidence from a natural experiment}
+      \field{year}{1990}
     \endentry
     \entry{santannaDoublyRobustDifferenceindifferences2020}{article}{}
       \name{author}{2}{}{%
@@ -766,6 +1064,33 @@
       \field{year}{2016}
       \field{pages}{1517\bibrangedash 1539}
       \range{pages}{23}
+    \endentry
+    \entry{wooldridge2019introductory}{book}{}
+      \name{author}{1}{}{%
+        {{un=0,uniquepart=base,hash=c93aeef4998e670d5343b7e632c431dc}{%
+           family={Wooldridge},
+           familyi={W\bibinitperiod},
+           given={Jeffrey\bibnamedelima M},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Cengage AU}%
+      }
+      \strng{namehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{fullhash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{bibnamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authorbibnamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authornamehash}{c93aeef4998e670d5343b7e632c431dc}
+      \strng{authorfullhash}{c93aeef4998e670d5343b7e632c431dc}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Introductory Econometrics: A Modern Approach 7e}
+      \field{year}{2019}
     \endentry
     \entry{zimmert2018efficient}{article}{}
       \name{author}{1}{}{%
