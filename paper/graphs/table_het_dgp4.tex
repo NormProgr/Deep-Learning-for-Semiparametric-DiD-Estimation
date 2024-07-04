@@ -5,6 +5,8 @@
 \label{tab:table2}
 \begin{tabular}{llllll}
 \toprule
+\hline
+\addlinespace
 Estimator         & Reference                         & Av. Bias   & Med. Bias   & RMSE & Variance  \\ \midrule
 \addlinespace
 $\hat{\tau}^{fe}$ & Regression, Eq. \eqref{eq:twfe}               & -20.418      & -20.245        & 21.242 & 34.360      \\
@@ -18,7 +20,6 @@ $\hat{\tau}^{dr,dl}$ & Sant'Anna and Zhao (2020) + DL & -1.596       & -1.607   
 \end{tabular}
 \begin{tablenotes}
     \item Notes: Simulations based on panel data with sample size $n = 1000$ and 1000 Monte Carlo repetitions. The average bias "Av. Bias", median bias "Med. Bias", root mean squared error "RMSE", and average variance "Variance" of the estimators are reported. The methods that predict propensity scores with deep learning are marked by "DL". The true treatment effect is $\tau = 0$ and heterogenous in all cases.
-
 \end{tablenotes}
 \end{threeparttable}
 \end{table}

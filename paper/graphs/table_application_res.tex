@@ -1,0 +1,22 @@
+\begin{table}[ht]
+\centering
+\begin{threeparttable}
+\caption{Regression Results}
+\label{tab:reg_results}
+\begin{tabular}{lcccccc}
+\toprule
+\hline
+\addlinespace
+Model & Coef. & Std.Err. & t & P>|t| & [0.025 & 0.975] \\
+\midrule
+Saturated design & 0.191 & 0.069 & 2.782 & 0.005 & 0.056 & 0.325 \\
+Regression Eq. (14)  & 0.172 & 0.064 & 2.694 & 0.007 & 0.047 & 0.297 \\
+\ac{drdid} + DL & 0.250 & 0.075 & 3.34 & 0.000 & 0.103 & 0.396\\
+Authors' model & 0.162 & 0.059 &  2.745 & 0.006 & 0.046 & 0.278 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+    \item Notes: In this table are reported the results of a saturated dummy design without controls, the regression equation (14) with controls and interactions, the \ac{drdid} with deep learning and controls and the results from \citet{meyer1990workers} of Table 6 Column (ii). Reported are the coefficients as the \ac{att}, the standard errors, the t-values, P>|t| is the p-value, and the lower- and upper bound of the 95 percent confidence interval. The dependent variable is the log of the duration of work leave. The dataset is taken from the online resources of \citet{wooldridge2019introductory}. The sample size is $n = 5347$.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
