@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
+from scipy.stats import norm
 
 
 def het_twfe_DGP4_simulation():
@@ -22,6 +23,10 @@ def het_twfe_DGP4_simulation():
     asymptotic_variance_corr = []
     ATTE_estimates_het = []
     asymptotic_variance_het = []
+    # Initialize lists for coverage probabilities
+    coverage_prob = []
+    coverage_prob_corr = []
+    coverage_prob_het = []
 
     for _i in range(1000):
         x1 = np.random.normal(0, 1, n)
@@ -88,8 +93,17 @@ def het_twfe_DGP4_simulation():
             sm.add_constant(dta_long[["x1", "x2", "x3", "x4", "post", "d", "post:d"]]),
         ).fit()
         twfe = twfe_i.params["post:d"]
-        asymptotic_variance.append(twfe_i.cov_params()["post:d"])
+        asymptotic_variance.append(twfe_i.cov_params().loc["post:d", "post:d"])
+
         ATTE_estimates.append(twfe)
+
+        lower_bound = twfe - norm.ppf(0.975) * np.sqrt(
+            twfe_i.cov_params().loc["post:d", "post:d"]
+        )
+        upper_bound = twfe + norm.ppf(0.975) * np.sqrt(
+            twfe_i.cov_params().loc["post:d", "post:d"]
+        )
+        coverage_prob.append(1 if lower_bound <= 0 <= upper_bound else 0)
 
         # Correct version of TWFE
         for var in ["x1", "x2", "x3", "x4"]:
@@ -132,8 +146,18 @@ def het_twfe_DGP4_simulation():
             + twfe_corr_i.params.get("x4:post:d", 0)
             * np.mean(dta_long["x4"][dta_long["d"] == 1])
         )
-        asymptotic_variance_corr.append(twfe_corr_i.cov_params()["post:d"])
+        asymptotic_variance_corr.append(
+            twfe_corr_i.cov_params().loc["post:d", "post:d"]
+        )
+
         ATTE_estimates_corr.append(twfe_corr)
+        lower_bound_corr = twfe_corr - norm.ppf(0.975) * np.sqrt(
+            twfe_corr_i.cov_params().loc["post:d", "post:d"]
+        )
+        upper_bound_corr = twfe_corr + norm.ppf(0.975) * np.sqrt(
+            twfe_corr_i.cov_params().loc["post:d", "post:d"]
+        )
+        coverage_prob_corr.append(1 if lower_bound_corr <= 0 <= upper_bound_corr else 0)
 
         # Third model to account for heterogeneous effects
         dta_long["post:d:x1"] = dta_long["post:d"] * dta_long["x1"]
@@ -197,15 +221,21 @@ def het_twfe_DGP4_simulation():
     rmse_het = np.sqrt(np.mean((ATTE_estimates_het - 0) ** 2))
     variance_ATT_het = np.var(ATTE_estimates_het)
 
+    # Compute coverage probabilities
+    coverage_prob = np.mean(coverage_prob)
+    coverage_prob_corr = np.mean(coverage_prob_corr)
+
     return {
         "Average Bias": avg_bias,
         "Median Bias": med_bias,
         "RMSE": rmse,
         "Average Variance of ATT": variance_ATT,
+        "Coverage Probability": coverage_prob,
         "Average Bias_corr": avg_bias_corr,
         "Median Bias_corr": med_bias_corr,
         "RMSE_corr": rmse_corr,
         "Average Variance of ATT_corr": variance_ATT_corr,
+        "Coverage Probability_corr": coverage_prob_corr,
         "Average Bias_het": avg_bias_het,
         "Median Bias_het": med_bias_het,
         "RMSE_het": rmse_het,

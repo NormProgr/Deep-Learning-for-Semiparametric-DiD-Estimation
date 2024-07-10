@@ -144,6 +144,63 @@
       \field{title}{Mostly harmless econometrics: An empiricist's companion}
       \field{year}{2009}
     \endentry
+    \entry{doubleml2024R}{article}{}
+      \name{author}{5}{}{%
+        {{un=0,uniquepart=base,hash=5d6d04b1ae5bd4734b03dc8ccd903e6e}{%
+           family={Bach},
+           familyi={B\bibinitperiod},
+           given={Philipp},
+           giveni={P\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d7b103a2f43eb4b6c31ad59f41e83943}{%
+           family={Kurz},
+           familyi={K\bibinitperiod},
+           given={Malte\bibnamedelima S.},
+           giveni={M\bibinitperiod\bibinitdelim S\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=c75cbe2cefd1e532f636a50892605d06}{%
+           family={Chernozhukov},
+           familyi={C\bibinitperiod},
+           given={Victor},
+           giveni={V\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=d8b1ae9734f477eac207fdb4e76b4b4d}{%
+           family={Spindler},
+           familyi={S\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=7905d02e1f2ee51c1ff4166cf9a8ba2a}{%
+           family={Klaassen},
+           familyi={K\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{146e3618962cd1f6e5b444c00f4a7467}
+      \strng{fullhash}{0aa847e604d3bbb36703659c096e0e10}
+      \strng{bibnamehash}{0aa847e604d3bbb36703659c096e0e10}
+      \strng{authorbibnamehash}{0aa847e604d3bbb36703659c096e0e10}
+      \strng{authornamehash}{146e3618962cd1f6e5b444c00f4a7467}
+      \strng{authorfullhash}{0aa847e604d3bbb36703659c096e0e10}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Statistical Software}
+      \field{note}{arXiv:\href{https://arxiv.org/abs/2103.09603}{2103.09603} [stat.ML]}
+      \field{number}{3}
+      \field{title}{{DoubleML}: {A}n Object-Oriented Implementation of Double Machine Learning in {R}}
+      \field{volume}{108}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 56}
+      \range{pages}{56}
+      \verb{doi}
+      \verb 10.18637/jss.v108.i03
+      \endverb
+    \endentry
     \entry{belloni2017program}{article}{}
       \name{author}{4}{}{%
         {{un=0,uniquepart=base,hash=d36a7f02195c9b910441b02a96249f50}{%

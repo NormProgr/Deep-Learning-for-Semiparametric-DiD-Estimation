@@ -182,6 +182,7 @@ def het_ipw_dgp4():
     # Initialize empty lists to store results
     ATTE_estimates = []
     asymptotic_variance = []
+    coverage_indicators = []
     for _i in range(1000):
         # Gen covariates
         x1 = np.random.normal(0, 1, n)
@@ -275,10 +276,12 @@ def het_ipw_dgp4():
 
         ATTE_estimates.append(result["ATT"])
         asymptotic_variance.append(result["se"] ** 2)
+        coverage_indicator = int(result["lci"] <= 0 <= result["uci"])
+        coverage_indicators.append(coverage_indicator)
 
     # Calculate average bias, median bias, and RMSE
     true_ATT = 0
-
+    avg_coverage_prob = np.mean(coverage_indicators)
     # Bias calculations
     biases = np.array(ATTE_estimates) - true_ATT
     average_bias = np.mean(biases)
@@ -293,4 +296,5 @@ def het_ipw_dgp4():
         "Median Bias": median_bias,
         "RMSE": rmse,
         "Average Variance of ATT": average_variance,
+        "avg_coverage_prob": avg_coverage_prob,
     }

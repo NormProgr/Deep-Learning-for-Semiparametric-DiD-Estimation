@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import statsmodels.api as sm
 from scipy.stats import logistic
+from scipy.stats import norm
 
 
 def twfe_DGP2_simulation():
@@ -36,7 +37,8 @@ def twfe_DGP2_simulation():
     asymptotic_variance = []
     asymptotic_variance_corr = []
     ATTE_estimates_corr = []
-
+    coverage_prob = []
+    coverage_prob_corr = []
     for _i in range(1000):
         # Generate covariates
         x1 = np.random.normal(0, 1, n)
@@ -129,9 +131,15 @@ def twfe_DGP2_simulation():
         ).fit()
         twfe = twfe_i.params["post:d"]
 
-        asymptotic_variance.append(
-            twfe_i.HC0_se["post:d"],
-        )  # Append the standard error for the interaction term
+        asymptotic_variance.append(twfe_i.cov_params().loc["post:d", "post:d"])
+        lower_bound = twfe - norm.ppf(0.975) * np.sqrt(
+            twfe_i.cov_params().loc["post:d", "post:d"]
+        )
+        upper_bound = twfe + norm.ppf(0.975) * np.sqrt(
+            twfe_i.cov_params().loc["post:d", "post:d"]
+        )
+        coverage_prob.append(1 if lower_bound <= 0 <= upper_bound else 0)
+
         ATTE_estimates.append(twfe)
         # correct version of twfe
         for var in ["x1", "x2", "x3", "x4"]:
@@ -164,8 +172,20 @@ def twfe_DGP2_simulation():
             sm.add_constant(dta_long[independent_vars]),
         ).fit()
         twfe_corr = twfe_corr_i.params["post:d"]
-        asymptotic_variance_corr.append(twfe_corr_i.cov_params()["post:d"])
+        asymptotic_variance_corr.append(
+            twfe_corr_i.cov_params().loc["post:d", "post:d"]
+        )
+
         ATTE_estimates_corr.append(twfe_corr)
+
+        lower_bound_corr = twfe_corr - norm.ppf(0.975) * np.sqrt(
+            twfe_corr_i.cov_params().loc["post:d", "post:d"]
+        )
+        upper_bound_corr = twfe_corr + norm.ppf(0.975) * np.sqrt(
+            twfe_corr_i.cov_params().loc["post:d", "post:d"]
+        )
+
+        coverage_prob_corr.append(1 if lower_bound_corr <= 0 <= upper_bound_corr else 0)
 
     ATTE_estimates = np.array(ATTE_estimates)
     ATTE_estimates_corr = np.array(ATTE_estimates_corr)
@@ -193,14 +213,17 @@ def twfe_DGP2_simulation():
         np.mean((ATTE_estimates_corr - 0) ** 2),
     )
     variance_ATT_corr = np.var(ATTE_estimates_corr)
-
+    coverage_prob = np.mean(coverage_prob)
+    coverage_prob_corr = np.mean(coverage_prob_corr)
     return {
         "Average Bias": avg_bias,
         "Median Bias": med_bias,
         "RMSE": rmse,
         "Average Variance of ATT": variance_ATT,
+        "Coverage Probability": coverage_prob,
         "Average Bias_corr": avg_bias_corr,
         "Median Bias_corr": med_bias_corr,
         "RMSE_corr": rmse_corr,
         "Average Variance of ATT_corr": variance_ATT_corr,
+        "Coverage Probability_corr": coverage_prob_corr,
     }

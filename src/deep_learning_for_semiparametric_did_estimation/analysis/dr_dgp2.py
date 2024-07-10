@@ -334,6 +334,7 @@ def sz_dr_dgp2():
     # Initialize empty lists to store results
     ATTE_estimates = []
     asymptotic_variance = []
+    coverage_indicators = []
 
     for _i in range(1000):
         # Generate covariates
@@ -428,6 +429,8 @@ def sz_dr_dgp2():
 
         ATTE_estimates.append(result["ATT"])
         asymptotic_variance.append(result["se"] ** 2)
+        coverage_indicator = int(result["lci"] <= 0 <= result["uci"])
+        coverage_indicators.append(coverage_indicator)
 
     # Calculate average bias, median bias, and RMSE
     true_ATT = 0
@@ -437,10 +440,11 @@ def sz_dr_dgp2():
 
     # Calculate average of the variance
     average_variance = np.mean(asymptotic_variance)
-
+    avg_coverage_prob = np.mean(coverage_indicators)
     return {
         "Average Bias": average_bias,
         "Median Bias": median_bias,
         "RMSE": rmse,
         "Average Variance of ATT": average_variance,
+        "avg_coverage_prob": avg_coverage_prob,
     }
