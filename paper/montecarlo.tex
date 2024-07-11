@@ -157,4 +157,23 @@ This is consistent with the findings of \citet{farrellDeepNeuralNetworks2021} an
 
 \subsection{Comparison of Deep Learning Architectures}
 
+The choice of the correct neural network is often arbitrary as discussed in Section 3.
+This is depending which kind of activation function, neural network class or hyperparameters are selected.
+Table \ref{tab:nn} shows the influence of different hyperparameters on the \ac{dgp} used in Section 4.3.
+Note that the activation function is \ac{relu} and the neural network is a feedforward neural network across all architectures.
+
+It is clear to see in table \ref{tab:nn} that there is no strict better alternative architecture to the neural network class that is used in this thesis.
+Every change in the  hyperparameter selection comes to the cost of either higher bias or higher variance, which is a common trade-off in machine learning.
+For example has the classic architecture higher bias than the first variation that has more hidden layers and units.
+This comes with the cost of higher variance.
+Interestingly is there no clear sign that deeper neural networks (with more units and layers) actually imposes better results than shallower networks.
+Generally come deeper neural networks with higher computational costs, which can be extensive in case of complex and large data.
+
+Additionally one can see that the first variation of the architecture has a bigger validation loss than training loss.
+The neural networks 4 and 5 report very small differences between the losses.
+As argued indicates a higher validation loss to training that the model overfits.
+For practioners it might be useful to use the results of the loss to evaluate which neural networks to select.
 \input{./graphs/table_nn}
+
+This results show that there is still no clear understanding how to select optimal deep learning models for inference.
+There are options like grid search with frameworks like TensorFlow\textsuperscript{\textregistered} that can help in case of simulations but for observational data the choice of optimal neural networks remains unclear.
