@@ -1,6 +1,6 @@
 \begin{table}[ht]
 \centering
-\resizebox{\linewidth}{!}{
+
 \begin{threeparttable}
 \caption{Simulation Results across Neural Network Architectures}
 \label{tab:nn}
@@ -8,7 +8,7 @@
     \toprule
 \hline
 \addlinespace
-Metric \textbackslash Architecture & Classic &  1 &  2 &  3 &  4 &  5 \\
+Metric\textbackslash Architecture & Classic &  1 &  2 &  3 &  4 &  5 \\
 \addlinespace
 \hline
 \addlinespace
@@ -31,5 +31,5 @@ L2 Regularization & 0.01 & 0.001 & 0.01 & 0.1 & 0.01 & 0.01 \\
 \begin{tablenotes}
     \item Notes: All networks use the \ac{relu} activation function. The classic architecture is the one used throughout the thesis. The other architectures are variations of the classic architecture with different hyperparameters. For example shows architecture 1 the following: the depth is 5 such there are 5 hidden layers, each hidden layer has 64 units (or \textit{neurons}). Each hidden layer applies a L2 regularization with value 0.001.
 \end{tablenotes}
-\end{threeparttable}}
+\end{threeparttable}
 \end{table}
