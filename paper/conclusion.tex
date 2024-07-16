@@ -1,3 +1,14 @@
 \section{Conclusion}
 
-In this thesis, I have pres
+In this thesis, I have revised common semiparametric \ac{did} estimators and implemented deep learning as a novel approach to estimate the \ac{att}.
+In the setting of conditional \ac{pta} and panel data, I have compared the \ac{or}, \ac{ipw}, and \ac{drdid} first step estimation approaches.
+The results show that the \ac{drdid} estimator outperforms the other estimators in terms of bias and variance under homogenous treatment effect.
+The deep learning implementation of the \ac{drdid} estimator achieves near as good results as the \ac{drdid} estimator.
+Under heterogenous treatment effects, the \ac{drdid} with deep learning outperforms all other comparable estimation strategies.
+I illustrate the methods by conducting a simulation study and applying them to an empirical data set.
+The results of the Kentucky workers compensation data suggests that the \ac{drdid} estimator with deep learning is a promising approach to estimate the \ac{att}.
+
+The results underline the potential of deep learning in causal inference, especially in cases of complex and large data.
+Especially under strong heterogenous treatment effects deep learning seems to be an advisable approach.
+A shortcoming is the arbitrary choice of the deep learning architecture and the choice of suitable settings for deep learning.
+Further research is needed to apply deep learning for \ac{did} estimation on repeated cross-sectional data or on multiple time and group period cases.

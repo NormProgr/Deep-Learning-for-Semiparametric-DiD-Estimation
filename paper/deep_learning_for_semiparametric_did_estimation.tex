@@ -30,8 +30,18 @@
     maxbibnames=10,
     useprefix=false,
     sortcites=true,
-    backend=biber
+    backend=biber,
+    doi=false,
+    url=false,
+    isbn=false,
 ]{biblatex}
+
+\AtEveryBibitem{
+    \clearfield{issn}
+    \clearfield{note}
+}
+
+
 \AtBeginDocument{\toggletrue{blx@useprefix}}
 \AtBeginBibliography{\togglefalse{blx@useprefix}}
 \setlength{\bibitemsep}{1.5ex}
