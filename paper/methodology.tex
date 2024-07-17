@@ -63,8 +63,8 @@ Naturally, it is crucial to correctly estimate the probability of being treated 
 The true probability is estimated by the so-called propensity score, given by $p(x) = P(D=1 \mid X)$, which is not directly observable.
 Therefore it is estimated by $\hat{\pi}(X)$.
 Note that there are several ways to estimate the propensity score, such as logistic regression, probit regression, or machine learning techniques.
-These techniques are used in the first-step to estimate the propensity score, and in the second step, the outcome model is estimated parametrically \citep{abadieSemiparametricDifferenceinDifferencesEstimators2005}, the \ac{ipw} estimator is called semiparametric.
-In this thesis, I use logistic regression and deep neural networks to estimate the propensity score.
+These techniques are used in the first-step to estimate the propensity score, and in the second step, the outcome model is estimated parametrically \citep{abadieSemiparametricDifferenceinDifferencesEstimators2005}.
+In this thesis, I use logistic regression and deep neural networks to estimate the propensity scores.
 
 The \ac{ipw} estimator is given by:
 \begin{equation}
@@ -77,7 +77,7 @@ $Y_1 - Y_0$ captures the change in the outcome for each individual.
 
 
 Lastly, there are two remarks regarding the \ac{ipw} estimator.
-First, the \ac{ipw} estimator is consistent and unbiased if the propensity score is correctly specified.
+First, the \ac{ipw} estimator is consistent and unbiased if the propensity scores are correctly specified.
 Second, it is important to consider all relevant covariates in the propensity score estimation \citep{angrist2009mostly}, than to improve the prediction of propensity scores \citep{https://doi.org/10.3982/ECTA18515}.
 The reason is that including irrelevant covariates to improve the prediction of the propensity scores, also increases the variance of the estimator without adding any more information \citep{hernanCausalInferenceWhat}.
 
@@ -108,6 +108,6 @@ Obviously the \ac{drdid} estimator is consistent and unbiased if both \ac{or} an
 To clarify this, assume the \ac{ipw} is incorrectly specified and the \ac{or} is correctly specified.
 The incorrect specification of \ac{ipw} is reflected in $w_0(D, X; \hat{\pi})$ in eq. \ref{eq:6}, because $\hat{\pi}$ is biased.
 Meaning the weight for the control group is misspecified for \ac{ipw}.
-This effect is nullified by the correct specification of \ac{or} in $\Delta Y - \mu_{0, \Delta}(X)$ because the change in the outcome evolution is zero in expectation.
+This effect is nullified by the correct specification of \ac{or} in $\Delta Y - \mu_{0, \Delta}(X)$, because the change in the outcome evolution is zero in expectation.
 Intuitively, because the \ac{or} correctly identifies that the change in outcome of control should not change over time, as it is not treated, any multiplication of it becomes zero as well.
 A similar argument can be made for the \ac{or} being misspecified and the \ac{ipw} being correctly specified.

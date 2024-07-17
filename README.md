@@ -5,6 +5,18 @@
 [![image](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/license/mit/)
 [![image](https://img.shields.io/badge/LaTeX-v0.3.0-yellowgreen)](https://www.tug.org/texlive/)
 
+## Abstract
+
+This thesis explores the implementation of deep learning into semiparametric
+Difference-in-Differences estimation (DiD), highlighting its potential under more
+realistic conditional Parallel Trends Assumption. It reviews current classical and
+machine learning techniques, introduces deep learning for first-step DiD estimation, and
+conducts a Monte Carlo Simulation to compare traditional methods with deep learning
+variations. The results demonstrate that deep learning approaches perform nearly as well
+as the best traditional techniques and outperform those in scenarios with incorrectly
+specified outcomes. Finally, DiD deep learning estimators show promise in real-world
+applications, handling heterogeneous treatment effects effectively.
+
 ## Usage
 
 To get started, create and activate the environment with
@@ -23,42 +35,34 @@ $ pytask
 
 this includes creating the pdf of the thesis and running multiple simulations.
 
-## Paper
+## Table of Contents
 
-The paper is structured as follows in */paper/*:
+1. Introduction - 1
+1. Methodology - 3
+   1. 2x2 Difference in Differences - 3
+   1. Outcome Regression - 4
+   1. Inverse Probability Weighting - 4
+   1. Double Robust Difference in Differences - 5
+1. Deep Learning - 7
+   1. Revision of Deep Learning - 7
+   1. Deep Learning for Inference - 10
+1. Monte Carlo Simulations - 11
+   1. Data Generating Process - 11
+   1. Results Homogenous Treatment Effects - 13
+   1. Results Heterogeneous Treatment Effects - 15
+   1. Comparison of Deep Learning Architectures - 17
+1. Application - 18
+1. Discussion and Further Research - 21
+1. Conclusion - 22
 
-- Main file for the paper
-  - deep_learning_for_semiparametric_did_estimation.tex
-- Titel page
-  - title.tex
-- Introduction
-  - intro.tex
-- Methodology
-  - methodology.tex
-- Deep Learning
-  - deepl.tex
-- Monte Carlo Simulations
-  - monte_carlo.tex
-- Application
-  - application.tex
-- Discussion
-  - discussion.tex
-- Conclusion
-  - conclusion.tex
-- Appendix
-  - appendix.tex
-- References
-  - references.bib
-- Statement
-  - statement.tex
+The papers content is structured in LaTeX in the following directory: */paper/*
 
 ## Monte Carlo Simulations
 
 ### Classical Methods
 
-Non-deep learning simulations are ordered like that in the paper:
-
-These include the following estimators:
+Non-deep learning simulations are ordered like that in the paper, which includes the
+following estimators:
 
 - Two-Way-Fixed-Effects
   - twfe_dgp1.py
