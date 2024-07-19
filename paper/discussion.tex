@@ -3,42 +3,40 @@
 %write that section first if I know if I write the application
 %cross sectional data extension
 %what is the problem with cross sectional data
-There are multiple ways to extend the results of this thesis.
-One is to apply the aforementioned methods on repeated cross-sectional data.
-Even though panel data is the preferred data structure for causal inference, cross-sectional data is often the only available data.
-That is because generally the panel data structure allows for lower variance than cross sectional data.
-Nonetheless, \citet{santannaDoublyRobustDifferenceindifferences2020} and \citet{manfeDifferenceInDifferenceDesignRepeated} show how useful it can be to implement \ac{did} on repeated cross-sectional data.
-Applying deep learning to this data structure could be an promising approach to estimate causal effects.
+Naturally, this thesis cannot do justice to all aspects of semiparametric estimation with deep learning, such that there are multiple ways to extend the results in further research.
+One possible extension is to apply the aforementioned methods on repeated cross-sectional data.
+Altough panel data is the preferred data structure for causal inference due to its generally lower variance, cross-sectional data is often the only available option.
+Nonetheless, \citet{santannaDoublyRobustDifferenceindifferences2020} and \citet{manfeDifferenceInDifferenceDesignRepeated} demonstrate the usefulness of implementing \ac{did} on repeated cross-sectional data.
+Applying deep learning to this data structure could be a promising approach to estimate causal effects.
 
 %santana and callaway how to implement it for multiple time periods
-Another extension is to deviate from the classical 2x2 \ac{did} setting and apply the deep learning approach to multiple time periods or groups.
-A natural extension is to use the work of \citet{callawayDifferenceinDifferencesMultipleTime2021} that extend the results of \citet{santannaDoublyRobustDifferenceindifferences2020} that is a basis of this thesis.
-The main contributions of  \citet{callawayDifferenceinDifferencesMultipleTime2021} are the application of the \ac{or}, \ac{ipw}, and \ac{drdid} on multiple time periods and groups.
-Especially accounting for conditonal \ac{pta} and heterogenous treatment effect in this setting would make it interesting to apply deep learning.
+Another extension is to move the classical 2x2 \ac{did} setting and apply the deep learning approach to multiple time periods or groups.
+A natural extension would be the use of the work of \citet{callawayDifferenceinDifferencesMultipleTime2021}, which extend the results of \citet{santannaDoublyRobustDifferenceindifferences2020} that form the basis of this thesis.
+The main contributions of  \citet{callawayDifferenceinDifferencesMultipleTime2021} are the application of the \ac{or}, \ac{ipw}, and \ac{drdid} methods to multiple time periods and groups.
+Accounting for conditonal \ac{pta} and heterogenous treatment effect in this setting would make the application of deep learning particularly interesting.
 
-The paper of \citet{dechaisemartinDifferenceinDifferencesEstimatorsIntertemporal2024} would be another interesting extension to apply deep learning to.
-Similar to the work of \citet{callawayDifferenceinDifferencesMultipleTime2021} they extend the \ac{did} estimator to multiple time periods and groups.
-They deviate by focussing on non-binary, non-absorbing treatments with lags.
+The work of \citet{dechaisemartinDifferenceinDifferencesEstimatorsIntertemporal2024} would be another interesting extension to apply deep learning to.
+Similar to \citet{callawayDifferenceinDifferencesMultipleTime2021}, they extend the \ac{did} estimator to multiple time periods and groups but focus on non-binary, non-absorbing treatments with lags.
 
 %discuss the shortcoming of my results
 %overfitting on L2 regularization
 %which archtiecture to choose
 %more understanding of the inherent structure of the data (like in the farrell paper l2 regularization)
-A major criticism of the deep learning approach is the arbitrary choice of the deep learning architecture and hyperparameters.
+A major criticism of the deep learning approach is the arbitrary choice of architecture and hyperparameters.
 There is still a lack of understanding of the inherent structure deep learning and how to choose the right architecture.
-It is unclear how the number of hidden layers, the number of neurons, or the choice of activation function impact the results.
-\citet{farrellDeepNeuralNetworks2021} discusses the notes the unclear effect of l2 regularization on deep learning in inference.
-In Section 4.4 I discussed that also in this thesis the choice of hyperparameters can have a significant impact on the results.
+It is unclear how the number of hidden layers, the number of neurons, or the choice of activation function impacts the results.
+\citet{farrellDeepNeuralNetworks2021} discusse the unclear effect of l2 regularization on deep learning in inference, even though often used in practice.
+In Section 4.4, I discuss that this thesis, the choice of hyperparameters can influence the magnitude of the results.
 More research needs to be done to give guidance on how to choose the right architecture and hyperparameters for deep learning in causal inference.
 
 Even though the effect of the size of the arhitecture is unclear for inference, it is intuitive that more hidden layers and neurons are computationally more expensive.
-For economist this issue has in the past been a minor concern but with the advent of deep and machine learning it becomes more important.
-Especially for large and complex data sets, the computational cost of deep learning can be a major concern.
-Further research is needed to understand how to make deep learning computationally more efficient.
+For economist, this issue has been a minor concern in the past, but with the advent of deep and machine learning, it becomes more important.
+Especially for large and complex data sets, the computational cost of deep learning can be demanding and computation time extensive.
+Further research is needed to understand how to make deep learning computationally more efficient as suggested by \citet{farrellDeepNeuralNetworks2021}.
 
 %what is new stuff
 %%ausblick auf neue deep learning approaches (direct estimation with deepl by farrel paper 2)
 A relatively new approach to using deep learning for inference is the direct estimation of treatment effects.
-Instead of incorporating deep learning within a semiparametric framework, it is used to directly recover parameter functions, as suggested by the work of \citet{DeepLearningIndividual2021}.
+Instead of incorporating deep learning within a semiparametric framework, it is used directly to recover parameter functions, as suggested by the work of \citet{DeepLearningIndividual2021}.
 This approach allows for second-stage inference, such as estimating how treatment impacts evolve over time or across different subgroups.
 Incorporating direct estimation of \ac{att} with deep learning, rather than using it solely for first-stage estimation, could provide an interesting extension for estimating causal effects.

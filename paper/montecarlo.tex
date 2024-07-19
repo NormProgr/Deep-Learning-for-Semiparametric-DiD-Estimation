@@ -3,30 +3,30 @@
 
 \subsection{Data Generating Process}
 
-In this section, I present the data \ac{dgp} for the Monte Carlo simulations.
+In this section, I introduce the \ac{dgp} for the Monte Carlo simulations.
 The \ac{dgp} is based on the simulation study by \citet{kang2007demystifying} and \citet{santannaDoublyRobustDifferenceindifferences2020}.
 The advantage of this setup is to ensure comparability with previous studies and allowing to validate novel approaches as the use of deep learning for \ac{did} estimation.
 For all simulations, the \ac{dgp} has a total sample size of $n=1000$.
-There are two time periods $t=0,1$ and two groups $i=0,1$ investigated, such that it allows to apply the classical $2\times2$-\ac{did} estimator.
-As individuals are tracked over time, the data is panel data.
-\citet{kang2007demystifying} created the \ac{dgp} the way such there are covariate specific trends and homogenous treatment effects.
+There are two time periods $t=0,1$ and two groups $i=0,1$, such that it allows to apply the classical $2\times2$-\ac{did} estimator.
+Since individuals are tracked over time, the data is panel data.
+\citet{kang2007demystifying} created the \ac{dgp} to include covariate specific trends and homogenous treatment effects.
 The true \ac{att} is $\tau = 0$.
-In the first simulation in Table \ref{tab:table1} I stick to this specification, in the second simulation in Table \ref{tab:table2} I extend the \ac{dgp} to allow for heterogeneous treatment effects.
+In the first simulation shown in Table \ref{tab:table1} I adhere to this specification. In the second simulation in Table \ref{tab:table2} I extend the \ac{dgp} to allow for heterogeneous treatment effects.
 
-Consider the arbitrary input vector $M = (M_1, M_2, M_3, M_4)'$ and let the true \ac{or} and propensity score based \ac{ipw} model be defined as follows:
+To introduce the outcome generation of the \ac{dgp}, consider the arbitrary input vector $M = (M_1, M_2, M_3, M_4)'$ and let the true \ac{or} and propensity score-based \ac{ipw} model be defined as follows:
 \begin{align}
     f_{\text{or}}(M) &= 210 + 27.4 \cdot M_1 + 13.7 \cdot (M_2 + M_3 + M_4), \\
     f_{\text{ps}}(M) &= 0.75 \cdot (-M_1 + 0.5 \cdot M_2 - 0.25 \cdot M_3 - 0.1 \cdot M_4).
 \end{align}
-Note that in this data is a selection bias constructed \citep{kang2007demystifying} such that naive estimators are likely to be biased.
+Note that in this data a selection bias constructed \citep{kang2007demystifying} such that naive estimators are likely to be biased.
 As $M$ is arbitrary, \citet{kang2007demystifying} introduce two variations of covariates $Z$ and $X$ that are used in the simulations.
 $Z$ is a set of observable variables, while $X$ is a set of unobservable variables.
-In this simulation study, $f_{\text{or}}(M)$ and $f_{\text{ps}}(M)$ is constructed only by $Z$ or only by $X$ or a combination of both.
-Thus there are four different \ac{dgp} setups that are labeled as DGP1, DGP2, DGP3, and DGP4.
+In this simulation study, $f_{\text{or}}(M)$ and $f_{\text{ps}}(M)$ are constructed only by $Z$, only by $X$, or a combination of both.
+Thus there are four different \ac{dgp} setups labeled as DGP1, DGP2, DGP3, and DGP4.
 These four setups differ because $Z$ is a non-linear transformation of $X$.
 
-Consider $\mathbf{X} = (X_1, X_2, X_3, X_4)'$ be distributed as $N(0, I_4)$. $I_4$ is the $4 \times 4$ identity matrix.
-For $j = 1, 2, 3, 4$, \citet{kang2007demystifying} define the following variations of $Z_j = \frac{\tilde{Z}_j - \mathbb{E}[\tilde{Z}_j]}{\sqrt{\text{Var}(\tilde{Z}_j)}}$ where
+Consider $\mathbf{X} = (X_1, X_2, X_3, X_4)'$ distributed as $N(0, I_4)$, where $I_4$ is the $4 \times 4$ identity matrix.
+For $j = 1, 2, 3, 4$, \citet{kang2007demystifying} define the following variations of $Z_j = \frac{\tilde{Z}_j - \mathbb{E}[\tilde{Z}_j]}{\sqrt{\text{Var}(\tilde{Z}_j)}}$ where:
 \begin{align} \nonumber
 \tilde{Z}_1 &= \exp(0.5X_1), \\ \nonumber
 \tilde{Z}_2 &= 10 + \frac{X_2}{1 + \exp(X_1)}, \\
@@ -34,14 +34,13 @@ For $j = 1, 2, 3, 4$, \citet{kang2007demystifying} define the following variatio
 \tilde{Z}_4 &= (20 + X_2 + X_4)^2.  \nonumber
 \label{eq:13}
 \end{align}
-Each variation of $Z$ differs by their functional form as they are quadratic, exponential, and cubic,
+Each variation of $Z$ differs by their functional form as they are quadratic, exponential, and cubic.
 They also include variations of interactions of $X$.
-This complexity in the functional form of $Z$ is added to invoke potential biases, when estimating the \ac{att}.
-For example, when the true \ac{dgp} is based on $X$ but the model estimates based on $Z$ then the estimates are likely to be biased.
-As we can construct either the \ac{or} or \ac{ipw} model based on $Z$ or $X$ or a combination of both, we have four different setups.
-In the following is the setup for each \ac{dgp} presented and it is also stated which model is then correctly specified and which is not.
+This complexity in the functional form of $Z$ is added to invoke potential biases when estimating the \ac{att}.
+For example, when the true \ac{dgp} is based on $X$ but the model estimates based on $Z$, then the estimates are likely to be biased.
+As we can construct either the \ac{or} or \ac{ipw} model based on $Z$, $X$, or a combination of both, we have four different setups.
+The setup for each \ac{dgp} is presented below, indicating which model is correctly specified and which is not.
 \begin{multicols}{2}
-
 \textbf{DGP1} \\
 (IPW and OR models correct)
 \begin{align*}
@@ -50,7 +49,6 @@ In the following is the setup for each \ac{dgp} presented and it is also stated 
     p(Z) &= \frac{\exp \left( f_{\text{ps}}(Z) \right)}{1 + \exp \left( f_{\text{ps}}(Z) \right)}, \\
     D &= 1\{ p(Z) \geq U \};
 \end{align*}
-
 \textbf{DGP2} \\
 (IPW model incorrect, OR correct)
 \begin{align*}
@@ -90,6 +88,7 @@ In this section I present the results of the Monte Carlo simulations for the hom
 Table \ref{tab:table1} and Table \ref{tab:table2} report the average bias, median bias, root mean squared error, and variance of the estimators.
 $\hat{\tau}^{corr}$ are the results of the correctly specified \ac{twfe} from Equation \ref{eq:twfecorr}, which can be interpreted as a baseline for the other estimators.
 $\hat{\tau}^{fe}$ is the naive \ac{twfe} estimator from Equation \ref{eq:twfe}, as argued, the estimator is highly biased because the naive selection of controls does not reflect the underlying function of the data.
+Note that the coverage probability is across \ac{dgp}s almost zero.
 $\hat{\tau}^{ipw}$ and $\hat{\tau}^{dr}$ are the results of the \ac{ipw} and \ac{drdid} estimators, respectively.
 In both cases are the propensity scores estimated with a logistic regression.
 The results of $\hat{\tau}^{fe}$, $\hat{\tau}^{ipw}$, and $\hat{\tau}^{dr}$ are directly comparable to the results of \citet{santannaDoublyRobustDifferenceindifferences2020} panel data case.
@@ -97,6 +96,8 @@ $\hat{\tau}^{ipw,dl}$ and $\hat{\tau}^{dr,dl}$ are the results of the \ac{ipw} a
 Note that the \ac{or} part of $\hat{\tau}^{dr,dl}$ is estimated as a linear model.
 
 One can see that in DGP1 all estimators have relatively small biases, except for the naive \ac{twfe} estimator.
+Also the coverage is quite high, and reaches in the case of the deep learning applications even 1.
+This is most likely due to inflated confidence interval length \citep{farrellDeepNeuralNetworks2021}.
 This is consistent as DGP1 marks the case where the \ac{ipw} and \ac{or} models are correctly specified.
 In DGP2 the propensity score approach is misspecified such that $\hat{\tau}^{ipw}$ and $\hat{\tau}^{ipw,dl}$ are biased but the bias for the  $\hat{\tau}^{ipw,dl}$ is substantial.
 Possible reasons could be overfitting or the prediction of extreme propensity scores.
@@ -110,6 +111,8 @@ DGP4 is the most challenging but probably most realistic case as both the \ac{ip
 One can see clearly that all estimators are now more biased and have higher variance.
 Surprisingly is that the $\hat{\tau}^{dr,dl}$ reports the smallest bias and relatively small variance compared to the other estimators.
 This result is consistent with the findings of \citet{belloni2017program,chernozhukovDoubleDebiasedMachine2018,farrellDeepNeuralNetworks2021} that deep learning is useful to recover the true treatment effect if there is nuisance in the data.
+
+
 
 Overall, the results seem to be consistent with the findings of the literature of deep learning and \ac{did} estimation.
 It should be noted that the biases of the deep learning estimators are relatively similar distributed within each \ac{dgp}.
@@ -157,17 +160,17 @@ This is consistent with the findings of \citet{farrellDeepNeuralNetworks2021} an
 
 \subsection{Comparison of Deep Learning Architectures}
 
-The choice of the correct neural network is often arbitrary as discussed in Section 3.
-This is depending which kind of activation function, neural network class or hyperparameters are selected.
+The choice of the correct neural network is generally arbitrary as discussed in Section 3.
+This is due to the chosen activation function is chosen, neural network class or hyperparameters.
 Table \ref{tab:nn} shows the influence of different hyperparameters on the \ac{dgp} used in Section 4.3.
 Note that the activation function is \ac{relu} and the neural network is a feedforward neural network across all architectures.
 
-It is clear to see in table \ref{tab:nn} that there is no strict better alternative architecture to the neural network class that is used in this thesis.
+It is clear to see in table \ref{tab:nn} that there is no strictly better alternative architecture comparing these neural network class.
 Every change in the  hyperparameter selection comes to the cost of either higher bias or higher variance, which is a common trade-off in machine learning.
 For example has the classic architecture higher bias than the first variation that has more hidden layers and units.
-This comes with the cost of higher variance.
+This comes to the cost of higher variance.
 Interestingly is there no clear sign that deeper neural networks (with more units and layers) actually imposes better results than shallower networks.
-Generally come deeper neural networks with higher computational costs, which can be extensive in case of complex and large data.
+Generally come deeper neural networks with higher computational costs, which can be extensive especially in case of complex and large data.
 
 Additionally one can see that the first variation of the architecture has a bigger validation loss than training loss.
 The neural networks 4 and 5 report very small differences between the losses.
@@ -175,8 +178,20 @@ As argued indicates a higher validation loss to training that the model overfits
 For practioners it might be useful to use the results of the loss to evaluate which neural networks to select.
 \input{./graphs/table_nn}
 
-This results show that there is still no clear understanding how to select optimal deep learning models for inference.
-There are options like grid search with frameworks like TensorFlow\textsuperscript{\textregistered} that can help in case of simulations but for observational data the choice of optimal neural networks remains unclear.
+Observing the coverage probability in Table \ref{tab:nn} one can see again the extreme coverage of 1 in all but one case.
+The exemption variation 4 has the lowest learning rate and reports coverage probability of 0.84.
+The learning rate is comparable to \citet{farrellDeepNeuralNetworks2021} that also report very high coverage probabilites but not as extreme as here.
+%regularization preach cautios
+%say something theoretically about learning rates here
+To better understand why in the most cases here the coverage probabilities reported here are extreme one can observe figure \ref{fig:atte_bounds}.
+Over all 1000 runs of the \ac{mcs} the estimated conditional \ac{att} never reaches the smallest upper or lower bound.
+Interestingly the true zero effect is never recovered.
+The very dense and narrow distribution is comparable to the results of \citet{farrellDeepNeuralNetworks2021}.
+
+These results show that there is still no clear understanding how to select optimal deep learning models for inference.
+The comparison of the neural network architectures even implies a modest sensitivity towards selected hyperparameters.
+There are options like grid search with frameworks like TensorFlow\textsuperscript{\textregistered} that can help in selecting hyperparameters for simulations but for observational data the choice of optimal neural networks remains unclear.
+\\
 \begin{figure}[h]
 \centering
 \caption{Conditional Average Treatment on the Treated Effekt with Bounds}

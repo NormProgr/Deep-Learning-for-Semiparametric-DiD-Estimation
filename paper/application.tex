@@ -1,12 +1,12 @@
 \section{Application}
 
-An early application of \ac{did} is the paper of \citet{meyer1990workers} that investigate the effect of workers' compensation on their time out of work.
+An early application of \ac{did} is the paper of \citet{meyer1990workers} who investigate the effect of workers' compensation on their time out of work.
 In 1980 the states of Kentucky and Michigan substantially increased the compensations in case of work induced disability or injury.
 As the policy just affected high-earning workers, \citet{meyer1990workers} took low-earning workers as a control group.
 Their idea is that low- and high earning workers are comparable except for the fact that high earning workers are treated with the compensation policy.
 In their original study they report a significant increase in time out of work for Kentucky but not for Michigan.
 
-\citet{meyer1990workers} implemented a classic $2 \times 2$ \ac{did} design, which makes it suitable to the methods discussed in this thesis.
+\citet{meyer1990workers} implemented a classical $2 \times 2$ \ac{did} design, which makes it suitable to the methods discussed in this thesis.
 Due to the low sample size of the Michigan data, the anaylsis is solely focused on Kentucky.
 Therefore the \ac{did} identification strategy can be formulated as follows:
 \begin{equation}
@@ -18,7 +18,7 @@ $X_{it}$ is a vector of control variables such as injury type, age or gender.
 As \citet{meyer1990workers} uses many of these pre-treatment covariates like age or gender it implicates that they assume conditional \ac{pta}.
 Of course it is not possible to test for \ac{pta} but the conditional \ac{pta} seems to be a more robust assumption in an observational study \citep{santannaDoublyRobustDifferenceindifferences2020}.
 A second remark is towards heterogeneity in the treatment group, which is given in almost all context \citep{DeepLearningIndividual2021}.
-In the Appendix Table \ref{tab:duration} show the difference in duration of out of work time across injury types before and after the treatment.
+The Appendix Table \ref{tab:duration} shows the difference in duration of out of work time across injury types before and after the treatment.
 The magnitude of the differences is quite large, which is a hint towards heterogeneity in the treatment group.
 Based on that I conducted a regression exclusion test following \citet{hansen2022econometrics} where the results can be seen in Table \ref{tab:exclusion_test} in the Appendix.
 The regression exclusion test is significant, which implies that homogeneous treatment effects cannot be assumed.

@@ -10,8 +10,8 @@
 \contentsline {section}{\numberline {4}Monte Carlo Simulations}{11}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Data Generating Process}{11}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Results Homogenous Treatment Effects}{13}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Results Heterogeneous Treatment Effects}{15}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Comparison of Deep Learning Architectures}{17}{subsection.4.4}%
-\contentsline {section}{\numberline {5}Application}{18}{section.5}%
-\contentsline {section}{\numberline {6}Discussion and Further Research}{21}{section.6}%
-\contentsline {section}{\numberline {7}Conclusion}{I}{section.7}%
+\contentsline {subsection}{\numberline {4.3}Results Heterogeneous Treatment Effects}{16}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Comparison of Deep Learning Architectures}{18}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Application}{19}{section.5}%
+\contentsline {section}{\numberline {6}Discussion and Further Research}{22}{section.6}%
+\contentsline {section}{\numberline {7}Conclusion}{24}{section.7}%
