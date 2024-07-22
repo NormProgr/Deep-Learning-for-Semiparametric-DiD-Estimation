@@ -1,14 +1,14 @@
 \section{Methodology}
 
-%\subsection{Notation and Setup}
 
 
 
 \subsection{2x2 Difference in Differences}
 %derive the explanation of 2x2 difference in difference from classic to TWFE and talk about heterogeneous effects
-To introduce a common ground for the rest of the thesis I want to introduce the notation for the basic 2x2 \ac{did} model.
-The model has two time periods given by $T$, where $t \in 0, 1$. These define the pre- and post-treatment period of the policy change.
-Note that I use in the whole thesis panel data such that $i$ denotes the individual over time periods.
+To introduce a common ground for the rest of the thesis, I want to introduce the notation for the basic 2x2 \ac{did} model.
+The model has two time periods given by $T$, where $t \in 0, 1$.
+These define the pre- and post-treatment period of the policy change.
+Throughout the thesis, I use panel data, with $i$ denoting the individual observed over time.
 The two groups are defined by $D$, where $d \in 0, 1$, such that $d = 1$ is the treatment group and $d = 0$ is the control group.
 The outcome variable is given by $Y$ and the variable of interest, the \ac{att}, is given by $\tau^{fe} = \mathbb{E}(Y_{1,1} - Y_{0,1} \mid  X,D = 1)$.
 Therefore the \ac{att} describes the expected difference in outcomes between the treated group (when they receive the treatment) and what their outcomes would have been if they had not received the treatment.
@@ -24,21 +24,21 @@ Second, it assumes that the \ac{pta} holds, such that the treatment and control 
 If one or both of these assumptions are violated the \ac{twfe} estimator in Eq. \ref{eq:twfe} is inconsistent and biased.
 
 To control for heterogeneous treatment effects and to account for conditional \ac{pta}, we can extend the model in Eq. \ref{eq:twfe} by adding interactions of $X$, $T$, and $D$ \citep[see][]{manfeDifferenceInDifferenceDesignRepeated, hansen2022econometrics}.
-Therefore we can rewrite the Eq. \ref{eq:twfe} the following:
+Therefore, one can rewrite the Eq. \ref{eq:twfe} the following:
 \begin{equation}
     Y_{it} = \alpha + \gamma T_{it} + \beta D_{i} + \tau^{corr} (T_{it} \cdot D_{i}) + X_{it}' \theta + (T_{it} \cdot X_{it}') \omega + (D_{i} \cdot X_{it}') \nu + (T_{it} \cdot D_{i} \cdot X_{it}') \rho + \epsilon_{it}
     \label{eq:twfecorr}
 \end{equation}
-Note that $T_{it} \cdot D_{i} \cdot X_{it}'$ is the change of the treatment depending on X and thus the conditional \ac{pta} holds \citep{manfeDifferenceInDifferenceDesignRepeated}.
+Note that $T_{it} \cdot D_{i} \cdot X_{it}'$ is the change of the treatment depending on X, thus the conditional \ac{pta} holds \citep{manfeDifferenceInDifferenceDesignRepeated}.
 Eq. \ref{eq:twfecorr} is therefore, in a correctly specified case, neither biased nor inconsistent.
-The issue is that the econometric practitioner needs very good reasoning and understanding to add the right interactions.
-In the following sections I introduce more flexible techniques circumventing this issue.
+The issue is that the econometric practitioner needs good reasoning and understanding to add the correct interactions.
+In the following sections, I introduce more flexible techniques circumventing this issue.
 
 \subsection{Outcome Regression}
 In this part, I revise \ac{or} as it is an important technique used in \ac{drdid}, rather than using \ac{or} itself for estimating.
 \ac{or} is a generalized \ac{did} estimation approach that estimates the outcomes as a function of covariates, given by $Y_i = g_i(X) + \epsilon_i$, where $i \in 0,1$.
 The basic idea is to predict the control group outcomes based on their covariates and then compare these predicted outcomes to the actual outcomes observed for the treated group.
-The prediction can be done trough a linear regression or other non-linear models like p-nearest neighbor matching \parencite{heckmanMatchingEconometricEvaluation1998}.
+The prediction can be computed through a linear regression or other non-linear models like p-nearest neighbor matching \parencite{heckmanMatchingEconometricEvaluation1998}.
 
 In this thesis, I fit a regression to estimate \ac{or} within the \ac{drdid} framework, allowing to formulate the following model:
 \begin{equation}
@@ -49,21 +49,21 @@ where $\bar{Y}_{1,1} - \bar{Y}_{1,0}$ is the average outcome among treated units
 The part in brackets of eq. \ref{eq:3} is the difference between the predicted control outcomes in the post- and the predicted control outcomes in the pre-treatment period.
 The key expression is $\hat{\mu}_{d,t}(X)$ which estimates the true, unknown $m_{d,t}(x) \equiv \mathbb{E}[Y_t \mid D = d, X = x]$.
 Intuitively, it estimates what the outcome would be for a person with specific traits if they were either treated or not treated.
-Note that if $\hat{\mu}_{d,t}(X)$ is linear it would be close to the correct \ac{twfe} estimator $\tau^{corr}$.
-Finally, it is crucial that $\hat{\mu}_{d,t}(X)$ is correctly specified; otherwise the \ac{att} is biased and inconsistent.
+Note that if $\hat{\mu}_{d,t}(X)$ is linear, it would be close to the correct \ac{twfe} estimator $\tau^{corr}$.
+Therefore, it is crucial that $\hat{\mu}_{d,t}(X)$ is correctly specified; otherwise, the \ac{att} is biased and inconsistent.
 
 \subsection{Inverse Probability Weighting}
 The \ac{ipw} estimator is another common approach to estimate \ac{att}, which relaxes the conditional \ac{pta} as considered in this thesis.
 Contrary to the \ac{or} approach, \ac{ipw} does not directly model the change in the outcome \citep{santannaDoublyRobustDifferenceindifferences2020}.
 Instead, the idea is to only control for covariates that affect the probability of the treatment.
-If the probability of an individual to receive the treatment or being in the control group is the same, then the only difference between control and treatment is chance.
+If the probability of an individual receiving the treatment or being in the control group is the same, then the only difference between control and treatment is chance.
 Thus, there are no biases through confounding variables.
 
-Naturally, it is crucial to correctly estimate the probability of being treated \citep{angrist2009mostly}.
+Therefore, it is crucial to correctly estimate the probability of being treated \citep{angrist2009mostly}.
 The true probability is estimated by the so-called propensity score, given by $p(x) = P(D=1 \mid X)$, which is not directly observable.
 Therefore it is estimated by $\hat{\pi}(X)$.
 Note that there are several ways to estimate the propensity score, such as logistic regression, probit regression, or machine learning techniques.
-These techniques are used in the first-step to estimate the propensity score, and in the second step, the outcome model is estimated parametrically \citep{abadieSemiparametricDifferenceinDifferencesEstimators2005}.
+These techniques are used in the first step to estimate the propensity score, and in the second step, the outcome model is estimated parametrically \citep{abadieSemiparametricDifferenceinDifferencesEstimators2005}.
 In this thesis, I use logistic regression and deep neural networks to estimate the propensity scores.
 
 The \ac{ipw} estimator is given by:
@@ -78,16 +78,16 @@ $Y_1 - Y_0$ captures the change in the outcome for each individual.
 
 Lastly, there are two remarks regarding the \ac{ipw} estimator.
 First, the \ac{ipw} estimator is consistent and unbiased if the propensity scores are correctly specified.
-Second, it is important to consider all relevant covariates in the propensity score estimation \citep{angrist2009mostly}, than to improve the prediction of propensity scores \citep{https://doi.org/10.3982/ECTA18515}.
-The reason is that including irrelevant covariates to improve the prediction of the propensity scores, also increases the variance of the estimator without adding any more information \citep{hernanCausalInferenceWhat}.
+Second, it is crucial to consider all relevant covariates in the propensity score estimation \citep{angrist2009mostly}, than to improve the prediction of propensity scores \citep{https://doi.org/10.3982/ECTA18515}.
+The reason is that including irrelevant covariates to improve the prediction of the propensity scores also increases the variance of the estimator, without adding any more information \citep{hernanCausalInferenceWhat}.
 
 \subsection{Double Robust Difference in Differences}
 
 The \ac{drdid} of \citet{santannaDoublyRobustDifferenceindifferences2020} is a combination of the two approaches discussed before; \ac{or} and \ac{ipw}.
 The \ac{drdid} identifies the \ac{att} correctly if either the \ac{or} or \ac{ipw} is correctly specified.
-In this case the aforementioned weakness of either approach is avoided which makes the \ac{drdid} double robust.
+In this case, the aforementioned weaknesses of either approach are avoided which makes the \ac{drdid} double robust.
 
-Recall from before that $\hat{\pi}(X)$ estimates $p(X)$ the true, unknown propensity score model. $\mu_{d,t}(X)$ is being a model for the true, unknown outcome regression $m_{d,t}(x)\equiv \mathbb{E}[Y_t | D = d, X = x]$, $d, t = 0, 1$.
+Recall from before that $\hat{\pi}(X)$ estimates $p(X)$ the true, unknown propensity score model. $\mu_{d,t}(X)$ is a model for the true, unknown outcome regression $m_{d,t}(x)\equiv \mathbb{E}[Y_t | D = d, X = x]$, $d, t = 0, 1$.
 In this thesis, I only view panel data such that I can write $\Delta Y = Y_1 - Y_0$ for the change in the outcome.
 The expression $\mu_{d,\Delta}(X) \equiv \mu_{d,1}(X) - \mu_{d,0}(X)$ represents the difference in the expected outcomes before and after treatment, adjusted for covariates $X$, for the group with treatment status $D=d$.
 
@@ -104,10 +104,10 @@ w_1(D) = \frac{D}{\mathbb{E}[D]}, \quad  \mathit{and} \quad
 w_0(D, X; \hat{\pi}) = \frac{\hat{\pi}(X)(1-D)}{1 - \hat{\pi}(X)} \Bigg/ \mathbb{E} \left[ \frac{\hat{\pi}(X)(1-D)}{1 - \hat{\pi}(X)} \right].
 \label{eq:6}
 \end{equation}
-Obviously the \ac{drdid} estimator is consistent and unbiased if both \ac{or} and \ac{ipw} are correctly specified but it is less clear if only one of the two is correctly specified.
+The \ac{drdid} estimator is consistent and unbiased if both \ac{or} and \ac{ipw} are correctly specified but it is less clear if only one of the two is correctly specified.
 To clarify this, assume the \ac{ipw} is incorrectly specified and the \ac{or} is correctly specified.
-The incorrect specification of \ac{ipw} is reflected in $w_0(D, X; \hat{\pi})$ in eq. \ref{eq:6}, because $\hat{\pi}$ is biased.
+The incorrect specification of \ac{ipw} is reflected in $w_0(D, X; \hat{\pi})$ in eq. \ref{eq:6} because $\hat{\pi}$ is biased.
 Meaning the weight for the control group is misspecified for \ac{ipw}.
-This effect is nullified by the correct specification of \ac{or} in $\Delta Y - \mu_{0, \Delta}(X)$, because the change in the outcome evolution is zero in expectation.
-Intuitively, because the \ac{or} correctly identifies that the change in outcome of control should not change over time, as it is not treated, any multiplication of it becomes zero as well.
+This effect is nullified by the correct specification of \ac{or} in $\Delta Y - \mu_{0, \Delta}(X)$ because the change in the outcome evolution is zero in expectation.
+Intuitively, because the \ac{or} correctly identifies that the change in the outcome of control should not change over time, as it is not treated, any multiplication of it becomes zero as well.
 A similar argument can be made for the \ac{or} being misspecified and the \ac{ipw} being correctly specified.
