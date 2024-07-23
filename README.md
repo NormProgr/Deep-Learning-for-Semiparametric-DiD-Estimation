@@ -51,11 +51,11 @@ this includes creating the pdf of the thesis and running multiple simulations.
 1. Monte Carlo Simulations - 11
    1. Data Generating Process - 11
    1. Results Homogenous Treatment Effects - 13
-   1. Results Heterogeneous Treatment Effects - 15
+   1. Results Heterogeneous Treatment Effects - 16
    1. Comparison of Deep Learning Architectures - 17
-1. Application - 18
-1. Discussion and Further Research - 21
-1. Conclusion - 22
+1. Application - 20
+1. Discussion and Further Research - 22
+1. Conclusion - 24
 
 The papers content is structured in LaTeX in the following directory: */paper/*
 
