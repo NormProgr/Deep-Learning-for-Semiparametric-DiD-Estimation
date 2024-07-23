@@ -4,28 +4,28 @@
 \begin{threeparttable}
 \caption{Simulation Results across Neural Network Architectures}
 \label{tab:nn}
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{lrrrrrrr}
     \toprule
 \hline
 \addlinespace
-Metric\textbackslash Architecture & Classic &  1 &  2 &  3 &  4 &  5 \\
+Metric\textbackslash Architecture & Thesis &  1 &  2 &  3 &  4 &  5 & 6 \\
 \addlinespace
 \hline
 \addlinespace
-Avg Bias & -1.593 & -0.409 & -2.731 & -6.011 & -5.501 &-4.369 \\
-Med Bias & -1.591 & -0.557 & -2.669 & -6.002 & -5.524 & -4.483\\
-RMSE & 1.632 & 1.192 & 2.7739 &  6.012 &5.573 & 4.389 \\
-Variance & 16.579 & 18.920 & 15.793 & 11.059 & 11.592 & 11.811 \\
-Training Loss & 0.632 & 0.608 &0.627 &0.658 & 0.723 & 0.657 \\
-Validation Loss & 0.625 & 0.612 &  0.618 & 0.656 & 0.722 & 0.651 \\
-Cover & 1.000 & 1.000 & 1.000 & 1.000 & 0.840 & 1.000 \\
+Avg Bias & -1.596 & -0.409 & -2.731 & -6.011 & -5.501 &-4.369 & 4.328\\
+Med Bias & -1.607 & -0.557 & -2.669 & -6.002 & -5.524 & -4.483&-3.052 \\
+RMSE & 1.633 & 1.192 & 2.7739 &  6.012 &5.573 & 4.389&12.204 \\
+Variance & 16.570 & 18.920 & 15.793 & 11.059 & 11.592 & 11.811 &45.494\\
+Training Loss & 0.632 & 0.608 &0.627 &0.658 & 0.723 & 0.657&0.510 \\
+Validation Loss & 0.625 & 0.612 &  0.618 & 0.656 & 0.722 & 0.651&0.566 \\
+Cover & 1.000 & 1.000 & 1.000 & 1.000 & 0.840 & 1.000 & 0.874\\
 \addlinespace
 \hline
 \addlinespace
-Depth & 3 & 5 & 2 & 3 & 3 & 6 \\
-Units & 32 & 64 & 16 & 128 & 16 & 128 \\
-Learning Rate & 0.01 & 0.001 & 0.01 & 0.001 & 0.0001 & 0.001 \\
-L2 Regularization & 0.01 & 0.001 & 0.01 & 0.1 & 0.01 & 0.01 \\
+Depth & 3 & 5 & 2 & 3 & 3 & 6&3 \\
+Units & 32 & 64 & 16 & 128 & 16 & 128 &32\\
+Learning Rate & 0.01 & 0.001 & 0.01 & 0.001 & 0.0001 & 0.001 &0.01\\
+L2 Regularization & 0.01 & 0.001 & 0.01 & 0.1 & 0.01 & 0.01 &0.00\\
 \hline
 \end{tabular}
 \begin{tablenotes}

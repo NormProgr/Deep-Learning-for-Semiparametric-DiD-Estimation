@@ -1,42 +1,43 @@
 \section{Application}
 
 An early application of \ac{did} is the paper of \citet{meyer1990workers} who investigate the effect of workers' compensation on their time out of work.
-In 1980 the states of Kentucky and Michigan substantially increased the compensations in case of work induced disability or injury.
-As the policy just affected high-earning workers, \citet{meyer1990workers} took low-earning workers as a control group.
-Their idea is that low- and high earning workers are comparable except for the fact that high earning workers are treated with the compensation policy.
-In their original study they report a significant increase in time out of work for Kentucky but not for Michigan.
+In 1980, the states of Kentucky and Michigan substantially increased the compensations in case of work-induced disability or injury.
+As the policy affected high-earning workers, \citet{meyer1990workers} took low-earning workers as a control group.
+Their idea was that low- and high-earning workers are comparable except that high-earning workers are treated with the compensation policy.
+The distribution of the pre-treatment compensation duration for low- and high-earning workers can be seen in the Appendix Figure \ref{fig:log_duration_distribution}.
+In their original study, they report a significant increase in time out of work for Kentucky but not for Michigan.
 
 \citet{meyer1990workers} implemented a classical $2 \times 2$ \ac{did} design, which makes it suitable to the methods discussed in this thesis.
-Due to the low sample size of the Michigan data, the anaylsis is solely focused on Kentucky.
-Therefore the \ac{did} identification strategy can be formulated as follows:
+Due to the low sample size of the Michigan data, the analysis is solely focused on Kentucky.
+Therefore, the \ac{did} identification strategy can be formulated as follows:
 \begin{equation}
 \text{Duration}_{it} = \alpha + \beta_1 \text{Post}_t + \beta_2 \text{HighEarnings}_i + \beta_3 (\text{Post}_t \times \text{HighEarnings}_i) + \gamma X_{it} + \epsilon_{it},
 \label{eq:duration}
 \end{equation}
 where the interaction $(\text{Post}_t \times \text{HighEarnings}_i)$ is the \ac{did} estimator.
-$X_{it}$ is a vector of control variables such as injury type, age or gender.
-As \citet{meyer1990workers} uses many of these pre-treatment covariates like age or gender it implicates that they assume conditional \ac{pta}.
-Of course it is not possible to test for \ac{pta} but the conditional \ac{pta} seems to be a more robust assumption in an observational study \citep{santannaDoublyRobustDifferenceindifferences2020}.
-A second remark is towards heterogeneity in the treatment group, which is given in almost all context \citep{DeepLearningIndividual2021}.
-The Appendix Table \ref{tab:duration} shows the difference in duration of out of work time across injury types before and after the treatment.
-The magnitude of the differences is quite large, which is a hint towards heterogeneity in the treatment group.
-Based on that I conducted a regression exclusion test following \citet{hansen2022econometrics} where the results can be seen in Table \ref{tab:exclusion_test} in the Appendix.
+$X_{it}$ is a vector of control variables such as injury type, age, or gender.
+As \citet{meyer1990workers} use many of these pre-treatment covariates like age or gender it implicates that they assume conditional \ac{pta}.
+By design, it is not possible to test for \ac{pta} but the conditional \ac{pta} seems to be a more robust assumption in an observational study \citep{santannaDoublyRobustDifferenceindifferences2020}.
+A second remark is towards heterogeneity in the treatment group, which is given in almost all contexts \citep{DeepLearningIndividual2021}.
+The Appendix Table \ref{tab:duration} shows the difference in duration of out-of-work time across injury types before and after the treatment.
+The magnitude of the differences is quite large, hinting towards heterogeneity in the treatment group.
+Based on that, I conducted a regression exclusion test following \citet{hansen2022econometrics} where the results can be seen in Table \ref{tab:exclusion_test} in the Appendix.
 The regression exclusion test is significant, which implies that homogeneous treatment effects cannot be assumed.
 
-These results motivate to apply the \ac{drdid} + DL\footnote[5]{Contrary to before I use the prebuilt software implementation of \citet*{doubleml2024R} to be able to report summary statistics for the \ac{drdid} + DL estimation.} estimator to the data of \citet{meyer1990workers}.
-To be able to compare between different designs, I also estimate a saturated dummy design without controls and the regression equation \ref{eq:duration} with controls and interactions.
+These results are reason to apply the \ac{drdid} + DL\footnote[5]{Here I use the prebuilt software implementation of \citet*{doubleml2024R} to be able to report summary statistics for the \ac{drdid} + DL estimation.} estimator to the data of \citet{meyer1990workers}.
+To compare different designs, I also estimate a saturated dummy design without controls and the regression equation \ref{eq:duration} with controls and interactions.
 The estimates are reported in Table \ref{tab:reg_results}.
-Note that the results of the regression equation \ref{eq:duration} are slightly different to the results of \citet{meyer1990workers}.
+Note that the results of the regression equation \ref{eq:duration} are slightly different from the results of \citet{meyer1990workers}.
 This should be due to different handling of the data-cleaning process than to the different estimation methods.
 
 \input{./graphs/table_application_res.tex}
 
-In Table \ref{tab:reg_results} one can clearly see that the results for all parametric models are quite similar.
+In Table \ref{tab:reg_results}, one can see that the results for all parametric models are quite similar.
 Note that the saturated design is similar to the regression equation \ref{eq:duration} implying that the controls might not have a large impact on the results.
-Assuming homogenous treatment effect this result would normally imply that the parametric model is robust and sufficient for estimation.
+Assuming a homogenous treatment effect this result would normally imply that the parametric model is robust and sufficient for estimation.
 Due to the potential heterogeneity in the treatment group, the \ac{drdid} + DL estimator is arguably the most robust model.
 One can see that the \ac{drdid} + DL estimator is still able to retrieve significant results as the other models, even though the standard errors are slightly larger.
-The magnitude of the \ac{att} is also larger than in the other models, implying a even bigger effect of compensation policy in Kentucky than previously assumed.
+The magnitude of the \ac{att} is also larger than in the other models, implying an even bigger effect of compensation policy in Kentucky than previously assumed.
 
 Even though the \ac{drdid} + DL is more robust to unspecified models and heterogeneity in the treatment group, there is the potential issue of overfitting.
 Note that the neural network used in Table \ref{tab:reg_results} has the same architecture as in the simulation study.

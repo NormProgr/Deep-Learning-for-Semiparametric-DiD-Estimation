@@ -1,25 +1,27 @@
 \section*{Appendix}
 
 
+\begin{figure}[h]
+\centering
+\caption{Conditional Average Treatment on the Treated Effekt with Regularization}
+\includegraphics[width=\textwidth]{atte_bounds}
+\label{fig:atte_bounds}
+\end{figure}
+
 
 \begin{figure}[h]
 \centering
-\caption{Example of \ac{relu} Activation Function}
-\includegraphics[width=\textwidth]{relu}
+\caption{Example of a \ac{relu} Activation Function}
+\includegraphics[width=0.7\textwidth]{relu}
 \label{fig:relu}
 \end{figure}
 
-
-
 \begin{figure}[h]
 \centering
-\caption{Distribution of Log Duration by Earnings Category}
+\caption{Distribution of Log Leave Duration by Earnings Category}
 \includegraphics[width=\textwidth]{dist}
 \label{fig:log_duration_distribution}
 \end{figure}
-
-
-
 
 \begin{table}[ht]
 \centering
@@ -47,8 +49,6 @@ Difference & -6.75 & 533.25 & 348.00 & 334.50 & -443.5 & 166.50 & 110.75 & 146.0
 \end{table}
 
 
-% Please add the following required packages to your document preamble:
-% \usepackage{graphicx}
 \begin{table}[]
 \centering
 \caption{Regression Exclusion Test}
@@ -56,7 +56,7 @@ Difference & -6.75 & 533.25 & 348.00 & 334.50 & -443.5 & 166.50 & 110.75 & 146.0
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{llllll}
 Residual Degrees & Sum of Squared  & Degrees of  & Sum of Squares& F     & Pr(\textgreater{}(F)) \\
-of Freedom                    &   Residuals                       &     Freedom Difference                          &         Difference                    &       &                       \\
+of Freedom                    &   Residuals                       &     Freedom Difference    &    Difference   &    &       \\
 \hline
 \hline
 \addlinespace
@@ -66,14 +66,7 @@ of Freedom                    &   Residuals                       &     Freedom 
 }
 \begin{tablenotes}
     \small
-    \item \textbf{Notes}:
-    \item The table reports the results of the regression exclusion test. The test compares the full model with the restricted model, excluding the variable of interest.
-    \small\item \textbf{Residual Degrees of Freedom}: Number of independent pieces of information remaining after fitting the model.
-    \small\item \textbf{Sum of Squared Residuals}: Measure of the discrepancy between the observed data and the model's predictions, quantifying the variation not explained by the model.
-    \small\item \textbf{Degrees of Freedom Difference}: Change in the degrees of freedom when moving from the restricted model to the full model.
-    \small\item \textbf{Sum of Squares Difference}: Reduction in the sum of squared residuals when additional variables are added, indicating the improvement in model fit.
-    \small\item \textbf{F}: F-statistic for the comparison of the two models.
-    \small \item \textbf{Pr(>F)}: p-value for the F-test, indicating the significance of the difference between the models.
+    \item Notes: The table reports the results of the regression exclusion test. The test compares the full model with the restricted model, excluding the variable of interest.
     \end{tablenotes}
 \end{table}
 
