@@ -7,15 +7,17 @@
 
 ## Abstract
 
-This thesis explores the implementation of deep learning into semiparametric
-Difference-in-Differences estimation (DiD), highlighting its potential under more
-realistic conditional Parallel Trends Assumption. It reviews current classical and
-machine learning techniques, introduces deep learning for first-step DiD estimation, and
-conducts a Monte Carlo Simulation to compare traditional methods with deep learning
-variations. The results demonstrate that deep learning approaches perform nearly as well
-as the best traditional techniques and outperform those in scenarios with incorrectly
-specified outcomes. Finally, DiD deep learning estimators show promise in real-world
-applications, handling heterogeneous treatment effects effectively.
+This thesis explores the implementation of deep feedforward neural networks into
+semiparametric Difference-in-Differences estimation (DiD), highlighting its potential
+under conditional parallel trends assumption. It reviews current classical and deep
+learning estimation methods for first-step DiD estimation and conducts a Monte Carlo
+Simulation to test their validity for second-step inference. The results demonstrate
+that deep learning performs nearly as well as the best classical approaches and
+outperforms those in scenarios with incorrectly specified outcomes. To further
+investigate deep learning, multiple deep learning architectures are tested, showing
+sensitivity towards their hyperparameters. Finally, DiD deep learning estimators show
+promise in real-world applications, handling heterogeneous treatment effects
+effectively.
 
 ## Usage
 
