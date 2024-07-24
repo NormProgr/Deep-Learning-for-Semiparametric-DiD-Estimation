@@ -29,30 +29,30 @@ Third, I conduct a \ac{mcs} to compare the performance of traditional techniques
 The simulation design follows \citet{santannaDoublyRobustDifferenceindifferences2020}, using a \ac{dgp} for panel data with four variations.
 The variations differ whether the outcome was generated correctly by \ac{or} or \ac{ipw}, both or none.
 The results show that deep learning approaches perform nearly as well as the best traditional estimators in the first three variations and outperform others when the outcome is not correctly specified by any estimation strategy.
-Additionally, I introduce heterogeneity in treatment for the incorrectly specified case and show that the \ac{drdid} deep learning case is the best-performing technique.
+Additionally, I introduce heterogeneity in treatment for the incorrectly specified case and demonstrate that the \ac{drdid} deep learning case is the best-performing technique.
 These results suggest that deep learning is a valid approach for first-step estimation, especially when imposing few restrictions on the \ac{did} model.
 
 Lastly, I want to apply these techniques to a real-world dataset of \citet{meyer1990workers} to show the potential of the \ac{drdid} deep learning estimator. %explain more
-The estimator shows promising results, robust to heterogeneous treatment effects and under conditional \ac{pta}.
+The estimator shows promising results, robust to heterogeneous treatment effects assuming conditional \ac{pta}.
 
 % add here a part were I say what for issues I had and what problems I encountered
 Finally, this thesis cannot cover all aspects relevant to semiparametric \ac{did} estimation.
-It is crucial to emphasize the sensitivity of semiparametric estimators to the selection of the \ac{dgp}, especially in low-dimensional examples such as here \ac{dgp} \citep{zimmert2018efficient}.
+It is crucial to emphasize the sensitivity of semiparametric estimators to the selection of the \ac{dgp}, especially in low-dimensional examples such as viewed here \citep{zimmert2018efficient}.
 More research is needed to apply deep learning to other DGPs, such as repeated cross-sectional data.
 Additionally, this thesis focuses on the simple 2x2 \ac{did} setting, excluding more complex scenarios like multiple treatment groups or multiple periods \citep[see][]{callawayDifferenceinDifferencesMultipleTime2021,goodman-baconDifferenceindifferencesVariationTreatment2021}.
-Further research is required to develop more computationally efficient deep learning models, making these methods more accessible to econometric practitioners.
+Further research is required to develop more computationally efficient deep learning models, making these methods accessible to econometric practitioners.
 
 The remainder of the thesis is structured as follows: Section I introduces the methodology of all techniques used in this thesis.
 Section II introduces deep learning in general and its use for inference.
-Section III introduces the \ac{mcs} and its results.
+Section III introduces the \ac{mcs} and discusses its results.
 Section IV applies the techniques to a real-world dataset.
-Section V discusses the results and implications.
+Section V discusses further extensions and research.
 Section VI concludes the thesis.
 
 \noindent\rule{3cm}{0.5pt} % Horizontal line
 
 \small
-The code can be found on GitHub for replication purposes:
+The code of this thesis can be found on GitHub for replication purposes:
 \url{https://github.com/NormProgr/Deep-Learning-for-Semiparametric-DiD-Estimation.git}.
 \normalsize
 % Organization of the paper

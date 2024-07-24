@@ -43,19 +43,19 @@ this includes creating the pdf of the thesis and running multiple simulations.
 1. Methodology - 3
    1. 2x2 Difference in Differences - 3
    1. Outcome Regression - 4
-   1. Inverse Probability Weighting - 4
-   1. Double Robust Difference in Differences - 5
-1. Deep Learning - 7
-   1. Revision of Deep Learning - 7
-   1. Deep Learning for Inference - 10
-1. Monte Carlo Simulations - 11
-   1. Data Generating Process - 11
-   1. Results Homogenous Treatment Effects - 13
-   1. Results Heterogeneous Treatment Effects - 16
-   1. Comparison of Deep Learning Architectures - 17
-1. Application - 20
-1. Discussion and Further Research - 22
-1. Conclusion - 24
+   1. Inverse Probability Weighting - 5
+   1. Double Robust Difference in Differences - 6
+1. Deep Learning - 8
+   1. Revision of Deep Learning - 8
+   1. Deep Learning for Inference - 11
+1. Monte Carlo Simulations - 13
+   1. Data Generating Process - 13
+   1. Results Homogenous Treatment Effects - 15
+   1. Results Heterogeneous Treatment Effects - 18
+   1. Comparison of Deep Learning Architectures - 20
+1. Application - 23
+1. Discussion and Further Research - 26
+1. Conclusion - 27
 
 The papers content is structured in LaTeX in the following directory: */paper/*
 
