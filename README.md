@@ -122,6 +122,14 @@ To check code quality, type
 $ pre-commit install
 ```
 
+## Known Issues
+
+Sometimes when running the LaTeX code, especially using a MikTex distribution, an error
+with a missing package called "pearl" appears on windows. To fix this, install the
+package manually from here:
+
+https://strawberryperl.com/
+
 ## Credits
 
 This project was created with [cookiecutter](https://github.com/audreyr/cookiecutter)
