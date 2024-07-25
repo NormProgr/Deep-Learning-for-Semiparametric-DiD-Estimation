@@ -98,6 +98,8 @@ Deep learning simulations can be run by running the accompanying jupyter noteboo
   - architecture_nn.ipynb
 - IPW and DR with Deep Learning for DGP 4 and heterogenous treatment effects
   - SZ_dl_heterogenous.ipynb
+- Neural Network Architecture with DGP 4 and heterogenous treatment effects
+  - architecture_nn_heterogenous.ipynb
 
 to run the code faster it is recommended to use a GPU or run the code in Google Colab.
 
