@@ -3,12 +3,12 @@
 
 This thesis cannot do justice to all aspects of semiparametric estimation with deep learning, such that there are multiple ways to extend the results in further research.
 One possible extension is to apply the aforementioned methods to repeated cross-sectional data.
-Although panel data is the preferred data structure for causal inference due to its generally lower variance, cross-sectional data is often the only available option.
+Although panel data is the preferred data structure for causal inference due to its generally lower variance, cross-sectional data is often the only available option \citep{wooldridge2010econometric}.
 Nonetheless, \citet{santannaDoublyRobustDifferenceindifferences2020} and \citet{manfeDifferenceInDifferenceDesignRepeated} demonstrate the usefulness of implementing \ac{did} on repeated cross-sectional data.
 Applying deep learning to this data structure could be a promising approach to estimating causal effects.
 
 %santana and callaway how to implement it for multiple time periods
-Another extension is to move the classical 2x2 \ac{did} setting and apply the deep learning approach to multiple periods or groups.
+Another extension is to move away from the classical 2x2 \ac{did} setting and apply the deep learning approach to multiple periods or groups.
 A natural extension would be the use of the work of \citet{callawayDifferenceinDifferencesMultipleTime2021}, which extend the results of \citet{santannaDoublyRobustDifferenceindifferences2020} that form the basis of this thesis.
 The main contributions of  \citet{callawayDifferenceinDifferencesMultipleTime2021} are the application of the \ac{or}, \ac{ipw}, and \ac{drdid} methods to multiple periods and groups.
 Accounting for conditional \ac{pta} and heterogenous treatment effect in this setting would make the application of deep learning particularly interesting.
@@ -24,17 +24,17 @@ A major criticism of the deep learning approach is the arbitrary choice of archi
 There is still a lack of understanding of the inherent structure of deep learning and how to choose the right architecture.
 It is unclear how the number of hidden layers, the number of neurons, or the choice of activation function impacts the results.
 \citet{farrellDeepNeuralNetworks2021} discuss the unclear effect of l2 regularization on deep learning in inference, even though often used in practice.
-In Section 4.4, I discuss that in this thesis the choice of hyperparameters can influence the magnitude of the results.
+In Section 4.4, I discuss that the choice of hyperparameters can influence the magnitude of the results.
 More research needs to be done to give guidance on how to choose the right architecture and hyperparameters for deep learning in causal inference.
 
-Even though the effect of the size of the architecture is unclear for inference, it is intuitive that more hidden layers and neurons are computationally more expensive.
+Even though it is unclear how the size of the architecture influences the outcome of the neural network, the more hidden layers and neurons a neural network has, the more computationally costly it is \citep{thompson2020computational}.
 For economists, this issue has been a minor concern in the past, but with the advent of deep- and machine learning, it has become more important.
 Especially for large and complex data sets, the computational cost of deep learning can be demanding and computation time extensive.
 Further research is needed to understand how to make deep learning computationally more efficient as suggested by \citet{farrellDeepNeuralNetworks2021}.
 
 %what is new stuff
 %%ausblick auf neue deep learning approaches (direct estimation with deepl by farrel paper 2)
-A relatively new approach to using deep learning for inference is the direct estimation of treatment effects.
+Finally, a relatively new approach using deep learning for inference is the direct estimation of treatment effects.
 Instead of incorporating deep learning within a semiparametric framework, it is used directly to recover parameter functions, as suggested by the work of \citet{DeepLearningIndividual2021}.
 This approach allows for second-stage inference, such as estimating how treatment impacts evolve over time or across different subgroups.
 Incorporating direct estimation of \ac{att} with deep learning, rather than using it solely for first-stage estimation, could provide an interesting extension for estimating causal effects.

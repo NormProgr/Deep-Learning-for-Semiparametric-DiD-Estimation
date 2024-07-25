@@ -15,7 +15,7 @@ The advantage of the linear \ac{relu} is its computational efficiency and its ab
 When the neural network model is trained, all the weights of the model are updated through a process called \textit{backpropagation}.
 Backpropagation is the algorithm used to compute the gradient of the loss function with respect to each parameter, which is then used to update the parameters such that they minimize the loss.
 The issue that can arise is that updating of parameters is hindered or training is completely stopped \citep{abuqaddom2021oriented}.}
-The \ac{relu} takes any linear combination given by $\tilde{x}' w + b$ and transforms it to $ \sigma(\tilde{x}' w + b)$, where $w$ is the weight vector, $b$ is the constant term\footnote[2]{The actual term in computer science is \textit{bias} but to avoid confusion with econometric term I follow \citet{farrellDeepNeuralNetworks2021} and use the term \textit{constant}.}
+The \ac{relu} takes any linear combination given by $\tilde{x}' w + b$ and transforms it to $ \sigma(\tilde{x}' w + b)$, where $w$ is the weight vector, $b$ is the constant term\footnote[2]{The actual term in computer science is \textit{bias} but to avoid confusion with the econometric term I follow \citet{farrellDeepNeuralNetworks2021} and use the term \textit{constant}.}
 , and $\tilde{x}$ is the input vector.
 Thus, the \ac{relu} function sets all negative values from the linear combination $\tilde{x}' w + b$ to zero, while keeping all positive values unchanged.
 An example of a \ac{relu} function is shown in the Appendix Figure \ref{fig:relu}.
@@ -47,7 +47,7 @@ Unlike simple logistic regression applications, deep learning minimizes the loss
 For this $Z$ is passed multiple times through the neural network until the loss is minimized.
 The amount of iterations is called \textit{epochs}.
 Each epoch refers to one complete pass of the training dataset through the neural network.
-In practice, multiple epochs are typically required for the network to minimize the loss function.
+In practice, multiple epochs are required for the network to minimize the loss function.
 
 Combining all the elements described above, the full neural network can be formalized through recursion:
 \begin{equation}
@@ -92,7 +92,7 @@ The advantage of these machine learning approaches is their robustness towards h
 \citet{chernozhukovDoubleDebiasedMachine2018} approves those results in a low-dimensional setting but reports issues with the neural network if $n$ is small.
 Common across literature are the benefits of deep learning regarding handling heterogeneous treatment effects \citep[see][]{DeepLearningIndividual2021,belloni2017program,chernozhukovDoubleDebiasedMachine2018}
 
-Another major advantage of Deep learning is its effectiveness in high covariate settings \citep{chernozhukov2022automatic}.\footnote[3]{\citet{belloni2017program} demonstrate this for \textit{moderately high} and \textit{very high} amount of covariates compared to the sample size.}
+Another advantage of Deep learning is its effectiveness in high covariate settings \citep{chernozhukov2022automatic}.\footnote[3]{\citet{belloni2017program} demonstrate this for \textit{moderately high} and \textit{very high} amount of covariates compared to the sample size.}
 This advantage arises from deep learning's capability to perform variable selection.
 Especially employing some form of regularization, deep learning can reduce the variance induced by high covariates, albeit at the cost of increased bias \citep{chernozhukovDoubleDebiasedMachine2018}.
 Many machine learning techniques (e.g., lasso or certain tree-based methods) have similar properties.

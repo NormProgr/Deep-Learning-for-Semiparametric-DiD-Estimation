@@ -5,9 +5,9 @@
 
 In this section, I introduce the \ac{dgp} for the Monte Carlo simulations.
 The \ac{dgp} is based on the simulation study by \citet{kang2007demystifying} and \citet{santannaDoublyRobustDifferenceindifferences2020}.
-The advantage of this setup is to ensures comparability with previous studies and allow to validate novel approaches as the use of deep learning for \ac{did} estimation.
+The advantage of this setup is to ensures comparability with previous studies and allow to validate novel approaches as the use of deep neural networks for \ac{did} estimation.
 For all simulations, the \ac{dgp} has a total sample size of $n=1000$.
-There are two time periods $t=0,1$ and two groups $i=0,1$, such that it allows to apply the classical $2\times2$-\ac{did} estimator.
+There are two time periods $t=0,1$ and two groups $i=0,1$, such that it allows to apply the classical 2x2 \ac{did} estimator.
 Since individuals are tracked over time, the data is panel data.
 \citet{kang2007demystifying} created the \ac{dgp} to include covariate specific trends and homogenous treatment effects.
 The true \ac{att} is $\tau = 0$.
@@ -37,7 +37,7 @@ For $j = 1, 2, 3, 4$, \citet{kang2007demystifying} define the following variatio
 Each variation of $Z$ differs by their functional form as they are quadratic, exponential, and cubic.
 They also include variations of interactions of $X$.
 This complexity in the functional form of $Z$ is added to invoke potential biases when estimating the \ac{att}.
-For example, when the true \ac{dgp} are based on $X$ but the model estimates based on $Z$, then the estimates are likely to be biased.
+For example, when the true \ac{dgp} is based on $X$ but the model estimates are based on $Z$, then the estimates are likely to be biased.
 As we can construct either the \ac{or} or \ac{ipw} model based on $Z$, $X$, or a combination of both, we have four different setups.
 The setup for each \ac{dgp} is presented below, indicating which model is correctly specified and which is not.
 \begin{multicols}{2}
@@ -87,19 +87,20 @@ The setup for each \ac{dgp} is presented below, indicating which model is correc
 \input{./graphs/table_low_dim}
 
 In this section, I present the results of the Monte Carlo simulations for the homogenous treatment effects case.
-Table \ref{tab:table1} and Table \ref{tab:table2} report the average bias, median bias, root mean squared error, and variance of the estimators.
-$\hat{\tau}^{corr}$ are the results of the correctly specified \ac{twfe} from Equation \ref{eq:twfecorr}, which can be interpreted as a baseline for the other estimators.
+Table \ref{tab:table1} and Table \ref{tab:table2} report the average bias, median bias, root mean squared error, variance, and coverage of the estimators.
+$\hat{\tau}^{corr}$ are the results of the correctly specified \ac{twfe} estimators from equation \ref{eq:twfecorr}, which can be interpreted as a baseline for the other estimators.
 $\hat{\tau}^{fe}$ is the naive \ac{twfe} estimator from Equation \ref{eq:twfe}, as argued, the estimator is highly biased because the naive selection of controls does not reflect the underlying function of the data.
-Note that the coverage probabilities of the \ac{twfe} estimator across \ac{dgp}s is almost zero.
+The bias can bee seen as the coverage probabilities of the $\hat{\tau}^{fe}$ estimator across \ac{dgp}s are almost zero.
 $\hat{\tau}^{ipw}$ and $\hat{\tau}^{dr}$ are the results of the \ac{ipw} and \ac{drdid} estimators, respectively.
 In both cases are the propensity scores estimated with a logistic regression.
 The results of $\hat{\tau}^{fe}$, $\hat{\tau}^{ipw}$, and $\hat{\tau}^{dr}$ are directly comparable to the results of \citet{santannaDoublyRobustDifferenceindifferences2020} panel data case.
 $\hat{\tau}^{ipw,dl}$ and $\hat{\tau}^{dr,dl}$ are the results of the \ac{ipw} and \ac{drdid} estimators, respectively, where the propensity scores are estimated with a neural network.
-Note that the \ac{or} part of $\hat{\tau}^{dr,dl}$ is estimated as a linear model.
+Note that the \ac{or} part of $\hat{\tau}^{dr,dl}$ and $\hat{\tau}^{dr}$ is estimated as a linear model.
 
-In DGP1, all estimators exhibit relatively small biases, except for the naive \ac{twfe} estimator.
+In DGP1, all estimators exhibit relatively small biases, except for the naive $\hat{\tau}^{fe}$ estimator.
 Additionally, the coverage is quite high, with the deep learning applications even reaching 1.
-This is most likely due to inflated confidence interval length \citep{farrellDeepNeuralNetworks2021}.
+This is likely due to inflated confidence interval length and the applied regularization \citep{farrellDeepNeuralNetworks2021}.
+A more thorough discussion is presented in Section 4.4.
 The results are consistent with the theory, as DGP1 marks the case where the \ac{ipw} and \ac{or} models are correctly specified.
 In DGP2, the propensity score approach is misspecified such that $\hat{\tau}^{ipw}$ and $\hat{\tau}^{ipw,dl}$ are biased but the bias for the  $\hat{\tau}^{ipw,dl}$ is substantial.
 Possible reasons could be overfitting or the prediction of extreme propensity scores.
@@ -108,7 +109,7 @@ This high variance also appears in other data structures, such as repeated cross
 On the other hand, in DGP3 one can see that all estimators are relatively unbiased, except for the naive \ac{twfe} estimator as before.
 These results are consistent as DGP3 marks the case where the \ac{ipw} model is correctly specified.
 In DGP1-3 are both \ac{drdid} estimators $\hat{\tau}^{dr}$ and $\hat{\tau}^{dr,dl}$ relatively unbiased and produce low variance.
-Notably, the classic $\hat{\tau}^{dr}$ of \citet{santannaDoublyRobustDifferenceindifferences2020} does perform slightly better.
+Notably, the classic $\hat{\tau}^{dr}$ of \citet{santannaDoublyRobustDifferenceindifferences2020} does perform slightly better in terms of variance and bias.
 
 DGP4 is the most challenging but probably most realistic case as both the \ac{ipw} and \ac{or} models are misspecified.
 One can see clearly that all estimators are now more biased and have higher variance.
@@ -119,7 +120,7 @@ This result is consistent with the findings of \citet{belloni2017program,chernoz
 
 Overall, the results seem to be consistent with the findings of the literature on deep learning and \ac{did} estimation.
 It should be noted that the biases of the deep learning estimators are relatively similar distributed within each \ac{dgp}.
-This indicates that the deep learning model results across Monte Carlo runs are consistent and not heavily driven by outliers.
+This suggests that the deep learning model results across Monte Carlo runs are consistent and not heavily driven by outliers.
 The results also mirror a structural aspect of deep learning that especially when using regularization methods, they are prone to produce symmetrically distributed errors around zero \citep{koh2017understanding}.
 
 To evaluate if the deep learning model is robust, I report the minimum loss of the training and validation set in Table \ref{tab:table3}.
@@ -136,7 +137,7 @@ Importantly, across all setups is the validation loss smaller than the training 
 
 
 \subsection{Heterogeneous Treatment Effects Simulation}
-In the previous section, I outlined the advantage of deep learning, or machine learning in general, when dealing with heterogeneous treatment effects.
+In the previous sections, I outlined the advantage of deep learning, or machine learning in general, when dealing with heterogeneous treatment effects.
 The problem of heterogeneous treatment effect arises when the treatment effect $\theta(X)$ varies across groups \citep{hansen2022econometrics}.
 To validate how the aforementioned estimators perform under heterogeneous treatment effects, I introduce heterogeneity to the DGP4.
 DGP4 is the most general and possibly the most realistic case of the observed \ac{dgp}s.
@@ -151,30 +152,30 @@ DGP4 can therefore be rewritten as follows:
     D &= 1\{ p(X) \geq U \},
 \end{align*}
 where: $\theta(X) = 10 \cdot (Z_1 + Z_2 - Z_3 + Z_4)$.\\
-\input{./graphs/table_het_dgp4}
+
 The results of the Monte Carlo simulations with heterogeneous treatment effects are presented in Table \ref{tab:table2}.
 The estimators $\hat{\tau}^{fe}$,$\hat{\tau}^{corr}$,$\hat{\tau}^{ipw}$, and $\hat{\tau}^{dr}$ are now more biased and have higher variance compared to the homogenous treatment effects case.
 These results are consistent with the literature as these methods do not account for heterogeneity \citep{hansen2022econometrics}.
 \citet{manfeDifferenceInDifferenceDesignRepeated} reports similar more biased results for the \ac{ipw} and \ac{drdid} estimator in the case of repeated cross-sectional data.
 The $\hat{\tau}^{ipw,dl}$ also reports higher bias and variance compared to the homogenous treatment effects case.
 But the $\hat{\tau}^{ipw,dl}$ is now overall less biased and has lower variance than the comparable $\hat{\tau}^{ipw}$.
-The same is true for the $\hat{\tau}^{dr,dl}$, which reports the smallest bias and variance across all estimators.
+The same applies to the $\hat{\tau}^{dr,dl}$, which reports the smallest bias and variance across all estimators.
 These results are interesting as they indicate that neural networks are more robust towards covariate-specific trends and heterogeneous treatment effects than comparable estimators viewed in this thesis.
 This is consistent with the findings of \citet{farrellDeepNeuralNetworks2021} and \citet{chernozhukovDoubleDebiasedMachine2018}.
-
+\input{./graphs/table_het_dgp4}
 \subsection{Comparison of Deep Learning Architectures}
 
-The choice of the correct neural network is generally arbitrary as discussed in Section 3.
+The choice of the correct neural network seems generally arbitrary as discussed in Section 3.
 This is due to the chosen activation function, neural network class, or hyperparameters.
 Table \ref{tab:nn} shows the influence of different hyperparameters on the \ac{dgp} used in Section 4.3.
 Note that the activation function is \ac{relu} and the neural network is a feedforward neural network across all architectures.
 
-In table \ref{tab:nn} one can see, that there is no strictly better alternative architecture when comparing these neural network classes.
+In table \ref{tab:nn} one can see, that there is no strictly better alternative architecture when comparing these neural network classes, except variation 6.
 Every change in the hyperparameters comes to the cost of either higher bias or higher variance, which is a common trade-off in machine learning.
 For example, the architecture used throughout the thesis has a higher bias compared to the first variation, which has more hidden layers and units.
 This comes at the cost of higher variance.
 Interestingly, there is no clear sign that deeper neural networks (with more units and layers) impose better results than shallower networks.
-Generally, deeper neural networks come with higher computational costs, which can be extensive, especially in the case of complex and large data.
+Generally, deeper neural networks come with higher computational costs, which can be extensive, especially in the case of complex and large data \citep{thompson2020computational}.
 
 Additionally, one can see that the first variation and the last variation have a bigger validation loss than training loss.
 The neural networks 4 and 5 report very small differences between the losses.
@@ -184,14 +185,14 @@ For practitioners, it might be useful to use the results of the loss to evaluate
 
 
 %here
-Observing the coverage probability in Table \ref{tab:nn}, one can see again the extreme coverage of 1 in all but two cases.
+Observing the coverage probabilities in Table \ref{tab:nn}, one can see again the extreme coverage of 1 in all but two cases.
 The exemptions are variations 4 and 6 which report a coverage probability of 0.84 and 0.874, respectively.
 Variation 4 reports the lowest learning rate and variation 6 is equal to the architecture used throughout the thesis but with no regularization imposed.
 The learning rate of variation 4 is comparable to \citet{farrellDeepNeuralNetworks2021} which also report very high coverage probabilities but not as extreme as 1.
 \citet{farrellDeepNeuralNetworks2021} argue that regularization can lead to extreme coverage probabilities but it is not clear how large the impact is.
-The results of the thesis application and variation 6 suggest that imposing regularization might lead to extreme coverage probabilities.
+The results of the thesis application and variation 6 support this argument that imposing regularization might lead to extreme coverage probabilities.
 Variation 4 has a similar regularization as the other variations but a smaller learning rate, which could hint that learning rate and regularization affect the distribution of estimates and thus the coverage probabilities.
-The results emphasize the effect of hyperparameter selection on the model outcome and imply being cautious when imposing regularization within neural networks as \citet{farrellDeepNeuralNetworks2021} suggest.
+The results emphasize the effect of hyperparameter selection on the model outcome and imply caution when imposing regularization within neural networks as \citet{farrellDeepNeuralNetworks2021} suggest.
 
 \begin{figure}[h]
 \centering
@@ -204,10 +205,10 @@ The results emphasize the effect of hyperparameter selection on the model outcom
 To better understand the extreme coverage probabilities reported in this thesis, one can observe Figure \ref{fig:atte_bounds_noreg}.
 It shows for 1000 runs of the \ac{mcs} the estimated conditional \ac{att} of variation 6 without regularization.
 The highest density of the distribution is around 0, which is the "true" effect.
-In Appendix Figure \ref{fig:atte_bounds} one can see the results of the application used throughout the thesis.
-The estimated conditional \ac{att} never reaches the average upper or lower bound, thus indicating the extreme coverage probabilities of 1.
+In Appendix Figure \ref{fig:atte_bounds} one can see the distribution of the neural network implementation used throughout the thesis.
+In this case, the estimated conditional \ac{att} never reaches the average upper or lower bound, thus indicating the extreme coverage probabilities of 1.
 The distribution of the estimates is very dense and narrow as comparable to the results of \citet{farrellDeepNeuralNetworks2021}.
-Note that the application used throughout the thesis does not recover the true treatment effect even though reporting much lower bias and variance than variation 6.
+Note that the application used throughout the thesis does not recover the true treatment effect shown in Appendix Figure \ref{fig:atte_bounds} even though reporting much lower bias and variance than variation 6.
 
 These results show that there is still no clear understanding of how to select optimal deep learning models for inference.
 The comparison of the neural network architectures even implies a strong sensitivity towards selected hyperparameters.

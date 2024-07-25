@@ -1,10 +1,10 @@
 \section{Application}
 
-An early application of \ac{did} is the paper of \citet{meyer1990workers} who investigate the effect of workers' compensation on their time out of work.
+An early application of \ac{did} is the paper of \citet{meyer1990workers} who investigate the effect of a workers' compensation reform on their time out of work.
 In 1980, the states of Kentucky and Michigan substantially increased the compensations in case of work-induced disability or injury.
 As the policy affected high-earning workers, \citet{meyer1990workers} took low-earning workers as a control group.
 Their idea was that low- and high-earning workers are comparable except that high-earning workers are treated with the compensation policy.
-The distribution of the pre-treatment compensation duration for low- and high-earning workers can be seen in the Appendix Figure \ref{fig:log_duration_distribution}.
+The distribution of the pre-treatment out-of-work duration for low- and high-earning workers can be seen in the Appendix Figure \ref{fig:log_duration_distribution}.
 In their original study, they report a significant increase in time out of work for Kentucky but not for Michigan.
 
 \citet{meyer1990workers} implemented a classical $2 \times 2$ \ac{did} design, which makes it suitable to the methods discussed in this thesis.
@@ -33,11 +33,11 @@ This should be due to different handling of the data-cleaning process than to th
 \input{./graphs/table_application_res.tex}
 
 In Table \ref{tab:reg_results}, one can see that the results for all parametric models are quite similar.
-Note that the saturated design is similar to the regression equation \ref{eq:duration} implying that the controls might not have a large impact on the results.
+Note that the results of the saturated design are similar to the regression equation \ref{eq:duration} implying that the controls might not have a large impact on the results.
 Assuming a homogenous treatment effect this result would normally imply that the parametric model is robust and sufficient for estimation.
 Due to the potential heterogeneity in the treatment group, the \ac{drdid} + DL estimator is arguably the most robust model.
-One can see that the \ac{drdid} + DL estimator is still able to retrieve significant results as the other models, even though the standard errors are slightly larger.
-The magnitude of the \ac{att} is also larger than in the other models, implying an even bigger effect of compensation policy in Kentucky than previously assumed.
+One can see that the \ac{drdid} + DL estimator is still able to retrieve significant results as the parametric models, even though the standard errors are slightly larger.
+The magnitude of the \ac{att} is also larger than in the other models, implying an even bigger effect of the compensation policy in Kentucky than previously assumed.
 
 Even though the \ac{drdid} + DL is more robust to unspecified models and heterogeneity in the treatment group, there is the potential issue of overfitting.
 Note that the neural network used in Table \ref{tab:reg_results} has the same architecture as in the simulation study.
@@ -45,5 +45,5 @@ Contrary to the simulation study, the neural network reports in this application
 Even though the size of the difference is small, it is a hint towards overfitting.
 Arguably the issue of heterogenous treatment effects is more severe than the issue of overfitting.
 
-Finally, the results of the \ac{drdid} + DL estimator are quite promising in observational studies.
+Finally, the results of the \ac{drdid} + DL estimator are quite promising and emphasize more applications of deep learning in observational studies.
 In settings with large $n$, conditional \ac{pta}, and potential heterogeneity in the treatment group, the \ac{drdid} + DL estimator seems to be a robust and efficient alternative.
