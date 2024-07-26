@@ -24,7 +24,7 @@ effectively.
 To get started, create and activate the environment with
 
 ```console
-$ cd ./deep_learning_for_semiparametric_did_estimation
+$ cd ./Deep-Learning-for-Semiparametric-DiD-Estimation
 $ conda env create -f environment.yml
 $ conda activate did
 ```
